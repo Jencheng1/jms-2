@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-09-05 03:09:21",
+  "sample": 12,
+  "queue_managers": {
+    "QM1": {
+      "connections": 49,
+      "sessions": 2,
+      "queue_depth": 0
+    },
+    "QM2": {
+      "connections": 49,
+      "sessions": 2,
+      "queue_depth": 0
+    },
+    "QM3": {
+      "connections": 49,
+      "sessions": 2,
+      "queue_depth": 0
+    }
+  },
+  "totals": {
+    "connections": 147,
+    "sessions": 6
+  }
+}
