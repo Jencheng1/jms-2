@@ -1,0 +1,55 @@
+==== BEFORE TEST - CONNECTION STATUS ====
+Fri Sep  5 18:06:56 UTC 2025
+
+=== QM1 ===
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+
+=== QM2 ===
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+
+=== QM3 ===
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+
+==== STARTING SINGLE PRODUCER TEST ====
+Fri Sep  5 18:06:56 UTC 2025
+Error: Could not find or load main class com.ibm.mq.demo.producer.JmsProducer
+Caused by: java.lang.ClassNotFoundException: com.ibm.mq.demo.producer.JmsProducer
+
+==== DURING TEST - CONNECTION STATUS ====
+Fri Sep  5 18:06:59 UTC 2025
+
+=== QM1 DETAILED CONNECTION DATA ===
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+=== QM2 DETAILED CONNECTION DATA ===
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+=== QM3 DETAILED CONNECTION DATA ===
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM3.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+==== TEST COMPLETED ====
+Fri Sep  5 18:06:59 UTC 2025

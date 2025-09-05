@@ -1,0 +1,92 @@
+=========================================================
+   PARENT-CHILD CONNECTION FINAL PROOF - RAW DATA
+   Timestamp: Fri Sep  5 18:10:33 UTC 2025
+=========================================================
+
+=== BEFORE TEST - NO CONNECTIONS ===
+QM1: 1 connections
+QM2: 1 connections
+QM3: 1 connections
+
+=== STARTING SINGLE CONNECTION TEST ===
+==========================================================
+     SINGLE CONNECTION PARENT-CHILD PROOF TEST
+==========================================================
+Creating ONE connection and THREE sessions to prove
+that all sessions go to the same Queue Manager
+==========================================================
+
+Application Tag: TEST-1757095835433
+Creating connection...
+Exception in thread "main" java.lang.NoClassDefFoundError: org/json/JSONException
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1012)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at com.ibm.mq.jmqi.system.internal.CCDTFileParser.newInstance(CCDTFileParser.java:129)
+	at com.ibm.mq.jmqi.system.internal.CCDT.<init>(CCDT.java:111)
+	at com.ibm.mq.jmqi.remote.impl.RemoteCCDT.<init>(RemoteCCDT.java:62)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.getCcdt(RemoteFAP.java:489)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.access$2300(RemoteFAP.java:190)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.initialiseFromCCDT(RemoteFAP.java:14459)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13346)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13202)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:415)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9009)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8349)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:242)
+	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6193)
+	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6256)
+	at SimpleConnectionTest.main(SimpleConnectionTest.java:33)
+Caused by: java.lang.ClassNotFoundException: org.json.JSONException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 29 more
+
+=== DURING TEST - CAPTURING RAW CONNECTION DATA ===
+
+############### QM1 RAW DATA ###############
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+############### QM2 RAW DATA ###############
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+############### QM3 RAW DATA ###############
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM3.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+=== FINAL SUMMARY ===

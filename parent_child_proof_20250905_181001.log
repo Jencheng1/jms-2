@@ -1,0 +1,111 @@
+=========================================================
+   PARENT-CHILD CONNECTION PROOF - RAW DATA CAPTURE
+   Timestamp: Fri Sep  5 18:10:01 UTC 2025
+=========================================================
+
+=== INITIAL STATE - NO CONNECTIONS ===
+
+--- QM1 ---
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+
+--- QM2 ---
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+
+--- QM3 ---
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+
+=== RUNNING SINGLE CONNECTION TEST ===
+Starting at: Fri Sep  5 18:10:01 UTC 2025
+==========================================================
+     SINGLE CONNECTION PARENT-CHILD PROOF TEST
+==========================================================
+Creating ONE connection and THREE sessions to prove
+that all sessions go to the same Queue Manager
+==========================================================
+
+Application Tag: TEST-1757095802929
+Creating connection...
+Exception in thread "main" com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ2020: Failed to connect to queue manager '' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Check the queue manager is started and if running in client mode, check there is a listener running. Please see the linked exception for more information.
+	at com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:482)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9009)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8349)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:242)
+	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6193)
+	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6256)
+	at SimpleConnectionTest.main(SimpleConnectionTest.java:33)
+Caused by: com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2278' ('MQRC_CLIENT_CONN_ERROR').
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+	... 8 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2278;AMQ9516: File error occurred. [1=java.io.FileNotFoundException[/workspace/ccdt/ccdt.json (No such file or directory)],3=file:/workspace/ccdt/ccdt.json]
+	at com.ibm.mq.jmqi.system.internal.CCDTFileParser.open(CCDTFileParser.java:185)
+	at com.ibm.mq.jmqi.system.internal.CCDTFileParser.newInstance(CCDTFileParser.java:121)
+	at com.ibm.mq.jmqi.system.internal.CCDT.<init>(CCDT.java:111)
+	at com.ibm.mq.jmqi.remote.impl.RemoteCCDT.<init>(RemoteCCDT.java:62)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.getCcdt(RemoteFAP.java:489)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.access$2300(RemoteFAP.java:190)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.initialiseFromCCDT(RemoteFAP.java:14459)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13346)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13202)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:415)
+	... 7 more
+Caused by: java.io.FileNotFoundException: /workspace/ccdt/ccdt.json (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:184)
+	at java.base/java.net.URL.openStream(URL.java:1165)
+	at com.ibm.mq.jmqi.system.internal.CCDTFileParser$1.run(CCDTFileParser.java:165)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.mq.jmqi.system.internal.CCDTFileParser.open(CCDTFileParser.java:157)
+	... 20 more
+
+=== ACTIVE CONNECTIONS DURING TEST ===
+Captured at: Fri Sep  5 18:10:03 UTC 2025
+
+--- QM1 DETAILED CONNECTION DATA ---
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+--- QM2 DETAILED CONNECTION DATA ---
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+--- QM3 DETAILED CONNECTION DATA ---
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM3.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+=== TEST COMPLETED ===

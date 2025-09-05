@@ -1,4 +1,0 @@
-com/ibm/mq/demo/utils/MQConnectionFactory.class
-com/ibm/mq/demo/producer/JmsProducer.class
-com/ibm/mq/demo/utils/ConnectionInfo.class
-com/ibm/mq/demo/consumer/JmsConsumer.class

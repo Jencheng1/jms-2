@@ -26,12 +26,27 @@
       "connectionManagement": {
         "sharingConversations": 10,
         "heartbeatInterval": 300,
+        "keepAliveInterval": -1,
+        "reconnect": {
+          "enabled": true,
+          "timeout": 1800
+        },
         "affinity": "none",
         "clientWeight": 1
       },
       "general": {
-        "description": "Client channel for uniform cluster"
+        "description": "Client channel for uniform cluster with automatic balancing"
       }
     }
-  ]
+  ],
+  "tuning": {
+    "advancedProperties": {
+      "automaticReconnect": true,
+      "reconnectDelay": {
+        "delay": 1000,
+        "multiplier": 2,
+        "maximumDelay": 30000
+      }
+    }
+  }
 }

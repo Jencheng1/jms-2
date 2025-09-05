@@ -1,0 +1,155 @@
+[1;33mChecking queue managers...[0m
+  [0;32m✓[0m qm1 is running
+  [0;32m✓[0m qm2 is running
+  [0;32m✓[0m qm3 is running
+
+[0;36m╔════════════════════════════════════════════════════════════════╗[0m
+[0;36m║         ACTIVE CONNECTION TRACER - MONITORING MODE             ║[0m
+[0;36m║                                                                ║[0m
+[0;36m║  Monitoring EXISTING connections from JMS Producer/Consumer    ║[0m
+[0;36m║  NOT creating any new connections                              ║[0m
+[0;36m╚════════════════════════════════════════════════════════════════╝[0m
+
+
+[0;34m═══ Queue Manager: QM1 at 2025-09-05 18:04:28.135 ═══[0m
+────────────────────────────────────────────────────
+Connection ID:        *
+Queue Manager:        QM1
+Channel:              
+Connection Name:      
+Application Tag:      
+Application Type:     
+User ID:              
+Process ID:           
+Thread ID:            
+UOW Log Date:         
+UOW Log Time:         
+UOW Start Date:       
+UOW Start Time:       
+UR Type:              
+External UR ID:       
+
+
+[0;34m═══ Queue Manager: QM2 at 2025-09-05 18:04:28.227 ═══[0m
+────────────────────────────────────────────────────
+Connection ID:        *
+Queue Manager:        QM2
+Channel:              
+Connection Name:      
+Application Tag:      
+Application Type:     
+User ID:              
+Process ID:           
+Thread ID:            
+UOW Log Date:         
+UOW Log Time:         
+UOW Start Date:       
+UOW Start Time:       
+UR Type:              
+External UR ID:       
+
+
+[0;34m═══ Queue Manager: QM3 at 2025-09-05 18:04:28.327 ═══[0m
+────────────────────────────────────────────────────
+Connection ID:        *
+Queue Manager:        QM3
+Channel:              
+Connection Name:      
+Application Tag:      
+Application Type:     
+User ID:              
+Process ID:           
+Thread ID:            
+UOW Log Date:         
+UOW Log Time:         
+UOW Start Date:       
+UOW Start Time:       
+UR Type:              
+External UR ID:       
+
+
+[0;35m════════════════════════════════════════════════════════════════[0m
+[0;35m           PARENT-CHILD CONNECTION ANALYSIS                      [0m
+[0;35m════════════════════════════════════════════════════════════════[0m
+
+[1;33mGrouping connections by IP address (parent-child detection):[0m
+
+
+[1;33mGrouping by Application Tag patterns:[0m
+
+
+[1;33mSaving evidence to: connection_trace_20250905_180428.log[0m
+════════════════════════════════════════════════════════════════
+     CONNECTION TRACE EVIDENCE - 2025-09-05 18:04:28
+════════════════════════════════════════════════════════════════
+
+
+[0;34m═══ Queue Manager: QM1 at 2025-09-05 18:04:28.707 ═══[0m
+────────────────────────────────────────────────────
+Connection ID:        *
+Queue Manager:        QM1
+Channel:              
+Connection Name:      
+Application Tag:      
+Application Type:     
+User ID:              
+Process ID:           
+Thread ID:            
+UOW Log Date:         
+UOW Log Time:         
+UOW Start Date:       
+UOW Start Time:       
+UR Type:              
+External UR ID:       
+
+
+[0;34m═══ Queue Manager: QM2 at 2025-09-05 18:04:28.800 ═══[0m
+────────────────────────────────────────────────────
+Connection ID:        *
+Queue Manager:        QM2
+Channel:              
+Connection Name:      
+Application Tag:      
+Application Type:     
+User ID:              
+Process ID:           
+Thread ID:            
+UOW Log Date:         
+UOW Log Time:         
+UOW Start Date:       
+UOW Start Time:       
+UR Type:              
+External UR ID:       
+
+
+[0;34m═══ Queue Manager: QM3 at 2025-09-05 18:04:28.895 ═══[0m
+────────────────────────────────────────────────────
+Connection ID:        *
+Queue Manager:        QM3
+Channel:              
+Connection Name:      
+Application Tag:      
+Application Type:     
+User ID:              
+Process ID:           
+Thread ID:            
+UOW Log Date:         
+UOW Log Time:         
+UOW Start Date:       
+UOW Start Time:       
+UR Type:              
+External UR ID:       
+
+
+
+[0;35m════════════════════════════════════════════════════════════════[0m
+[0;35m           PARENT-CHILD CONNECTION ANALYSIS                      [0m
+[0;35m════════════════════════════════════════════════════════════════[0m
+
+[1;33mGrouping connections by IP address (parent-child detection):[0m
+
+
+[1;33mGrouping by Application Tag patterns:[0m
+
+
+[0;32mEvidence saved to: connection_trace_20250905_180428.log[0m

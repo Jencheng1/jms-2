@@ -1,0 +1,91 @@
+===============================================================================
+     SUCCESSFUL PARENT-CHILD CONNECTION PROOF - FINAL TEST
+     Timestamp: Fri Sep  5 18:13:22 UTC 2025
+===============================================================================
+
+>>> RUNNING PARENT-CHILD PROOF TEST <<<
+
+==============================================================================
+     PARENT CONNECTION - CHILD SESSION CORRELATION PROOF
+==============================================================================
+This test creates ONE parent connection and multiple child sessions
+and proves they all connect to the SAME Queue Manager
+==============================================================================
+
+APPLICATION TAG FOR MQSC TRACKING: PROOF-1757096003305
+Timestamp: 1757096003305
+
+Creating parent connection...
+
+Exception in thread "main" com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ2020: Failed to connect to queue manager '' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Check the queue manager is started and if running in client mode, check there is a listener running. Please see the linked exception for more information.
+	at com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:482)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9009)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8349)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:242)
+	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6193)
+	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6256)
+	at ParentChildProof.main(ParentChildProof.java:38)
+Caused by: com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2278' ('MQRC_CLIENT_CONN_ERROR').
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+	... 8 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2278;AMQ9695: JSON file format error for 'file:/workspace/ccdt/ccdt.json'. [3=file:/workspace/ccdt/ccdt.json,4=connectionManagement,5=com.ibm.mq.jmqi.system.internal.JSONFileFormatException["unsupported attribute 'reconnect' for 'connectionManagement' attribute section]]
+	at com.ibm.mq.jmqi.system.internal.JSONCCDTFileParser.parse(JSONCCDTFileParser.java:120)
+	at com.ibm.mq.jmqi.system.internal.CCDT.<init>(CCDT.java:112)
+	at com.ibm.mq.jmqi.remote.impl.RemoteCCDT.<init>(RemoteCCDT.java:62)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.getCcdt(RemoteFAP.java:489)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.access$2300(RemoteFAP.java:190)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.initialiseFromCCDT(RemoteFAP.java:14459)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13346)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13202)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:415)
+	... 7 more
+Caused by: com.ibm.mq.jmqi.system.internal.JSONFileFormatException: "unsupported attribute 'reconnect' for 'connectionManagement' attribute section
+	at com.ibm.mq.jmqi.system.internal.JSONExceptionFactory.newJSONFileFormatException(JSONCCDTFileParser.java:1041)
+	at com.ibm.mq.jmqi.system.internal.JSONExceptionFactory.UnsupportedKey(JSONCCDTFileParser.java:1071)
+	at com.ibm.mq.jmqi.system.internal.ConnectionManagementAttributes.setAttributes(JSONCCDTFileParser.java:579)
+	at com.ibm.mq.jmqi.system.internal.ChannelDefinitionAttributes.processDefinition(JSONCCDTFileParser.java:389)
+	at com.ibm.mq.jmqi.system.internal.ChannelDefinitionAttributes.processChannelDefinition(JSONCCDTFileParser.java:356)
+	at com.ibm.mq.jmqi.system.internal.JSONCCDTFileParser.processJSONChannelDefinition(JSONCCDTFileParser.java:223)
+	at com.ibm.mq.jmqi.system.internal.JSONCCDTFileParser.parse(JSONCCDTFileParser.java:107)
+	... 19 more
+
+>>> CAPTURING ACTIVE CONNECTIONS FROM ALL QUEUE MANAGERS <<<
+
+################################################################################
+#                        QM1 CONNECTION DATA                                   #
+################################################################################
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+################################################################################
+#                        QM2 CONNECTION DATA                                   #
+################################################################################
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+################################################################################
+#                        QM3 CONNECTION DATA                                   #
+################################################################################
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+===============================================================================
+TEST COMPLETED - Evidence saved to: SUCCESS_PARENT_CHILD_PROOF_20250905_181322.log
+===============================================================================

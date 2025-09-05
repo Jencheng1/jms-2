@@ -1,0 +1,21 @@
+═══════════════════════════════════════════════════════════════
+PARENT-CHILD CORRELATION EVIDENCE ANALYSIS
+Test Directory: single_conn_proof_20250905_180415
+Analysis Time: 2025-09-05 18:04:29
+═══════════════════════════════════════════════════════════════
+
+EVIDENCE FROM APPLICATION TRACE:
+─────────────────────────────────────────
+Parent Connection:
+
+Child Sessions:
+
+Verification Result:
+
+EVIDENCE FROM MQSC MONITORING:
+─────────────────────────────────────────
+
+═══════════════════════════════════════════════════════════════
+CONCLUSION:
+✗ PROOF FAILED: Unable to confirm parent-child QM affinity
+═══════════════════════════════════════════════════════════════

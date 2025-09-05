@@ -45,8 +45,7 @@ public class MQConnectionFactory {
         // Enable connection balancing
         factory.setBooleanProperty(WMQConstants.WMQ_SYNCPOINT_ALL_GETS, false);
         
-        // Set connection options for uniform cluster
-        factory.setIntProperty(WMQConstants.WMQ_SHARE_CONV_ALLOWED, 10);
+        // Set connection options for uniform cluster - removed invalid property
         
         // Configure SSL if needed (disabled for demo)
         factory.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, true);
