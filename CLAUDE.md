@@ -371,9 +371,65 @@ The solution successfully demonstrates that in IBM MQ Uniform Cluster, child ses
 
 ---
 
-**Last Updated**: September 5, 2025 04:00 UTC
-**Status**: PRODUCTION READY - Parent-Child Correlation PROVEN
+### September 5, 2025 - Session 4 (SUCCESSFUL Parent-Child Proof with MQSC Evidence)
+- **OBJECTIVE**: Fix connection errors and capture live MQSC evidence
+- **KEY ACHIEVEMENT**: Successfully captured 6 MQ connections (1 parent + 5 sessions)
+
+#### Solutions Implemented:
+
+**Fixed CCDT Errors:**
+- Created `mq/ccdt/ccdt-qm1.json` - QM1-only CCDT without problematic attributes
+- Removed unsupported "tuning", "reconnect" sections causing JSON parsing errors
+
+**Created Live Tests:**
+- `QM1LiveDebug.java` - **PRIMARY TEST** - Keeps connection alive for 60 seconds
+- `QM1ParentChildDebug.java` - Focused QM1 test with debug output
+- `ParentChildMaxDebug.java` - Maximum debug with exhaustive field extraction
+
+**Fixed Authentication:**
+```bash
+# Set MCAUSER on all QMs
+ALTER CHANNEL('APP.SVRCONN') CHLTYPE(SVRCONN) MCAUSER('mqm')
+SET CHLAUTH('APP.SVRCONN') TYPE(BLOCKUSER) USERLIST('nobody') ACTION(REPLACE)
+```
+
+#### MQSC Evidence Captured:
+
+**Tracking Key**: LIVE-1757097420561
+**6 Connections Found**:
+1. CONN(6147BA6800D40740) - Session
+2. CONN(6147BA6800D30740) - Session
+3. CONN(6147BA6800D20740) - Session
+4. CONN(6147BA6800D60740) - Session
+5. CONN(6147BA6800D10740) - **PARENT** (has MQCNO_GENERATE_CONN_TAG)
+6. CONN(6147BA6800D50740) - Session
+
+**All Share:**
+- Same APPLTAG: LIVE-1757097420561
+- Same PID: 3079, TID: 14
+- Same CHANNEL: APP.SVRCONN
+- Same CONNAME: 10.10.10.2
+- Same base CONNTAG: MQCT6147BA6800D10740QM1
+
+#### Proof Points:
+1. ✅ 1 JMS Connection creates 1 MQ connection
+2. ✅ 5 JMS Sessions appear as 5 additional MQ connections
+3. ✅ All 6 connections visible in MQSC with same APPLTAG
+4. ✅ Parent identified by MQCNO_GENERATE_CONN_TAG flag
+5. ✅ Sessions inherit parent's CONNECTION_ID
+6. ✅ All on QM1 (no distribution to QM2/QM3)
+
+#### Files Created:
+- `SUCCESSFUL_PROOF_CAPTURE.md` - Complete MQSC evidence
+- `FINAL_PROOF_QM1.md` - Detailed analysis
+- `QM1LiveDebug.java` - Test with 60-second keep-alive
+- `run_and_monitor.sh` - Script for live MQSC monitoring
+
+---
+
+**Last Updated**: September 5, 2025 18:40 UTC
+**Status**: PARENT-CHILD RELATIONSHIP PROVEN WITH MQSC EVIDENCE
 **Environment**: Docker on Linux (Amazon Linux 2)
 **MQ Version**: 9.3.5.0 (Latest)
 **Java Version**: OpenJDK 17
-**Maven Version**: 3.8
+**Key Achievement**: Captured live MQSC proof of 1 parent + 5 sessions = 6 connections
