@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  # Full Repository Queue Manager 1
+  qm1:
+    image: icr.io/ibm-messaging/mq:latest
+    container_name: qm1
+    hostname: qm1
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM1
+      - MQ_APP_PASSWORD=passw0rd
+      - MQ_ENABLE_METRICS=true
+    ports:
+      - "1414:1414"  # MQ listener
+      - "9543:9443"  # Web console
+    volumes:
+      - ./mq/scripts/qm1_setup.mqsc:/etc/mqm/qm1_setup.mqsc:ro
+      - qm1-data:/var/mqm
+    networks:
+      mqnet:
+        ipv4_address: 10.10.10.10
+    command: runmqdevserver
+
+  # Full Repository Queue Manager 2
+  qm2:
+    image: icr.io/ibm-messaging/mq:latest
+    container_name: qm2
+    hostname: qm2
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM2
+      - MQ_APP_PASSWORD=passw0rd
+      - MQ_ENABLE_METRICS=true
+    ports:
+      - "1415:1414"
+      - "9544:9443"
+    volumes:
+      - ./mq/scripts/qm2_setup.mqsc:/etc/mqm/qm2_setup.mqsc:ro
+      - qm2-data:/var/mqm
+    networks:
+      mqnet:
+        ipv4_address: 10.10.10.11
+    command: runmqdevserver
+    depends_on:
+      - qm1
+
+  # Partial Repository Queue Manager 3
+  qm3:
+    image: icr.io/ibm-messaging/mq:latest
+    container_name: qm3
+    hostname: qm3
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM3
+      - MQ_APP_PASSWORD=passw0rd
+      - MQ_ENABLE_METRICS=true
+    ports:
+      - "1416:1414"
+      - "9545:9443"
+    volumes:
+      - ./mq/scripts/qm3_setup.mqsc:/etc/mqm/qm3_setup.mqsc:ro
+      - qm3-data:/var/mqm
+    networks:
+      mqnet:
+        ipv4_address: 10.10.10.12
+    command: runmqdevserver
+    depends_on:
+      - qm1
+      - qm2
+
+  # CCDT Generator Service
+  ccdt-generator:
+    image: alpine:latest
+    container_name: ccdt-generator
+    volumes:
+      - ./mq/ccdt:/ccdt
+    command: |
+      sh -c "
+        echo 'Waiting for QMs to be ready...'
+        sleep 45
+        echo 'CCDT will be pre-created in the volume'
+      "
+    depends_on:
+      - qm1
+      - qm2
+      - qm3
+
+  # Java Application Builder
+  app-builder:
+    image: maven:3.9-openjdk-17
+    container_name: app-builder
+    working_dir: /workspace
+    volumes:
+      - ./java-app:/workspace
+      - maven-cache:/root/.m2
+    command: mvn clean package
+    depends_on:
+      - ccdt-generator
+
+networks:
+  mqnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.10.0/24
+
+volumes:
+  qm1-data:
+  qm2-data:
+  qm3-data:
+  maven-cache:

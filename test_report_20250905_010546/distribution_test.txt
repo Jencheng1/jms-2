@@ -1,0 +1,26 @@
+======================================
+CONNECTION DISTRIBUTION TEST RESULTS
+======================================
+Test Start: Fri Sep  5 01:06:56 UTC 2025
+
+Starting 3 producer instances...
+2b8974f09e2f3eaff7fdbd4d4ddc0143b08e2cf01b327e7800ad72a0b5894b33
+  Started Producer 1
+f411b8b26e9e00fd30e09ae049c909d5f355eada9b528ae67c57f263da5437e3
+  Started Producer 2
+a73c49162e01cf8c6fc614ade7989d745b55b7296c20b08cfc077db93b249e3e
+  Started Producer 3
+Starting 3 consumer instances...
+986dd6ca200fab1cda4a9bcdba91e309cfafcd88b829a4265fe53f29adf6c7a7
+  Started Consumer 1
+5e35b213646eac324ff9df0f8596ca0f4df523f17ac70412db2e69e7260b48af
+  Started Consumer 2
+89079d6590f69187e1464dfd5dee2f32db16db02b0480c1016d71151d9de39b3
+  Started Consumer 3
+
+Waiting 20 seconds for connections to establish...
+
+CONNECTION DISTRIBUTION ANALYSIS:
+---------------------------------
+
+Measurement 1 (01:07:38):

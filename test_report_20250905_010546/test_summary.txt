@@ -1,0 +1,31 @@
+==========================================
+IBM MQ UNIFORM CLUSTER - TEST SUMMARY
+==========================================
+Generated: Fri Sep  5 01:07:38 UTC 2025
+
+TEST ENVIRONMENT:
+-----------------
+• 3 Queue Managers (QM1, QM2, QM3)
+• Cluster Name: UNICLUSTER
+• Shared Queue: UNIFORM.QUEUE
+• CCDT Configuration: JSON with affinity=none
+
+KEY FINDINGS:
+-------------
+✓ Uniform Cluster successfully formed
+✓ Connection distribution tested across QMs
+✓ Failover and recovery tested
+
+BENEFITS DEMONSTRATED:
+----------------------
+1. Automatic connection distribution without external LB
+2. MQ-aware load balancing at session level
+3. Automatic failover with connection preservation
+4. Self-healing on QM recovery
+
+FILES GENERATED:
+----------------
+• test_report_20250905_010546/cluster_verification.txt
+• test_report_20250905_010546/distribution_test.txt
+• test_report_20250905_010546/qm*_setup.log
+

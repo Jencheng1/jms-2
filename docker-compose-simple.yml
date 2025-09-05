@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  qm1:
+    image: icr.io/ibm-messaging/mq:latest
+    container_name: qm1
+    hostname: qm1
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM1
+      - MQ_APP_PASSWORD=passw0rd
+      - MQ_DEV=true
+    ports:
+      - "1414:1414"
+      - "9543:9443"
+    volumes:
+      - qm1-data:/var/mqm
+    networks:
+      mqnet:
+        ipv4_address: 10.10.10.10
+
+  qm2:
+    image: icr.io/ibm-messaging/mq:latest
+    container_name: qm2
+    hostname: qm2
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM2
+      - MQ_APP_PASSWORD=passw0rd
+      - MQ_DEV=true
+    ports:
+      - "1415:1414"
+      - "9544:9443"
+    volumes:
+      - qm2-data:/var/mqm
+    networks:
+      mqnet:
+        ipv4_address: 10.10.10.11
+
+  qm3:
+    image: icr.io/ibm-messaging/mq:latest
+    container_name: qm3
+    hostname: qm3
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM3
+      - MQ_APP_PASSWORD=passw0rd
+      - MQ_DEV=true
+    ports:
+      - "1416:1414"
+      - "9545:9443"
+    volumes:
+      - qm3-data:/var/mqm
+    networks:
+      mqnet:
+        ipv4_address: 10.10.10.12
+
+networks:
+  mqnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.10.0/24
+
+volumes:
+  qm1-data:
+  qm2-data:
+  qm3-data:

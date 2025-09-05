@@ -1,0 +1,28 @@
+===================================
+CLUSTER CONFIGURATION VERIFICATION
+===================================
+
+--- Queue Manager QM1 ---
+Cluster Members:
+  No cluster members
+Cluster Queues:
+  Queue not found
+Cluster Channels:
+  No channels
+
+--- Queue Manager QM2 ---
+Cluster Members:
+  No cluster members
+Cluster Queues:
+  Queue not found
+Cluster Channels:
+  No channels
+
+--- Queue Manager QM3 ---
+Cluster Members:
+  No cluster members
+Cluster Queues:
+  Queue not found
+Cluster Channels:
+  No channels
+

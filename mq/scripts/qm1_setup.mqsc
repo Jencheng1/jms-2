@@ -1,0 +1,80 @@
+* =========================================
+* QM1 Setup - Full Repository Queue Manager
+* =========================================
+
+* Define the cluster
+ALTER QMGR REPOS(UNICLUSTER) REPOSNL(UNICLUSTER.NL)
+
+* Define cluster namelist for uniform cluster
+DEFINE NAMELIST(UNICLUSTER.NL) +
+       NAMES(QM1,QM2) +
+       DESCR('Uniform Cluster Repository Namelist') +
+       REPLACE
+
+* Define cluster receiver channel
+DEFINE CHANNEL(TO.QM1) +
+       CHLTYPE(CLUSRCVR) +
+       CLUSTER(UNICLUSTER) +
+       CONNAME('10.10.10.10(1414)') +
+       DESCR('Cluster receiver channel for QM1') +
+       REPLACE
+
+* Define cluster sender channels to other full repository
+DEFINE CHANNEL(TO.QM2) +
+       CHLTYPE(CLUSSDR) +
+       CLUSTER(UNICLUSTER) +
+       CONNAME('10.10.10.11(1414)') +
+       DESCR('Cluster sender channel from QM1 to QM2') +
+       REPLACE
+
+* Create uniform cluster queue for workload distribution
+DEFINE QLOCAL(UNIFORM.QUEUE) +
+       CLUSTER(UNICLUSTER) +
+       DEFPSIST(YES) +
+       DEFBIND(NOTFIXED) +
+       CLWLRANK(50) +
+       CLWLPRTY(50) +
+       DESCR('Uniform cluster shared queue') +
+       REPLACE
+
+* Define application connection channel
+DEFINE CHANNEL(APP.SVRCONN) +
+       CHLTYPE(SVRCONN) +
+       MCAUSER('app') +
+       DESCR('Application server connection channel') +
+       REPLACE
+
+* Set channel authentication rules
+SET CHLAUTH(APP.SVRCONN) +
+    TYPE(ADDRESSMAP) +
+    ADDRESS('*') +
+    MCAUSER('app') +
+    ACTION(ADD)
+
+SET CHLAUTH('*') +
+    TYPE(BLOCKUSER) +
+    USERLIST('nobody')
+
+* Enable automatic application balancing for uniform cluster
+ALTER QMGR DEFCLXQ(SCTQ) MONACLS(HIGH)
+
+* Set cluster workload parameters for uniform distribution
+ALTER QMGR CLWLDATA('UniformCluster=true')
+ALTER QMGR CLWLLEN(100)
+ALTER QMGR CLWLMRUC(999999)
+ALTER QMGR CLWLUSEQ(LOCAL)
+
+* Create monitoring queue
+DEFINE QLOCAL(MONITOR.QUEUE) +
+       DESCR('Queue for monitoring messages') +
+       REPLACE
+
+* Set authorities for app user
+SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('app') AUTHADD(CONNECT,INQ)
+SET AUTHREC PROFILE('UNIFORM.QUEUE') OBJTYPE(QUEUE) PRINCIPAL('app') AUTHADD(PUT,GET,BROWSE,INQ)
+SET AUTHREC PROFILE('MONITOR.QUEUE') OBJTYPE(QUEUE) PRINCIPAL('app') AUTHADD(PUT,GET,BROWSE,INQ)
+
+* Display cluster status
+DISPLAY CLUSQMGR(*)
+DISPLAY CHANNEL(*) WHERE(CHLTYPE EQ CLUSSDR)
+DISPLAY CHANNEL(*) WHERE(CHLTYPE EQ CLUSRCVR)
