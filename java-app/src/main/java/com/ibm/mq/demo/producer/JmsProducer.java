@@ -42,10 +42,11 @@ public class JmsProducer {
         for (int i = 0; i < numberOfProducers; i++) {
             final int producerId = i + 1;
             final int messagesPerProducer = numberOfMessages / numberOfProducers;
+            final int finalDelay = delayBetweenMessages;
             
             producers[i] = new Thread(() -> {
                 try {
-                    runProducer(producerId, messagesPerProducer, delayBetweenMessages);
+                    runProducer(producerId, messagesPerProducer, finalDelay);
                 } catch (Exception e) {
                     System.err.println("Producer " + producerId + " failed: " + e.getMessage());
                     e.printStackTrace();

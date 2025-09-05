@@ -1,0 +1,2 @@
+docker: Error response from daemon: Conflict. The container name "/producer-2" is already in use by container "19fd9f138b63533792b6e6f23bb35655ebe1b0b20a06d4660b3df790bff6e79e". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.

@@ -1,0 +1,23 @@
+Connection Test Results
+=======================
+Timestamp: Fri Sep  5 02:14:23 UTC 2025
+
+Queue Manager Status:
+
+QM1:
+   QMNAME(QM1)                             ACCTCONO(DISABLED)
+     1 : DIS QL(UNIFORM.QUEUE)
+   QUEUE(UNIFORM.QUEUE)                    TYPE(QLOCAL)
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+
+QM2:
+   QMNAME(QM2)                             ACCTCONO(DISABLED)
+     1 : DIS QL(UNIFORM.QUEUE)
+   QUEUE(UNIFORM.QUEUE)                    TYPE(QLOCAL)
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+
+QM3:
+   QMNAME(QM3)                             ACCTCONO(DISABLED)
+     1 : DIS QL(UNIFORM.QUEUE)
+   QUEUE(UNIFORM.QUEUE)                    TYPE(QLOCAL)
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)

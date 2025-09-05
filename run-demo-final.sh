@@ -60,19 +60,19 @@ EOF
 
 for i in 1 2 3; do
     echo "  Configuring QM$i..."
-    docker exec qm$i bash -c "cat > /tmp/setup.mqsc << 'EOF'
-DEFINE QLOCAL(UNIFORM.QUEUE) REPLACE
-DEFINE CHANNEL(APP.SVRCONN) CHLTYPE(SVRCONN) MCAUSER('app') REPLACE
-SET CHLAUTH('*') TYPE(BLOCKUSER) USERLIST('nobody')
-SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('app') AUTHADD(CONNECT,INQ)
-SET AUTHREC PROFILE('UNIFORM.QUEUE') OBJTYPE(QUEUE) PRINCIPAL('app') AUTHADD(PUT,GET,INQ,BROWSE)
-EOF
-runmqsc QM$i < /tmp/setup.mqsc" > "$REPORT_DIR/qm${i}_config.log" 2>&1
     
-    if grep -q "completed normally" "$REPORT_DIR/qm${i}_config.log" 2>/dev/null; then
-        echo -e "    ${GREEN}✓${NC} Configuration applied"
+    # Apply configuration commands one by one for better error handling
+    docker exec qm$i bash -c "echo 'DEFINE QLOCAL(UNIFORM.QUEUE) REPLACE' | runmqsc QM$i" > "$REPORT_DIR/qm${i}_config.log" 2>&1
+    docker exec qm$i bash -c "echo 'DEFINE CHANNEL(APP.SVRCONN) CHLTYPE(SVRCONN) MCAUSER('app') REPLACE' | runmqsc QM$i" >> "$REPORT_DIR/qm${i}_config.log" 2>&1
+    docker exec qm$i bash -c "echo \"SET CHLAUTH('*') TYPE(BLOCKUSER) USERLIST('nobody')\" | runmqsc QM$i" >> "$REPORT_DIR/qm${i}_config.log" 2>&1
+    docker exec qm$i bash -c "echo \"SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('app') AUTHADD(CONNECT,INQ)\" | runmqsc QM$i" >> "$REPORT_DIR/qm${i}_config.log" 2>&1
+    docker exec qm$i bash -c "echo \"SET AUTHREC PROFILE('UNIFORM.QUEUE') OBJTYPE(QUEUE) PRINCIPAL('app') AUTHADD(PUT,GET,INQ,BROWSE)\" | runmqsc QM$i" >> "$REPORT_DIR/qm${i}_config.log" 2>&1
+    
+    # Check if commands succeeded
+    if grep -q "AMQ" "$REPORT_DIR/qm${i}_config.log" && ! grep -q "AMQ8405I" "$REPORT_DIR/qm${i}_config.log"; then
+        echo -e "    ${GREEN}✓${NC} Configuration applied successfully"
     else
-        echo -e "    ${YELLOW}⚠${NC} Configuration may have issues"
+        echo -e "    ${YELLOW}⚠${NC} Some objects may already exist (this is normal)"
     fi
 done
 

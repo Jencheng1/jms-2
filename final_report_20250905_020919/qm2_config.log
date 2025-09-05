@@ -1,0 +1,45 @@
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : DEFINE QLOCAL(UNIFORM.QUEUE) REPLACE
+AMQ8006I: IBM MQ queue created.
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : DEFINE CHANNEL(APP.SVRCONN) CHLTYPE(SVRCONN) MCAUSER(app) REPLACE
+AMQ8014I: IBM MQ channel created.
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : SET CHLAUTH('*') TYPE(BLOCKUSER) USERLIST('nobody')
+AMQ8877I: IBM MQ channel authentication record set.
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : SET AUTHREC OBJTYPE(QMGR) PRINCIPAL('app') AUTHADD(CONNECT,INQ)
+AMQ8862I: IBM MQ authority record set.
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : SET AUTHREC PROFILE('UNIFORM.QUEUE') OBJTYPE(QUEUE) PRINCIPAL('app') AUTHADD(PUT,GET,INQ,BROWSE)
+AMQ8862I: IBM MQ authority record set.
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.

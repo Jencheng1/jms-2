@@ -1,0 +1,22 @@
+
+TIME-SERIES DISTRIBUTION DATA
+==============================
+
+Sample #1 - 02:36:20
+------------------------
+  QM1: Connections=49, Sessions=2
+  QM2: Connections=49, Sessions=2
+  QM3: Connections=49, Sessions=2
+
+Sample #2 - 02:36:30
+------------------------
+  QM1: Connections=49, Sessions=2
+  QM2: Connections=49, Sessions=2
+  QM3: Connections=49, Sessions=2
+
+Sample #3 - 02:36:41
+------------------------
+  QM1: Connections=49, Sessions=2
+  QM2: Connections=49, Sessions=2
+  QM3: Connections=49, Sessions=2
+

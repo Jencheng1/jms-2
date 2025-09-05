@@ -1,0 +1,20 @@
+==========================================
+BASELINE CONNECTION AND SESSION DATA
+==========================================
+Collection Time: Fri Sep  5 02:36:05 UTC 2025
+
+Queue Manager: QM1
+-------------------
+  Connections: 49
+  Sessions: 2
+
+Queue Manager: QM2
+-------------------
+  Connections: 49
+  Sessions: 2
+
+Queue Manager: QM3
+-------------------
+  Connections: 49
+  Sessions: 2
+

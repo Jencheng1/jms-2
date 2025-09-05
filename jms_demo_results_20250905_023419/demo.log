@@ -1,0 +1,22 @@
+
+[1m[1;33mPHASE 1: Environment Setup[0m
+════════════════════════════════════════
+  [0;32m✓[0m QM1 is running
+  [0;32m✓[0m QM2 is running
+  [0;32m✓[0m QM3 is running
+  [0;32m✓[0m CCDT file exists
+  [0;36mCCDT Configuration:[0m
+    "host": "10.10.10.10",
+    "port": 1414
+    "host": "10.10.10.11",
+    "port": 1414
+    "host": "10.10.10.12",
+    "port": 1414
+    "affinity": "none",
+
+[1m[1;33mPHASE 2: Preparing Java JMS Applications[0m
+════════════════════════════════════════
+[1;33mCompiling Java JMS applications...[0m
+  Building Java applications...
+  [0;31m✗[0m Failed to compile Java applications
+[0;31mERROR: Failed to build Java applications[0m

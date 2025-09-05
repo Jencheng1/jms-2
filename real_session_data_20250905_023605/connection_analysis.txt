@@ -1,0 +1,364 @@
+==========================================
+ACTIVE CONNECTION AND SESSION ANALYSIS
+==========================================
+Collection Time: Fri Sep  5 02:36:16 UTC 2025
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Queue Manager: QM1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONNECTION DETAILS (Parent):
+----------------------------
+  Connection: *
+  Connection: 6147BA6800080040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800240040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800030040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001F0040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800150040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800230040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA680E360040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800020040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001E0040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800270040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800060040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800140040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800220040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68000F0040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001D0040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800180040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800260040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800210040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68000E0040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800090040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800250040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800120040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800200040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001B0040
+  Connection: 414D5143514D31202020202020202020
+    Channel:  
+    Client:  
+
+SESSION/CHANNEL STATUS (Children):
+-----------------------------------
+  Session: *
+  Session: *
+
+SUMMARY for QM1:
+  Parent Connections: 49
+  Active Sessions: 2
+  Sessions per Connection: .04
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Queue Manager: QM2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONNECTION DETAILS (Parent):
+----------------------------
+  Connection: *
+  Connection: 5D47BA68000F0040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA68001D0040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800180040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800260040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800130040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800210040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA68001C0040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800170040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800250040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800120040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800200040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800080040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800160040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800240040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800030040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA68001F0040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA680F340040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800070040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800230040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800020040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA68001E0040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800270040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800060040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+  Connection: 5D47BA6800220040
+  Connection: 414D5143514D32202020202020202020
+    Channel:  
+    Client:  
+
+SESSION/CHANNEL STATUS (Children):
+-----------------------------------
+  Session: *
+  Session: *
+
+SUMMARY for QM2:
+  Parent Connections: 49
+  Active Sessions: 2
+  Sessions per Connection: .04
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Queue Manager: QM3
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONNECTION DETAILS (Parent):
+----------------------------
+  Connection: *
+  Connection: 6147BA6800080040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800240040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800030040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800110040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001F0040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68000C0040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001A0040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800070040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800230040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800020040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800100040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001E0040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800270040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800220040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68000F0040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800180040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800260040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800210040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA680E340040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800090040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800250040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800120040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA6800200040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+  Connection: 6147BA68001B0040
+  Connection: 414D5143514D33202020202020202020
+    Channel:  
+    Client:  
+
+SESSION/CHANNEL STATUS (Children):
+-----------------------------------
+  Session: *
+  Session: *
+
+SUMMARY for QM3:
+  Parent Connections: 49
+  Active Sessions: 2
+  Sessions per Connection: .04
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DISTRIBUTION ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Total Parent Connections: 147
+Total Active Sessions: 6
+
+Connection Distribution:
+  QM1: [██████░░░░░░░░░░░░░░] 49 connections (33.3%)
+  QM2: [██████░░░░░░░░░░░░░░] 49 connections (33.3%)
+  QM3: [██████░░░░░░░░░░░░░░] 49 connections (33.3%)
+
+Session Distribution:
+  QM1: [██████░░░░░░░░░░░░░░] 2 sessions (33.3%)
+  QM2: [██████░░░░░░░░░░░░░░] 2 sessions (33.3%)
+  QM3: [██████░░░░░░░░░░░░░░] 2 sessions (33.3%)
