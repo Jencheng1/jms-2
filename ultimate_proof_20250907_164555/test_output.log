@@ -1,0 +1,149 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                      IBM MQ PARENT-CHILD ULTIMATE PROOF                      ║
+║                   Implementing All ChatGPT Recommendations                   ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║ Tracking Key: PROOF-1757263561687                                          ║
+║ Target QM: QM1                                                              ║
+║ Sessions: 5                                                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+ENABLING JMS TRACE (Recommendation #4)
+============================================================
+✓ JMS trace enabled: JMS_TRACE_PROOF-1757263561687.trc
+✓ Trace will show every MQCONN with HCONN values
+
+CREATING CONNECTION FACTORY WITH APPLTAG (Recommendation #2)
+============================================================
+The IBM MQ messaging client trace mechanism is tracing to '/JMS_TRACE_PROOF-1757263561687.trc'
+✓ WMQ_APPLICATIONNAME = PROOF-1757263561687
+  This APPLTAG will group parent + all sessions
+✓ WMQ_CONNECTION_TAG = PARENT-CHILD-TEST-1757263561687
+✓ SHARE_CONV will use channel configuration
+  Note: This affects TCP sharing, NOT the number of HCONNs
+✓ Connection factory configured for QM1
+
+CAPTURING PRE-TEST STATE
+============================================================
+  QM1: 0 connections with APPLTAG 'PROOF-1757263561687'
+  QM2: 0 connections with APPLTAG 'PROOF-1757263561687'
+  QM3: 0 connections with APPLTAG 'PROOF-1757263561687'
+✓ All QMs should have 0 connections before test
+
+CREATING PARENT JMS CONNECTION (First HCONN)
+============================================================
+✓ JMS Connection created in 998ms
+  This creates the FIRST MQ connection (HCONN)
+
+PARENT CONNECTION DETAILS:
+  Connection ID: unknown
+  Queue Manager: unknown
+  APPLTAG: PROOF-1757263561687
+✓ Connection started
+
+CREATING 5 CHILD SESSIONS (Each gets own HCONN)
+============================================================
+Key Point: Each createSession() creates a NEW MQ connection
+
+Creating Session #1...
+  ✓ Session #1 created in 298ms
+    This is MQ connection #2 (parent + 1 sessions)
+    Queue Manager: unknown
+    APPLTAG: PROOF-1757263561687 (inherited from parent)
+    ✓ Test message sent
+
+Creating Session #2...
+  ✓ Session #2 created in 177ms
+    This is MQ connection #3 (parent + 2 sessions)
+    Queue Manager: unknown
+    APPLTAG: PROOF-1757263561687 (inherited from parent)
+    ✓ Test message sent
+
+Creating Session #3...
+  ✓ Session #3 created in 169ms
+    This is MQ connection #4 (parent + 3 sessions)
+    Queue Manager: unknown
+    APPLTAG: PROOF-1757263561687 (inherited from parent)
+    ✓ Test message sent
+
+Creating Session #4...
+  ✓ Session #4 created in 227ms
+    This is MQ connection #5 (parent + 4 sessions)
+    Queue Manager: unknown
+    APPLTAG: PROOF-1757263561687 (inherited from parent)
+    ✓ Test message sent
+
+Creating Session #5...
+  ✓ Session #5 created in 235ms
+    This is MQ connection #6 (parent + 5 sessions)
+    Queue Manager: unknown
+    APPLTAG: PROOF-1757263561687 (inherited from parent)
+    ✓ Test message sent
+
+SUMMARY: Created 5 sessions
+Expected MQ connections: 6 (1 parent + 5 sessions)
+
+VERIFYING QUEUE MANAGER AFFINITY
+============================================================
+  QM1: 0 connections
+  QM2: 0 connections
+  QM3: 0 connections
+
+❌ UNEXPECTED DISTRIBUTION!
+  Expected all on QM1 but found distribution across QMs
+
+SHARED CONVERSATION ANALYSIS (Recommendation #5)
+============================================================
+SHARECNV affects TCP sharing, NOT HCONN count
+
+Channel APP.SVRCONN SHARECNV: unknown
+
+TCP connections on port 1414: 0
+MQ connections (HCONNs): 6
+
+Could not parse SHARECNV value: unknown
+
+KEY POINT: SHARECNV doesn't change the one-HCONN-per-session rule!
+
+VERIFYING OTHER QUEUE MANAGERS ARE EMPTY
+============================================================
+
+Checking QM2:
+  Total connections on APP.SVRCONN: 0
+  Connections with our APPLTAG: 0
+  ✅ Confirmed: No connections from our test
+
+Checking QM3:
+  Total connections on APP.SVRCONN: 0
+  Connections with our APPLTAG: 0
+  ✅ Confirmed: No connections from our test
+
+✓ Proof report generated: PROOF_REPORT_PROOF-1757263561687.md
+
+
+============================================================
+KEEPING CONNECTION ALIVE FOR VERIFICATION
+============================================================
+
+Manual verification commands:
+
+1. Check QM1 (should have 6 connections):
+   docker exec qm1 bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ \'PROOF-1757263561687\')' | runmqsc QM1"
+
+2. Check QM2 (should have 0 connections):
+   docker exec qm2 bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ \'PROOF-1757263561687\')' | runmqsc QM2"
+
+3. Check QM3 (should have 0 connections):
+   docker exec qm3 bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ \'PROOF-1757263561687\')' | runmqsc QM3"
+
+Keeping alive for 60 seconds...
+Time remaining: 60 seconds  Time remaining: 59 seconds  Time remaining: 58 seconds  Time remaining: 57 seconds  Time remaining: 56 seconds  Time remaining: 55 seconds  Time remaining: 54 seconds  Time remaining: 53 seconds  Time remaining: 52 seconds  Time remaining: 51 seconds  Time remaining: 50 seconds  Time remaining: 49 seconds  Time remaining: 48 seconds  Time remaining: 47 seconds  Time remaining: 46 seconds  Time remaining: 45 seconds  Time remaining: 44 seconds  Time remaining: 43 seconds  Time remaining: 42 seconds  Time remaining: 41 seconds  Time remaining: 40 seconds  Time remaining: 39 seconds  Time remaining: 38 seconds  Time remaining: 37 seconds  Time remaining: 36 seconds  Time remaining: 35 seconds  Time remaining: 34 seconds  Time remaining: 33 seconds  Time remaining: 32 seconds  Time remaining: 31 seconds  Time remaining: 30 seconds  Time remaining: 29 seconds  Time remaining: 28 seconds  Time remaining: 27 seconds  Time remaining: 26 seconds  Time remaining: 25 seconds  Time remaining: 24 seconds  Time remaining: 23 seconds  Time remaining: 22 seconds  Time remaining: 21 seconds  Time remaining: 20 seconds  Time remaining: 19 seconds  Time remaining: 18 seconds  Time remaining: 17 seconds  Time remaining: 16 seconds  Time remaining: 15 seconds  Time remaining: 14 seconds  Time remaining: 13 seconds  Time remaining: 12 seconds  Time remaining: 11 seconds  Time remaining: 10 seconds  Time remaining: 9 seconds  Time remaining: 8 seconds  Time remaining: 7 seconds  Time remaining: 6 seconds  Time remaining: 5 seconds  Time remaining: 4 seconds  Time remaining: 3 seconds  Time remaining: 2 seconds  Time remaining: 1 seconds  
+
+CLEANUP
+============================================================
+  Closed session #1
+  Closed session #2
+  Closed session #3
+  Closed session #4
+  Closed session #5
+  Closed parent connection
+

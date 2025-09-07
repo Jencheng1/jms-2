@@ -1,0 +1,9 @@
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM3.
+
+
+     1 : DIS CHSTATUS(APP.SVRCONN) ALL
+AMQ8420I: Channel Status not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.

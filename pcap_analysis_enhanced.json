@@ -1,0 +1,125 @@
+{
+  "qm_traffic": {
+    "QM1": {
+      "packets": 373,
+      "bytes": 60824,
+      "connections": "{'10.10.10.2:42365'}"
+    },
+    "QM2": {
+      "packets": 0,
+      "bytes": 0,
+      "connections": "set()"
+    },
+    "QM3": {
+      "packets": 0,
+      "bytes": 0,
+      "connections": "set()"
+    }
+  },
+  "connection_flow": [
+    {
+      "time": "16:51:01.238742",
+      "direction": "CLIENT->QM",
+      "qm": "QM1",
+      "src": "10.10.10.2:42365",
+      "dst": "10.10.10.10:1414",
+      "bytes": 0
+    },
+    {
+      "time": "16:51:01.238769",
+      "direction": "CLIENT->QM",
+      "qm": "QM1",
+      "src": "10.10.10.2:42365",
+      "dst": "10.10.10.10:1414",
+      "bytes": 0
+    },
+    {
+      "time": "16:51:01.238791",
+      "direction": "QM->CLIENT",
+      "qm": "QM1",
+      "src": "10.10.10.10:1414",
+      "dst": "10.10.10.2:42365",
+      "bytes": 0
+    },
+    {
+      "time": "16:51:01.238796",
+      "direction": "QM->CLIENT",
+      "qm": "QM1",
+      "src": "10.10.10.10:1414",
+      "dst": "10.10.10.2:42365",
+      "bytes": 0
+    },
+    {
+      "time": "16:51:01.238811",
+      "direction": "CLIENT->QM",
+      "qm": "QM1",
+      "src": "10.10.10.2:42365",
+      "dst": "10.10.10.10:1414",
+      "bytes": 0
+    },
+    {
+      "time": "16:51:01.238815",
+      "direction": "CLIENT->QM",
+      "qm": "QM1",
+      "src": "10.10.10.2:42365",
+      "dst": "10.10.10.10:1414",
+      "bytes": 0
+    },
+    {
+      "time": "16:51:01.281628",
+      "direction": "CLIENT->QM",
+      "qm": "QM1",
+      "src": "10.10.10.2:42365",
+      "dst": "10.10.10.10:1414",
+      "bytes": 268
+    },
+    {
+      "time": "16:51:01.281661",
+      "direction": "CLIENT->QM",
+      "qm": "QM1",
+      "src": "10.10.10.2:42365",
+      "dst": "10.10.10.10:1414",
+      "bytes": 268
+    },
+    {
+      "time": "16:51:01.281685",
+      "direction": "QM->CLIENT",
+      "qm": "QM1",
+      "src": "10.10.10.10:1414",
+      "dst": "10.10.10.2:42365",
+      "bytes": 0
+    },
+    {
+      "time": "16:51:01.281691",
+      "direction": "QM->CLIENT",
+      "qm": "QM1",
+      "src": "10.10.10.10:1414",
+      "dst": "10.10.10.2:42365",
+      "bytes": 0
+    }
+  ],
+  "total_mq_packets": 373,
+  "tcp_handshakes": {
+    "QM1": [
+      {
+        "time": "16:51:01.238742",
+        "type": "SYN",
+        "packet": "16:51:01.238742 IP 10.10.10.2.42365 > 10.10.10.10.1414: Flags [S], seq 2680996764, win 29200, option"
+      },
+      {
+        "time": "16:51:01.238769",
+        "type": "SYN",
+        "packet": "16:51:01.238769 IP 10.10.10.2.42365 > 10.10.10.10.1414: Flags [S], seq 2680996764, win 29200, option"
+      }
+    ],
+    "QM2": [],
+    "QM3": []
+  },
+  "mq_pattern_counts": {
+    "268_bytes": 4,
+    "276_bytes": 4,
+    "36_bytes": 12,
+    "524_bytes": 24,
+    "340_bytes": 28
+  }
+}

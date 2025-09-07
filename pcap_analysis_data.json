@@ -1,0 +1,21 @@
+{
+  "qm_packet_counts": {},
+  "qm_connections": {},
+  "total_packets": 0,
+  "unique_connections": 0,
+  "tcp_flags": {
+    "SYN": 2,
+    "SYN-ACK": 2,
+    "ACK": 92,
+    "PSH-ACK": 277
+  },
+  "connection_initiations": 2,
+  "mq_patterns": {
+    "TSH": 16,
+    "MQCONN": 4,
+    "MQDISC": 0,
+    "MQOPEN": 0,
+    "MQPUT": 0,
+    "MQGET": 0
+  }
+}

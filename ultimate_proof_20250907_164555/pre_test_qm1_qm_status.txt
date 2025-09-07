@@ -1,0 +1,32 @@
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS QMSTATUS ALL
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(QM1)                             TYPE(QMGR)
+   STATUS(RUNNING)                         AUTOCLUS(NONE)
+   CHINIT(RUNNING)                         CHKPTCNT(11)
+   CHKPTOPS(361)                           CHKPTSZ(0)
+   CMDSERV(RUNNING)                        CONNS(24)
+   DATFSSZ(SHARED)                         DATFSUSE(SHARED)
+   DATPATH(/mnt/mqm/data/qmgrs/QM1)        DISKLSN(<0:0:15:38706>)
+   GRPLSN( )                               GRPNAME( )
+   GRPROLE(NOTCONFIG)                      HOSTNAME(qm1)
+   INSTANCE( )                             INSTDESC(IBM MQ V9.4.3.0 (Unzipped))
+   INSTNAME(Installation1)                 INSTPATH(/opt/mqm)
+   LDAPCONN(INACTIVE)                      LOGEXTSZ(16392)
+   LOGFSSZ(SHARED)                         LOGFSUSE(SHARED)
+   LOGINUSE(3)                          
+   LOGPATH(/mnt/mqm/data/log/QM1/active/)
+   LOGPRIM(3)                              LOGSEC(2)
+   LOGSTRDA(2025-09-05)                    LOGSTRL(<0:0:13:52405>)
+   LOGSTRTI(19:45:47)                      LOGTYPE(CIRCULAR)
+   LOGUTIL(3)                              QMFSSZ(40948)
+   QMFSUSE(66)                             QUORUM( )
+   REUSESZ(0)                              STANDBY(PERMIT)
+   STARTDA(2025-09-07)                     STARTTI(16.33.01)
+   UNICLUS( )                           
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.

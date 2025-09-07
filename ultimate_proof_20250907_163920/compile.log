@@ -1,0 +1,188 @@
+MQParentChildUltimateProof.java:1: error: package com.ibm.msg.client.jms does not exist
+import com.ibm.msg.client.jms.JmsConnectionFactory;
+                             ^
+MQParentChildUltimateProof.java:2: error: package com.ibm.msg.client.jms does not exist
+import com.ibm.msg.client.jms.JmsFactoryFactory;
+                             ^
+MQParentChildUltimateProof.java:3: error: package com.ibm.msg.client.wmq does not exist
+import com.ibm.msg.client.wmq.WMQConstants;
+                             ^
+MQParentChildUltimateProof.java:4: error: package com.ibm.mq.jms does not exist
+import com.ibm.mq.jms.MQConnection;
+                     ^
+MQParentChildUltimateProof.java:5: error: package com.ibm.mq.jms does not exist
+import com.ibm.mq.jms.MQSession;
+                     ^
+MQParentChildUltimateProof.java:6: error: package com.ibm.mq.constants does not exist
+import com.ibm.mq.constants.CMQC;
+                           ^
+MQParentChildUltimateProof.java:7: error: package com.ibm.mq.constants does not exist
+import com.ibm.mq.constants.CMQCFC;
+                           ^
+MQParentChildUltimateProof.java:9: error: package com.ibm.mq does not exist
+import com.ibm.mq.MQQueueManager;
+                 ^
+MQParentChildUltimateProof.java:10: error: package com.ibm.mq does not exist
+import com.ibm.mq.MQEnvironment;
+                 ^
+MQParentChildUltimateProof.java:11: error: package com.ibm.mq does not exist
+import com.ibm.mq.MQException;
+                 ^
+MQParentChildUltimateProof.java:140: error: cannot find symbol
+    private static JmsConnectionFactory createConnectionFactory() throws Exception {
+                   ^
+  symbol:   class JmsConnectionFactory
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:201: error: cannot find symbol
+    private static Connection createParentConnection(JmsConnectionFactory factory) throws Exception {
+                                                     ^
+  symbol:   class JmsConnectionFactory
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:201: error: cannot find symbol
+    private static Connection createParentConnection(JmsConnectionFactory factory) throws Exception {
+                   ^
+  symbol:   class Connection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:236: error: cannot find symbol
+    private static List<Session> createChildSessions(Connection parentConnection) throws Exception {
+                                                     ^
+  symbol:   class Connection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:236: error: cannot find symbol
+    private static List<Session> createChildSessions(Connection parentConnection) throws Exception {
+                        ^
+  symbol:   class Session
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:624: error: cannot find symbol
+    private static Map<String, Object> extractConnectionDetails(MQConnection mqConn) throws Exception {
+                                                                ^
+  symbol:   class MQConnection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:646: error: cannot find symbol
+    private static Map<String, Object> extractSessionDetails(MQSession mqSession) throws Exception {
+                                                             ^
+  symbol:   class MQSession
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:772: error: cannot find symbol
+    private static void cleanup(Connection connection, List<Session> sessions) throws Exception {
+                                ^
+  symbol:   class Connection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:772: error: cannot find symbol
+    private static void cleanup(Connection connection, List<Session> sessions) throws Exception {
+                                                            ^
+  symbol:   class Session
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:12: error: package javax.jms does not exist
+import javax.jms.*;
+^
+MQParentChildUltimateProof.java:63: error: cannot find symbol
+            JmsConnectionFactory factory = createConnectionFactory();
+            ^
+  symbol:   class JmsConnectionFactory
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:69: error: cannot find symbol
+            Connection parentConnection = createParentConnection(factory);
+            ^
+  symbol:   class Connection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:75: error: cannot find symbol
+            List<Session> sessions = createChildSessions(parentConnection);
+                 ^
+  symbol:   class Session
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:144: error: cannot find symbol
+        JmsFactoryFactory ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER);
+        ^
+  symbol:   class JmsFactoryFactory
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:144: error: cannot find symbol
+        JmsFactoryFactory ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER);
+                                                             ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:144: error: cannot find symbol
+        JmsFactoryFactory ff = JmsFactoryFactory.getInstance(WMQConstants.WMQ_PROVIDER);
+                               ^
+  symbol:   variable JmsFactoryFactory
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:145: error: cannot find symbol
+        JmsConnectionFactory factory = ff.createConnectionFactory();
+        ^
+  symbol:   class JmsConnectionFactory
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:148: error: cannot find symbol
+        factory.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, TRACKING_KEY);
+                                  ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:156: error: cannot find symbol
+        factory.setObjectProperty(WMQConstants.WMQ_CONNECTION_TAG, fullTag);
+                                  ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:160: error: cannot find symbol
+        factory.setStringProperty(WMQConstants.WMQ_HOST_NAME, "10.10.10.10");
+                                  ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:161: error: cannot find symbol
+        factory.setIntProperty(WMQConstants.WMQ_PORT, 1414);
+                               ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:162: error: cannot find symbol
+        factory.setStringProperty(WMQConstants.WMQ_CHANNEL, CHANNEL);
+                                  ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:163: error: cannot find symbol
+        factory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, TARGET_QM);
+                                  ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:164: error: cannot find symbol
+        factory.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT);
+                               ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:164: error: cannot find symbol
+        factory.setIntProperty(WMQConstants.WMQ_CONNECTION_MODE, WMQConstants.WMQ_CM_CLIENT);
+                                                                 ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:172: error: cannot find symbol
+        factory.setStringProperty(WMQConstants.USERID, "app");
+                                  ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:173: error: cannot find symbol
+        factory.setStringProperty(WMQConstants.PASSWORD, "passw0rd");
+                                  ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:174: error: cannot find symbol
+        factory.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, true);
+                                   ^
+  symbol:   variable WMQConstants
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:206: error: cannot find symbol
+        Connection connection = factory.createConnection();
+        ^
+  symbol:   class Connection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:213: error: cannot find symbol
+        if (connection instanceof MQConnection) {
+                                  ^
+  symbol:   class MQConnection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:214: error: cannot find symbol
+            MQConnection mqConn = (MQConnection) connection;
+            ^
+  symbol:   class MQConnection
+  location: class MQParentChildUltimateProof
+MQParentChildUltimateProof.java:214: error: cannot find symbol
+            MQConnection mqConn = (MQConnection) connection;
+                                   ^
+  symbol:   class MQConnection
+  location: class MQParentChildUltimateProof

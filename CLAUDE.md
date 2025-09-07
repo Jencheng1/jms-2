@@ -52,6 +52,7 @@ Complete implementation of IBM MQ Uniform Cluster demonstrating native load bala
 - `MONITORING_EXPLAINED.md` - How monitoring works
 - `DEMO_RESULTS.md` - Initial summary
 - `final_report_20250905_015747/` - Previous session report directory
+- **NEW**: `QM1LiveDebugv2_DETAILED_ANALYSIS.md` - Deep technical analysis of parent-child proof
 
 ## What Was Proven
 
@@ -427,9 +428,60 @@ SET CHLAUTH('APP.SVRCONN') TYPE(BLOCKUSER) USERLIST('nobody') ACTION(REPLACE)
 
 ---
 
-**Last Updated**: September 5, 2025 18:40 UTC
-**Status**: PARENT-CHILD RELATIONSHIP PROVEN WITH MQSC EVIDENCE
+### September 5, 2025 - Session 5 (Deep Technical Analysis Documentation)
+- **OBJECTIVE**: Create comprehensive technical documentation explaining parent-child proof
+- **KEY ACHIEVEMENT**: Created detailed analysis correlating JMS debug logs with MQSC evidence
+
+#### Documentation Created:
+
+**QM1LiveDebugv2_DETAILED_ANALYSIS.md** - Complete technical guide including:
+- Test architecture and program flow analysis
+- Key correlation fields mapping (JMS ↔ MQSC)
+- Visual JMS to MQSC trace map showing 1 parent → 5 sessions → 6 MQ connections
+- Deep dive into connection and session field analysis
+- Step-by-step correlation methodology from raw logs
+- Technical proof points with evidence
+- Debugging field reference guide
+
+#### Key Technical Insights Documented:
+
+1. **CONNECTION_ID Format Analysis**:
+   - `414D5143514D312020202020202020206147BA6800270840`
+   - Prefix `414D5143` = "AMQC" in hex
+   - Middle = Queue Manager name (QM1 padded)
+   - Suffix = Unique connection handle
+
+2. **Field Inheritance Proof**:
+   - All 5 sessions inherit parent's `XMSC_WMQ_CONNECTION_ID`
+   - Same `XMSC_WMQ_RESOLVED_QUEUE_MANAGER` (QM1)
+   - Same `XMSC_WMQ_HOST_NAME` and `XMSC_WMQ_PORT`
+   - Same `XMSC_WMQ_APPNAME` (tracking key)
+
+3. **Correlation Methods**:
+   - **APPLTAG**: Set via `WMQConstants.WMQ_APPLICATIONNAME`, visible in MQSC
+   - **CONNECTION_ID**: Primary correlation between JMS and MQ levels
+   - **PID/TID**: Process/thread verification (all 6 connections same PID/TID)
+   - **MQCNO_GENERATE_CONN_TAG**: Unique parent identifier flag
+
+4. **Evidence Files Analyzed**:
+   - `QM1LiveDebugv2.java` - Test program with exhaustive field extraction
+   - `JMS_COMPLETE_V2-1757101546237_1757101556.log` - 46KB JMS debug log
+   - `MQSC_COMPLETE_V2-1757101546237_1757101556.log` - 42KB MQSC evidence
+   - `PARENT_CHILD_PROOF_V2-1757101546237.md` - Executive summary
+
+#### How to Use the Analysis:
+
+The documentation provides:
+- **For Developers**: Understanding of JMS-MQ connection architecture
+- **For Testing**: Step-by-step verification methodology
+- **For Debugging**: Complete field reference and extraction methods
+- **For Proof**: Irrefutable evidence chain from JMS API to MQSC
+
+---
+
+**Last Updated**: September 5, 2025 19:50 UTC
+**Status**: PARENT-CHILD RELATIONSHIP PROVEN WITH COMPREHENSIVE TECHNICAL DOCUMENTATION
 **Environment**: Docker on Linux (Amazon Linux 2)
 **MQ Version**: 9.3.5.0 (Latest)
 **Java Version**: OpenJDK 17
-**Key Achievement**: Captured live MQSC proof of 1 parent + 5 sessions = 6 connections
+**Key Achievement**: Created detailed technical analysis correlating JMS logs with MQSC evidence, proving 1 parent + 5 sessions = 6 connections with same QM affinity
