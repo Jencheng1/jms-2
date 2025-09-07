@@ -1,0 +1,2252 @@
+═══════════════════════════════════════════════════════════════════════════════
+    🔍 PARENT-CHILD CONNECTION PROOF - SINGLE CONNECTION, MULTIPLE SESSIONS
+    Tracking Key: V2-1757100085364
+    Time: Fri Sep  5 19:23:10 UTC 2025
+═══════════════════════════════════════════════════════════════════════════════
+
+▶️ MQSC DATA COLLECTION STARTING...
+
+═══════════════════════════════════════════════════════════════════════════════
+    CAPTURE ROUND #1 - 19:23:10.741921072
+═══════════════════════════════════════════════════════════════════════════════
+
+🔴 QM1 CONNECTION ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+1. BASIC CONNECTION LIST WITH APPLTAG FILTER
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2. FULL CONNECTION DETAILS - ALL ATTRIBUTES
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3. CONNECTION TYPE AND OPTIONS ANALYSIS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4. CHANNEL, USER, AND NETWORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5. PROCESS AND THREAD INFORMATION
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+6. CONNECTION TAGS AND IDENTIFIERS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+7. UNIT OF WORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8. EXTENDED URI AND CLIENT DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+9. CHANNEL STATUS FOR APP.SVRCONN
+Command: DIS CHS(APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8420I: Channel Status not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+10. CHANNEL DEFINITION DETAILS
+Command: DIS CHANNEL(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+11. CONNECTION AUTHENTICATION RECORDS
+Command: DIS CHLAUTH(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHLAUTH(APP.SVRCONN) ALL
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(USERMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS( )                              CLNTUSER(app)
+   MCAUSER(mqm)                            USERSRC(MAP)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(ADDRESSMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS(*)                              USERSRC(CHANNEL)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(BLOCKUSER)
+   DESCR( )                                CUSTOM( )
+   USERLIST(nobody)                        WARN(NO)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+12. ALL CONNECTIONS ON APP.SVRCONN (WIDER CONTEXT)
+Command: DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+13. QUEUE MANAGER STATUS
+Command: DIS QMSTATUS CONNS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS QMSTATUS CONNS
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(QM1)                             TYPE(QMGR)
+   STATUS(RUNNING)                         CONNS(24)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+14. INDIVIDUAL CONNECTION DETAILS (TARGETED QUERY)
+────────────────────────────────────────────────────────────────────────────
+
+  Detailed info for *:
+     1 : DIS CONN(*) ALL
+   CONN(6147BA6800080040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800080040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800240040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(5) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800240040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800030040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1188)                               TID(1) 
+   APPLTAG(amqzfuma)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800030040QM1_2025-09-05_02.13.44amqzfuma)
+   CONN(6147BA68001F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(4) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001F0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800150040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(8) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800150040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800230040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(6) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800230040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800020040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1232)                               TID(1) 
+   APPLDESC(IBM MQ Cluster Repository)     APPLTAG(amqrrmfa)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_FASTPATH_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800020040QM1_2025-09-05_02.13.44amqrrmfa)
+   CONN(6147BA68001E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(1) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001E0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6810EF0740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(24612)                              TID(1) 
+   APPLTAG(runmqsc)                        APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6810EF0740QM1_2025-09-05_02.13.44runmqsc)
+   CONN(6147BA6800270040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(9) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800270040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800060040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1244)                               TID(1) 
+   APPLDESC(IBM MQ Command Server)         APPLTAG(amqpcsea)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800060040QM1_2025-09-05_02.13.44amqpcsea)
+   CONN(6147BA6800140040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(16) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800140040QM1_2025-09-05_02.13.44amqzmur0)
+   CONN(6147BA6800220040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(5) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800220040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1195)                               TID(46) 
+   APPLTAG(amqzmuc0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000F0040QM1_2025-09-05_02.13.44amqzmuc0)
+   CONN(6147BA68001D0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(10) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001D0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800180040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(9) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800180040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800260040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(8) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800260040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800210040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(4) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800210040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(4) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000E0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800090040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800090040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800250040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(7) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800250040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800120040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(7) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800120040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800200040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(1) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800200040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68001B0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(15) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001B0040QM1_2025-09-05_02.13.44amqzmur0)
+
+15. CONNECTION COUNT AND ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='V2-1757100085364': 1
+Expected: 6 (1 parent + 5 sessions)
+⚠️ Count mismatch - found 1 connections
+
+16. PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for connection with MQCNO_GENERATE_CONN_TAG...
+
+17. SESSION CONNECTIONS (WITHOUT GENERATE_CONN_TAG)
+────────────────────────────────────────────────────────────────────────────
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNOPTS
+
+18. CONNECTION TAG BASE ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+      1      1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNTAG
+
+⏳ Waiting 10 seconds before round #2...
+═══════════════════════════════════════════════════════════════════════════════
+    CAPTURE ROUND #2 - 19:23:22.493098142
+═══════════════════════════════════════════════════════════════════════════════
+
+🔴 QM1 CONNECTION ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+1. BASIC CONNECTION LIST WITH APPLTAG FILTER
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2. FULL CONNECTION DETAILS - ALL ATTRIBUTES
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3. CONNECTION TYPE AND OPTIONS ANALYSIS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4. CHANNEL, USER, AND NETWORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5. PROCESS AND THREAD INFORMATION
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+6. CONNECTION TAGS AND IDENTIFIERS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+7. UNIT OF WORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8. EXTENDED URI AND CLIENT DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+9. CHANNEL STATUS FOR APP.SVRCONN
+Command: DIS CHS(APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8420I: Channel Status not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+10. CHANNEL DEFINITION DETAILS
+Command: DIS CHANNEL(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+11. CONNECTION AUTHENTICATION RECORDS
+Command: DIS CHLAUTH(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHLAUTH(APP.SVRCONN) ALL
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(USERMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS( )                              CLNTUSER(app)
+   MCAUSER(mqm)                            USERSRC(MAP)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(ADDRESSMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS(*)                              USERSRC(CHANNEL)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(BLOCKUSER)
+   DESCR( )                                CUSTOM( )
+   USERLIST(nobody)                        WARN(NO)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+12. ALL CONNECTIONS ON APP.SVRCONN (WIDER CONTEXT)
+Command: DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+13. QUEUE MANAGER STATUS
+Command: DIS QMSTATUS CONNS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS QMSTATUS CONNS
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(QM1)                             TYPE(QMGR)
+   STATUS(RUNNING)                         CONNS(24)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+14. INDIVIDUAL CONNECTION DETAILS (TARGETED QUERY)
+────────────────────────────────────────────────────────────────────────────
+
+  Detailed info for *:
+     1 : DIS CONN(*) ALL
+   CONN(6147BA6800080040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800080040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800240040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(5) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800240040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800030040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1188)                               TID(1) 
+   APPLTAG(amqzfuma)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800030040QM1_2025-09-05_02.13.44amqzfuma)
+   CONN(6147BA68001F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(4) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001F0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6810F00740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(24822)                              TID(1) 
+   APPLTAG(runmqsc)                        APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6810F00740QM1_2025-09-05_02.13.44runmqsc)
+   CONN(6147BA6800150040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(8) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800150040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800230040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(6) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800230040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800020040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1232)                               TID(1) 
+   APPLDESC(IBM MQ Cluster Repository)     APPLTAG(amqrrmfa)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_FASTPATH_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800020040QM1_2025-09-05_02.13.44amqrrmfa)
+   CONN(6147BA68001E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(1) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001E0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800270040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(9) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800270040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800060040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1244)                               TID(1) 
+   APPLDESC(IBM MQ Command Server)         APPLTAG(amqpcsea)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800060040QM1_2025-09-05_02.13.44amqpcsea)
+   CONN(6147BA6800140040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(16) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800140040QM1_2025-09-05_02.13.44amqzmur0)
+   CONN(6147BA6800220040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(5) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800220040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1195)                               TID(46) 
+   APPLTAG(amqzmuc0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000F0040QM1_2025-09-05_02.13.44amqzmuc0)
+   CONN(6147BA68001D0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(10) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001D0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800180040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(9) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800180040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800260040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(8) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800260040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800210040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(4) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800210040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(4) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000E0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800090040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800090040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800250040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(7) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800250040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800120040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(7) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800120040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800200040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(1) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800200040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68001B0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(15) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001B0040QM1_2025-09-05_02.13.44amqzmur0)
+
+15. CONNECTION COUNT AND ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='V2-1757100085364': 1
+Expected: 6 (1 parent + 5 sessions)
+⚠️ Count mismatch - found 1 connections
+
+16. PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for connection with MQCNO_GENERATE_CONN_TAG...
+
+17. SESSION CONNECTIONS (WITHOUT GENERATE_CONN_TAG)
+────────────────────────────────────────────────────────────────────────────
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNOPTS
+
+18. CONNECTION TAG BASE ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+      1      1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNTAG
+
+⏳ Waiting 10 seconds before round #3...
+═══════════════════════════════════════════════════════════════════════════════
+    CAPTURE ROUND #3 - 19:23:34.344949846
+═══════════════════════════════════════════════════════════════════════════════
+
+🔴 QM1 CONNECTION ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+1. BASIC CONNECTION LIST WITH APPLTAG FILTER
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2. FULL CONNECTION DETAILS - ALL ATTRIBUTES
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3. CONNECTION TYPE AND OPTIONS ANALYSIS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4. CHANNEL, USER, AND NETWORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5. PROCESS AND THREAD INFORMATION
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+6. CONNECTION TAGS AND IDENTIFIERS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+7. UNIT OF WORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8. EXTENDED URI AND CLIENT DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+9. CHANNEL STATUS FOR APP.SVRCONN
+Command: DIS CHS(APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8420I: Channel Status not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+10. CHANNEL DEFINITION DETAILS
+Command: DIS CHANNEL(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+11. CONNECTION AUTHENTICATION RECORDS
+Command: DIS CHLAUTH(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHLAUTH(APP.SVRCONN) ALL
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(USERMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS( )                              CLNTUSER(app)
+   MCAUSER(mqm)                            USERSRC(MAP)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(ADDRESSMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS(*)                              USERSRC(CHANNEL)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(BLOCKUSER)
+   DESCR( )                                CUSTOM( )
+   USERLIST(nobody)                        WARN(NO)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+12. ALL CONNECTIONS ON APP.SVRCONN (WIDER CONTEXT)
+Command: DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+13. QUEUE MANAGER STATUS
+Command: DIS QMSTATUS CONNS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS QMSTATUS CONNS
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(QM1)                             TYPE(QMGR)
+   STATUS(RUNNING)                         CONNS(24)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+14. INDIVIDUAL CONNECTION DETAILS (TARGETED QUERY)
+────────────────────────────────────────────────────────────────────────────
+
+  Detailed info for *:
+     1 : DIS CONN(*) ALL
+   CONN(6147BA6800080040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800080040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800240040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(5) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800240040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800030040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1188)                               TID(1) 
+   APPLTAG(amqzfuma)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800030040QM1_2025-09-05_02.13.44amqzfuma)
+   CONN(6147BA68001F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(4) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001F0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800150040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(8) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800150040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800230040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(6) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800230040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800020040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1232)                               TID(1) 
+   APPLDESC(IBM MQ Cluster Repository)     APPLTAG(amqrrmfa)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_FASTPATH_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800020040QM1_2025-09-05_02.13.44amqrrmfa)
+   CONN(6147BA68001E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(1) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001E0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800270040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(9) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800270040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800060040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1244)                               TID(1) 
+   APPLDESC(IBM MQ Command Server)         APPLTAG(amqpcsea)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800060040QM1_2025-09-05_02.13.44amqpcsea)
+   CONN(6147BA6800140040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(16) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800140040QM1_2025-09-05_02.13.44amqzmur0)
+   CONN(6147BA6800220040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(5) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800220040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1195)                               TID(46) 
+   APPLTAG(amqzmuc0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000F0040QM1_2025-09-05_02.13.44amqzmuc0)
+   CONN(6147BA68001D0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(10) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001D0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800180040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(9) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800180040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800260040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(8) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800260040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800210040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(4) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800210040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(4) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000E0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800090040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800090040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800250040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(7) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800250040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800120040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(7) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800120040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800200040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(1) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800200040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6810F10740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(25029)                              TID(1) 
+   APPLTAG(runmqsc)                        APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6810F10740QM1_2025-09-05_02.13.44runmqsc)
+   CONN(6147BA68001B0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(15) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001B0040QM1_2025-09-05_02.13.44amqzmur0)
+
+15. CONNECTION COUNT AND ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='V2-1757100085364': 1
+Expected: 6 (1 parent + 5 sessions)
+⚠️ Count mismatch - found 1 connections
+
+16. PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for connection with MQCNO_GENERATE_CONN_TAG...
+
+17. SESSION CONNECTIONS (WITHOUT GENERATE_CONN_TAG)
+────────────────────────────────────────────────────────────────────────────
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNOPTS
+
+18. CONNECTION TAG BASE ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+      1      1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNTAG
+
+⏳ Waiting 10 seconds before round #4...
+═══════════════════════════════════════════════════════════════════════════════
+    CAPTURE ROUND #4 - 19:23:46.455041287
+═══════════════════════════════════════════════════════════════════════════════
+
+🔴 QM1 CONNECTION ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+1. BASIC CONNECTION LIST WITH APPLTAG FILTER
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2. FULL CONNECTION DETAILS - ALL ATTRIBUTES
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3. CONNECTION TYPE AND OPTIONS ANALYSIS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4. CHANNEL, USER, AND NETWORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5. PROCESS AND THREAD INFORMATION
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+6. CONNECTION TAGS AND IDENTIFIERS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+7. UNIT OF WORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8. EXTENDED URI AND CLIENT DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+9. CHANNEL STATUS FOR APP.SVRCONN
+Command: DIS CHS(APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8420I: Channel Status not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+10. CHANNEL DEFINITION DETAILS
+Command: DIS CHANNEL(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+11. CONNECTION AUTHENTICATION RECORDS
+Command: DIS CHLAUTH(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHLAUTH(APP.SVRCONN) ALL
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(USERMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS( )                              CLNTUSER(app)
+   MCAUSER(mqm)                            USERSRC(MAP)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(ADDRESSMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS(*)                              USERSRC(CHANNEL)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(BLOCKUSER)
+   DESCR( )                                CUSTOM( )
+   USERLIST(nobody)                        WARN(NO)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+12. ALL CONNECTIONS ON APP.SVRCONN (WIDER CONTEXT)
+Command: DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+13. QUEUE MANAGER STATUS
+Command: DIS QMSTATUS CONNS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS QMSTATUS CONNS
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(QM1)                             TYPE(QMGR)
+   STATUS(RUNNING)                         CONNS(24)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+14. INDIVIDUAL CONNECTION DETAILS (TARGETED QUERY)
+────────────────────────────────────────────────────────────────────────────
+
+  Detailed info for *:
+     1 : DIS CONN(*) ALL
+   CONN(6147BA6800080040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800080040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800240040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(5) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800240040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800030040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1188)                               TID(1) 
+   APPLTAG(amqzfuma)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800030040QM1_2025-09-05_02.13.44amqzfuma)
+   CONN(6147BA68001F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(4) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001F0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800150040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(8) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800150040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800230040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(6) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800230040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800020040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1232)                               TID(1) 
+   APPLDESC(IBM MQ Cluster Repository)     APPLTAG(amqrrmfa)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_FASTPATH_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800020040QM1_2025-09-05_02.13.44amqrrmfa)
+   CONN(6147BA68001E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(1) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001E0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800270040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(9) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800270040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800060040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1244)                               TID(1) 
+   APPLDESC(IBM MQ Command Server)         APPLTAG(amqpcsea)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800060040QM1_2025-09-05_02.13.44amqpcsea)
+   CONN(6147BA6800140040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(16) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800140040QM1_2025-09-05_02.13.44amqzmur0)
+   CONN(6147BA6800220040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(5) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800220040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1195)                               TID(46) 
+   APPLTAG(amqzmuc0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000F0040QM1_2025-09-05_02.13.44amqzmuc0)
+   CONN(6147BA68001D0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(10) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001D0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800180040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(9) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800180040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800260040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(8) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800260040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800210040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(4) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800210040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6810F20740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(25238)                              TID(1) 
+   APPLTAG(runmqsc)                        APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6810F20740QM1_2025-09-05_02.13.44runmqsc)
+   CONN(6147BA68000E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(4) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000E0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800090040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800090040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800250040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(7) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800250040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800120040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(7) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800120040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800200040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(1) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800200040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68001B0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(15) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001B0040QM1_2025-09-05_02.13.44amqzmur0)
+
+15. CONNECTION COUNT AND ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='V2-1757100085364': 1
+Expected: 6 (1 parent + 5 sessions)
+⚠️ Count mismatch - found 1 connections
+
+16. PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for connection with MQCNO_GENERATE_CONN_TAG...
+
+17. SESSION CONNECTIONS (WITHOUT GENERATE_CONN_TAG)
+────────────────────────────────────────────────────────────────────────────
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNOPTS
+
+18. CONNECTION TAG BASE ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+      1      1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNTAG
+
+⏳ Waiting 10 seconds before round #5...
+═══════════════════════════════════════════════════════════════════════════════
+    CAPTURE ROUND #5 - 19:23:58.595647670
+═══════════════════════════════════════════════════════════════════════════════
+
+🔴 QM1 CONNECTION ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+
+1. BASIC CONNECTION LIST WITH APPLTAG FILTER
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2. FULL CONNECTION DETAILS - ALL ATTRIBUTES
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3. CONNECTION TYPE AND OPTIONS ANALYSIS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4. CHANNEL, USER, AND NETWORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CHANNEL CONNAME USERID APPLDESC
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5. PROCESS AND THREAD INFORMATION
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID APPLTYPE ASTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+6. CONNECTION TAGS AND IDENTIFIERS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN EXTCONN CONNTAG
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+7. UNIT OF WORK DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') UOWLOG UOWSTDA UOWSTTI UOWLOGDA UOWLOGTI UOWSTATE QMURID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8. EXTENDED URI AND CLIENT DETAILS
+Command: DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') URTYPE EXTURID CLIENTID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+9. CHANNEL STATUS FOR APP.SVRCONN
+Command: DIS CHS(APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8420I: Channel Status not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+10. CHANNEL DEFINITION DETAILS
+Command: DIS CHANNEL(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+11. CONNECTION AUTHENTICATION RECORDS
+Command: DIS CHLAUTH(APP.SVRCONN) ALL
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHLAUTH(APP.SVRCONN) ALL
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(USERMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS( )                              CLNTUSER(app)
+   MCAUSER(mqm)                            USERSRC(MAP)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(ADDRESSMAP)
+   DESCR( )                                CUSTOM( )
+   ADDRESS(*)                              USERSRC(CHANNEL)
+   CHCKCLNT(ASQMGR)                        ALTDATE(2025-09-05)
+   ALTTIME(18.17.15)                    
+AMQ8878I: Display channel authentication record details.
+   CHLAUTH(APP.SVRCONN)                    TYPE(BLOCKUSER)
+   DESCR( )                                CUSTOM( )
+   USERLIST(nobody)                        WARN(NO)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+12. ALL CONNECTIONS ON APP.SVRCONN (WIDER CONTEXT)
+Command: DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+13. QUEUE MANAGER STATUS
+Command: DIS QMSTATUS CONNS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS QMSTATUS CONNS
+AMQ8705I: Display Queue Manager Status Details.
+   QMNAME(QM1)                             TYPE(QMGR)
+   STATUS(RUNNING)                         CONNS(24)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+14. INDIVIDUAL CONNECTION DETAILS (TARGETED QUERY)
+────────────────────────────────────────────────────────────────────────────
+
+  Detailed info for *:
+     1 : DIS CONN(*) ALL
+   CONN(6147BA6800080040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800080040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800240040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(5) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800240040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800030040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1188)                               TID(1) 
+   APPLTAG(amqzfuma)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800030040QM1_2025-09-05_02.13.44amqzfuma)
+   CONN(6147BA68001F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(4) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001F0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800150040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(8) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800150040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800230040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(6) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800230040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800020040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1232)                               TID(1) 
+   APPLDESC(IBM MQ Cluster Repository)     APPLTAG(amqrrmfa)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_FASTPATH_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800020040QM1_2025-09-05_02.13.44amqrrmfa)
+   CONN(6147BA68001E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1304)                               TID(1) 
+   APPLTAG(amqfqpub)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001E0040QM1_2025-09-05_02.13.44amqfqpub)
+   CONN(6147BA6800270040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(9) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800270040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800060040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1244)                               TID(1) 
+   APPLDESC(IBM MQ Command Server)         APPLTAG(amqpcsea)
+   CHANNEL( )                              CLIENTID( )
+   CONNAME( )                              CONNOPTS(MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800060040QM1_2025-09-05_02.13.44amqpcsea)
+   CONN(6147BA6800140040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(16) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800140040QM1_2025-09-05_02.13.44amqzmur0)
+   CONN(6147BA6800220040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(5) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800220040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6810F30740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(25446)                              TID(1) 
+   APPLTAG(runmqsc)                        APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6810F30740QM1_2025-09-05_02.13.44runmqsc)
+   CONN(6147BA68000F0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1195)                               TID(46) 
+   APPLTAG(amqzmuc0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000F0040QM1_2025-09-05_02.13.44amqzmuc0)
+   CONN(6147BA68001D0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(10) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001D0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800180040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(9) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800180040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800260040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(8) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800260040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800210040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(4) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800210040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68000E0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(4) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68000E0040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800090040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1245)                               TID(1) 
+   APPLDESC(IBM MQ Channel Initiator)      APPLTAG(runmqchi)
+   CHANNEL( )                              CLIENTID( )
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800090040QM1_2025-09-05_02.13.44runmqchi)
+   CONN(6147BA6800250040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(7) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800250040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA6800120040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1226)                               TID(7) 
+   APPLTAG(amqzmuf0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800120040QM1_2025-09-05_02.13.44amqzmuf0)
+   CONN(6147BA6800200040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1323)                               TID(1) 
+   APPLTAG(amqfcxba)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_FASTPATH_BINDING)        USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA6800200040QM1_2025-09-05_02.13.44amqfcxba)
+   CONN(6147BA68001B0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(1210)                               TID(15) 
+   APPLTAG(amqzmur0)                       APPLTYPE(SYSTEM)
+   CLIENTID( )                             CONNAME( )
+   CONNOPTS(MQCNO_SHARED_BINDING)          USERID(mqm)
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   CONNTAG(MQCT6147BA68001B0040QM1_2025-09-05_02.13.44amqzmur0)
+
+15. CONNECTION COUNT AND ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='V2-1757100085364': 1
+Expected: 6 (1 parent + 5 sessions)
+⚠️ Count mismatch - found 1 connections
+
+16. PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for connection with MQCNO_GENERATE_CONN_TAG...
+
+17. SESSION CONNECTIONS (WITHOUT GENERATE_CONN_TAG)
+────────────────────────────────────────────────────────────────────────────
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNOPTS
+
+18. CONNECTION TAG BASE ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+      1      1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONNTAG
+
+═══════════════════════════════════════════════════════════════════════════════
+    📊 FINAL COMPREHENSIVE ANALYSIS
+═══════════════════════════════════════════════════════════════════════════════
+
+CONNECTION SUMMARY TABLE:
+────────────────────────
+1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN CONNOPTS DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') CONN
+DISPLAY CONN( connection_name )      [ EXTCONN( connection_name ) ]
+[ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+
+PROCESS/THREAD VERIFICATION:
+───────────────────────────
+      1      1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757100085364') PID TID
+
+═══════════════════════════════════════════════════════════════════════════════
+✅ MQSC DEBUG CAPTURE COMPLETE - Evidence saved to: MQSC_PROOF_DEBUG-V2-1757100085364_1757100190.log
+   Tracking Key: V2-1757100085364
+   Timestamp: 1757100190
+   Time: Fri Sep  5 19:24:00 UTC 2025
+═══════════════════════════════════════════════════════════════════════════════

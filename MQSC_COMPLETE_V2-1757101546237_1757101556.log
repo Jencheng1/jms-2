@@ -1,0 +1,862 @@
+════════════════════════════════════════════════════════════════════════════════
+    MQSC DEBUG CAPTURE - LIVE CONNECTIONS
+    Tracking Key: V2-1757101546237
+    Time: Fri Sep  5 19:45:56 UTC 2025
+════════════════════════════════════════════════════════════════════════════════
+
+
+──────────────────────────────────────────────────────────────────────────────
+ROUND 1 - 19:45:56
+──────────────────────────────────────────────────────────────────────────────
+
+► Basic Connection List
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237')
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Full Connection Details (ALL attributes)
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237') ALL
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Connection Count: 13 (Expected: 6)
+
+► Checking for Parent Connection (MQCNO_GENERATE_CONN_TAG):
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+
+Waiting 10 seconds...
+
+──────────────────────────────────────────────────────────────────────────────
+ROUND 2 - 19:46:06
+──────────────────────────────────────────────────────────────────────────────
+
+► Basic Connection List
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237')
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Full Connection Details (ALL attributes)
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237') ALL
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Connection Count: 13 (Expected: 6)
+
+► Checking for Parent Connection (MQCNO_GENERATE_CONN_TAG):
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+
+Waiting 10 seconds...
+
+──────────────────────────────────────────────────────────────────────────────
+ROUND 3 - 19:46:16
+──────────────────────────────────────────────────────────────────────────────
+
+► Basic Connection List
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237')
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Full Connection Details (ALL attributes)
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237') ALL
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Connection Count: 13 (Expected: 6)
+
+► Checking for Parent Connection (MQCNO_GENERATE_CONN_TAG):
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+
+Waiting 10 seconds...
+
+──────────────────────────────────────────────────────────────────────────────
+ROUND 4 - 19:46:27
+──────────────────────────────────────────────────────────────────────────────
+
+► Basic Connection List
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237')
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Full Connection Details (ALL attributes)
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237') ALL
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Connection Count: 13 (Expected: 6)
+
+► Checking for Parent Connection (MQCNO_GENERATE_CONN_TAG):
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+
+Waiting 10 seconds...
+
+──────────────────────────────────────────────────────────────────────────────
+ROUND 5 - 19:46:37
+──────────────────────────────────────────────────────────────────────────────
+
+► Basic Connection List
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237')
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757101546237)            
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Full Connection Details (ALL attributes)
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'V2-1757101546237') ALL
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800290840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800280840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002C0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800270840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002B0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+AMQ8276I: Display Connection details.
+   CONN(6147BA68002A0840)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   PID(3079)                               TID(22) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(V2-1757101546237)
+   APPLTYPE(USER)                          ASTATE(NONE)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+   UOWLOGDA( )                             UOWLOGTI( )
+   URTYPE(QMGR)                         
+   EXTURID(XA_FORMATID[] XA_GTRID[] XA_BQUAL[])
+   QMURID(0.0)                             UOWSTATE(NONE)
+   CONNTAG(MQCT6147BA6800270840QM1_2025-09-05_02.13.44V2-1757101546237)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+► Connection Count: 13 (Expected: 6)
+
+► Checking for Parent Connection (MQCNO_GENERATE_CONN_TAG):
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONNOPTS(MQCNO_HANDLE_SHARE_BLOCK,MQCNO_SHARED_BINDING,MQCNO_GENERATE_CONN_TAG,MQCNO_RECONNECT)
+   USERID(mqm)                             UOWLOG( )
+   UOWSTDA( )                              UOWSTTI( )
+
+
+════════════════════════════════════════════════════════════════════════════════
+    FINAL SUMMARY
+════════════════════════════════════════════════════════════════════════════════
+Total Connections: 13
+
+Connection List:
+  • *
+  • 6147BA6800290840
+  • 414D5143514D31202020202020202020
+  • 6147BA6800280840
+  • 414D5143514D31202020202020202020
+  • 6147BA68002C0840
+  • 414D5143514D31202020202020202020
+  • 6147BA6800270840
+  • 414D5143514D31202020202020202020
+  • 6147BA68002B0840
+  • 414D5143514D31202020202020202020
+  • 6147BA68002A0840
+  • 414D5143514D31202020202020202020
+
+✅ Parent connection identified (MQCNO_GENERATE_CONN_TAG found)

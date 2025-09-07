@@ -1,0 +1,60 @@
+================================================================================
+     QM1 LIVE DEBUG V2 - MAXIMUM SESSION DATA EXTRACTION
+================================================================================
+Start time: 2025-09-05 19:44:21.180
+Log file: QM1_DEBUG_V2_1757101461107.log
+================================================================================
+
+🔑 TRACKING KEY: V2-1757101461107
+   This will appear as APPLTAG in MQSC commands
+
+================================================================================
+
+STEP 1: CREATING CONNECTION FACTORY
+--------------------------------------------------------------------------------
+Configuring for QM1 ONLY:
+  ✓ CCDTURL = file:///workspace/ccdt/ccdt-qm1.json (QM1 ONLY)
+  ✓ CONNECTION_MODE = CLIENT
+  ✓ RECONNECT = ENABLED
+  ✓ AUTHENTICATION = MQCSP
+  ✓ APPLICATIONNAME = V2-1757101461107 (APPLTAG in MQSC)
+  ✓ USERID = app
+  ✓ PASSWORD = ********
+
+FACTORY INTERNAL PROPERTIES:
+  FIELD_mselSet = false
+  FIELD_logOverrideValues = true
+  FIELD_sccsid2 = @(#) MQMBID sn=p935-L240201 su=_TSUFq8DwEe6a1qdb8O1Dfw pn=com.ibm.mq.jms/src/com/ibm/mq/jms/MQConnectionFactory.java
+  FIELD_nullString = IamANullString
+  FIELD_createTime = 1757101462181
+  FIELD_providerFactory = com.ibm.msg.client.wmq.factories.WMQFactoryFactory@6a6afff2
+  FIELD_sccsid = @(#) MQMBID sn=p935-L240201 su=_TSUFq8DwEe6a1qdb8O1Dfw pn=com.ibm.msg.client.jms.internal/src/com/ibm/msg/client/jms/internal/JmsReadablePropertyContextImpl.java
+  FIELD_properties = {XMSC_WMQ_SSL_KEY_RESETCOUNT=0, XMSC_WMQ_APPNAME=V2-1757101461107, XMSC_WMQ_CHANNEL=SYSTEM.DEF.SVRCONN, failIfQuiesce=1, XMSC_WMQ_USE_CONNECTION_POOLING=true, XMSC_WMQ_BROKER_CONTROLQ=SYSTEM.BROKER.CONTROL.QUEUE, XMSC_WMQ_QUEUE_MANAGER=, XMSC_WMQ_SECURITY_EXIT_INIT=null, XMSC_WMQ_RECEIVE_ISOLATION=0, XMSC_WMQ_MSG_COMP=[0], XMSC_RTT_PROXY_HOSTNAME=null, XMSC_WMQ_MESSAGE_SELECTION=0, XMSC_WMQ_CONNECTION_TAG=[B@1649b0e6, XMSC_WMQ_PROCESS_DURATION=0, XMSC_ASYNC_EXCEPTIONS=1, XMSC_WMQ_MSG_BATCH_SIZE=10, XMSC_WMQ_OUTCOME_NOTIFICATION=true, wildcardFormat=0, XMSC_USER_AUTHENTICATION_MQCSP=true, XMSC_CLIENT_ID=null, XMSC_WMQ_SHARE_CONV_ALLOWED=1, XMSC_WMQ_BALANCING_APPLICATION_TYPE=0, XMSC_WMQ_BROKER_CC_SUBQ=SYSTEM.JMS.ND.CC.SUBSCRIBER.QUEUE, XMSC_WMQ_MESSAGE_RETENTION=1, XMSC_USERID=app, XMSC_WMQ_RESCAN_INTERVAL=5000, XMSC_WMQ_CONNECTION_MODE=1, XMSC_WMQ_BROKER_PUBQ=SYSTEM.BROKER.DEFAULT.STREAM, brokerVersion=-1, XMSC_WMQ_CLIENT_RECONNECT_TIMEOUT=1800, version=7, XMSC_WMQ_SSL_CERT_STORES_STR=null, XMSC_CONNECTION_TYPE_NAME=com.ibm.msg.client.wmq, XMSC_WMQ_MAX_BUFFER_SIZE=1000, XMSC_WMQ_BROKER_QMGR=, XMSC_WMQ_TARGET_CLIENT_MATCHING=true, XMSC_WMQ_SEND_CHECK_COUNT=0, XMSC_WMQ_SSL_SOCKET_FACTORY=null, XMSC_WMQ_BROKER_SUBQ=SYSTEM.JMS.ND.SUBSCRIBER.QUEUE, XMSC_WMQ_CLIENT_RECONNECT_OPTIONS=16777216, XMSC_WMQ_RECEIVE_EXIT_INIT=null, XMSC_RTT_PROXY_PORT=443, XMSC_WMQ_BALANCING_OPTIONS=0, XMSC_WMQ_HEADER_COMP=[0], XMSC_WMQ_CLONE_SUPPORT=0, XMSC_WMQ_MAP_NAME_STYLE=true, XMSC_WMQ_SYNCPOINT_ALL_GETS=false, XMSC_WMQ_OPT_PUB=false, XMSC_WMQ_TEMP_Q_PREFIX=, XMSC_WMQ_SEND_EXIT_INIT=null, XMSC_WMQ_TEMPORARY_MODEL=SYSTEM.DEFAULT.MODEL.QUEUE, XMSC_WMQ_CLEANUP_INTERVAL=3600000, XMSC_WMQ_SSL_FIPS_REQUIRED=false, XMSC_WMQ_SSL_PEER_NAME=null, XMSC_WMQ_LOCAL_ADDRESS=, XMSC_WMQ_SUBSCRIPTION_STORE=1, XMSC_WMQ_SSL_CERT_STORES_COL=null, XMSC_WMQ_BALANCING_TIMEOUT=-1, XMSC_WMQ_STATUS_REFRESH_INTERVAL=60000, XMSC_WMQ_CCDTURL=file:///workspace/ccdt/ccdt-qm1.json, XMSC_WMQ_CLEANUP_LEVEL=1, XMSC_WMQ_PUB_ACK_INTERVAL=25, XMSC_WMQ_CONNECT_OPTIONS=0, XMSC_ADMIN_OBJECT_TYPE=20, XMSC_WMQ_RECEIVE_EXIT=null, XMSC_RTT_DIRECT_AUTH=0, XMSC_WMQ_TEMP_TOPIC_PREFIX=, multicast=0, XMSC_WMQ_PROVIDER_VERSION=unspecified, XMSC_WMQ_SEND_EXIT=null, XMSC_WMQ_QMGR_CCSID=819, XMSC_WMQ_CONNECTION_NAME_LIST_INT=localhost(1414), XMSC_WMQ_CF_DESCRIPTION=null, XMSC_PASSWORD=passw0rd, XMSC_WMQ_POLLING_INTERVAL=5000, XMSC_WMQ_SSL_CIPHER_SUITE=null, XMSC_CONNECTION_TYPE=1, XMSC_WMQ_SECURITY_EXIT=null, XMSC_WMQ_SPARSE_SUBSCRIPTIONS=false}
+  FIELD_versionChangeAllowed = false
+  FIELD_connectionType = com.ibm.msg.client.wmq
+  FIELD_providerCacheSynched = false
+  FIELD_connectionTypeName = com.ibm.msg.client.wmq
+  FIELD_providerPropertyContext = com.ibm.msg.client.wmq.factories.WMQConnectionFactory@8aeb3717
+  FIELD_bverSet = false
+  FIELD_changeableProperties = [XMSC_WMQ_SSL_KEY_RESETCOUNT, XMSC_WMQ_SSL_CERT_STORES_STR, XMSC_WMQ_CCDTURL, XMSC_WMQ_CHANNEL, XMSC_WMQ_SSL_CIPHER_SUITE, XMSC_WMQ_SSL_FIPS_REQUIRED]
+  FIELD_providerConnectionFactory = com.ibm.msg.client.wmq.factories.WMQConnectionFactory@8aeb3717
+  FIELD_portSet = false
+  FIELD_settingDefaults = false
+  FIELD_serialVersionUID = 1485713687468941354
+  FIELD_capabilities = |   com.ibm.msg.client.jms.internal.JmsCapabilityContextImpl@62e7f11d  :-  
+|   |   XMSC_CAPABILITY_ASF                 :-  true
+|   |   XMSC_CAPABILITY_POINT_TO_POINT      :-  true
+|   |   XMSC_CAPABILITY_PUBLISH_SUBSCRIBE   :-  true
+|   |   XMSC_CAPABILITY_TRANSACTIONS_LOCAL  :-  true
+|   |   XMSC_CAPABILITY_TRANSACTIONS_XA     :-  true
+|   |   XMSC_CAPABILITY_USERNAME_PASSWORD   :-  true
+  FIELD_creator = Thread[main,5,main]
+  FIELD_serialPersistentFields = [Ljava.io.ObjectStreamField;@7690781
+
+================================================================================
+
+STEP 2: CREATING PARENT CONNECTION TO QM1
+--------------------------------------------------------------------------------
+Calling createConnection()...
+❌ CONNECTION FAILED!
+Error: JMSWMQ2020: Failed to connect to queue manager '' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt-qm1.json', see linked exception for more information.

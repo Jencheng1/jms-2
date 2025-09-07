@@ -1,0 +1,646 @@
+═══════════════════════════════════════════════════════════════════════════════
+    🔍 MQSC COMPREHENSIVE DEBUG CAPTURE
+    Tracking Key: KEY:
+    Time: Fri Sep  5 19:19:34 UTC 2025
+═══════════════════════════════════════════════════════════════════════════════
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ CAPTURE #1 - 19:19:34.327317432                                  ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+1️⃣ BASIC CONNECTION QUERY - WHERE APPLTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2️⃣ DETAILED CONNECTION INFO - ALL FIELDS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3️⃣ CONNECTION TYPE AND OPTIONS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4️⃣ CHANNEL AND NETWORK INFO
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') CHANNEL CONNAME USERID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5️⃣ EXTENDED CONNECTION DETAILS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') EXTCONN PID TID APPLDESC APPLTYPE
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') EXTCONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+6️⃣ UNIT OF WORK INFORMATION
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') UOWLOG UOWSTDA UOWSTTI UOWSTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+7️⃣ CONNECTION TAGS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') CONNTAG
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8️⃣ ALL APP.SVRCONN CONNECTIONS (WIDER VIEW)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) APPLTAG CONNAME
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E20740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E10740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E50740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E00740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E40740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E30740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+9️⃣ CHANNEL STATUS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8417I: Display Channel Status details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   CONNAME(10.10.10.2)                     CURRENT
+   STATUS(RUNNING)                         SUBSTATE(RECEIVE)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+🔟 CHANNEL DEFINITION
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+1️⃣1️⃣ CONNECTION COUNT ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='KEY:': 1
+
+Connection IDs found:
+  - 1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:')
+
+1️⃣2️⃣ PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for MQCNO_GENERATE_CONN_TAG flag...
+Parent connection identification by CONNOPTS
+
+⏳ Waiting 15 seconds before next capture...
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ CAPTURE #2 - 19:19:50.822348416                                  ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+1️⃣ BASIC CONNECTION QUERY - WHERE APPLTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2️⃣ DETAILED CONNECTION INFO - ALL FIELDS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3️⃣ CONNECTION TYPE AND OPTIONS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4️⃣ CHANNEL AND NETWORK INFO
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') CHANNEL CONNAME USERID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5️⃣ EXTENDED CONNECTION DETAILS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') EXTCONN PID TID APPLDESC APPLTYPE
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') EXTCONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+6️⃣ UNIT OF WORK INFORMATION
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') UOWLOG UOWSTDA UOWSTTI UOWSTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+7️⃣ CONNECTION TAGS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') CONNTAG
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8️⃣ ALL APP.SVRCONN CONNECTIONS (WIDER VIEW)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) APPLTAG CONNAME
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E20740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E10740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E50740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E00740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E40740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E30740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+9️⃣ CHANNEL STATUS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8417I: Display Channel Status details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   CONNAME(10.10.10.2)                     CURRENT
+   STATUS(RUNNING)                         SUBSTATE(RECEIVE)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+🔟 CHANNEL DEFINITION
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+1️⃣1️⃣ CONNECTION COUNT ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='KEY:': 1
+
+Connection IDs found:
+  - 1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:')
+
+1️⃣2️⃣ PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for MQCNO_GENERATE_CONN_TAG flag...
+Parent connection identification by CONNOPTS
+
+⏳ Waiting 15 seconds before next capture...
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ CAPTURE #3 - 19:20:07.073319750                                  ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+1️⃣ BASIC CONNECTION QUERY - WHERE APPLTAG
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:')
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+2️⃣ DETAILED CONNECTION INFO - ALL FIELDS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') ALL
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+3️⃣ CONNECTION TYPE AND OPTIONS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') TYPE(*) CONNOPTS
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+4️⃣ CHANNEL AND NETWORK INFO
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') CHANNEL CONNAME USERID
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+5️⃣ EXTENDED CONNECTION DETAILS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') EXTCONN PID TID APPLDESC APPLTYPE
+AMQ8405I: Syntax error detected at or near end of command segment below:-
+DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') EXTCONN
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY CONN( connection_name )
+
+     [ WHERE( filter_keyword operator filter_value ) ]
+
+     [ EXTCONN( connection_name ) ]
+
+     [ TYPE( CONN | HANDLE | * | ALL ) ]
+
+     [ ALL      ] [ APPLDESC ] [ APPLTAG  ] [ APPLTYPE ] [ ASTATE   ]
+     [ CHANNEL  ] [ CLIENTID ] [ CONNAME  ] [ CONNOPTS ] [ CONNTAG  ]
+     [ DEST     ] [ DESTQMGR ] [ EXTURID  ] [ HSTATE   ] [ OBJNAME  ]
+     [ OBJTYPE  ] [ OPENOPTS ] [ PID      ] [ QMURID   ] [ READA    ]
+     [ SUBID    ] [ SUBNAME  ] [ TID      ] [ TOPICSTR ] [ UOWLOG   ]
+     [ UOWLOGDA ] [ UOWLOGTI ] [ UOWSTATE ] [ UOWSTDA  ] [ UOWSTTI  ]
+     [ URTYPE   ] [ USERID   ]
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.
+
+6️⃣ UNIT OF WORK INFORMATION
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') UOWLOG UOWSTDA UOWSTTI UOWSTATE
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+7️⃣ CONNECTION TAGS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:') CONNTAG
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
+
+8️⃣ ALL APP.SVRCONN CONNECTIONS (WIDER VIEW)
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) APPLTAG CONNAME
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E20740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E10740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E50740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E00740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E40740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+AMQ8276I: Display Connection details.
+   CONN(6147BA6800E30740)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(V2-1757099969424)               CHANNEL(APP.SVRCONN)
+   CONNAME(10.10.10.2)                  
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+9️⃣ CHANNEL STATUS
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHS(APP.SVRCONN)
+AMQ8417I: Display Channel Status details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   CONNAME(10.10.10.2)                     CURRENT
+   STATUS(RUNNING)                         SUBSTATE(RECEIVE)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+🔟 CHANNEL DEFINITION
+────────────────────────────────────────────────────────────────────────────
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHANNEL(APP.SVRCONN) ALL
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-05)                     ALTTIME(18.19.08)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+1️⃣1️⃣ CONNECTION COUNT ANALYSIS
+────────────────────────────────────────────────────────────────────────────
+Total connections with APPLTAG='KEY:': 1
+
+Connection IDs found:
+  - 1 : DIS CONN(*) WHERE(APPLTAG EQ 'KEY:')
+
+1️⃣2️⃣ PARENT CONNECTION IDENTIFICATION
+────────────────────────────────────────────────────────────────────────────
+Looking for MQCNO_GENERATE_CONN_TAG flag...
+Parent connection identification by CONNOPTS
+
+═══════════════════════════════════════════════════════════════════════════════
+    📊 FINAL STATISTICS AND ANALYSIS
+═══════════════════════════════════════════════════════════════════════════════
+
+SUMMARY OF CONNECTIONS:
+──────────────────────
+
+Connection: *
+     1 : DIS CONN(*) CONNOPTS
+
+═══════════════════════════════════════════════════════════════════════════════
+    ✅ MQSC DEBUG CAPTURE COMPLETE
+    Log file: MQSC_DEBUG_KEY:_1757099974.log
+    Time: Fri Sep  5 19:20:08 UTC 2025
+═══════════════════════════════════════════════════════════════════════════════
