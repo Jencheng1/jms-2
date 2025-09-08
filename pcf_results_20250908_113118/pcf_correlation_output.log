@@ -1,0 +1,33 @@
+================================================================================
+PCF CORRELATION MONITOR - JMS TO MQ MAPPING
+================================================================================
+Timestamp: 20250908_113123
+Application Tag: PCF83385
+Queue Manager: QM1
+Session Count: 5
+================================================================================
+
+PHASE 1: CREATING JMS CONNECTIONS AND SESSIONS
+================================================
+
+MQConnectionFactory configured:
+  Host: 10.10.10.10:1414
+  Channel: APP.SVRCONN
+  Queue Manager: QM1
+  Application Tag: PCF83385
+Parent JMS Connection Created:
+  JMS Connection ID: JMSConn-5d47c63f
+  Application Tag: PCF83385
+
+  Created Session-1
+  Created Session-2
+  Created Session-3
+  Created Session-4
+  Created Session-5
+
+JMS Summary: 1 Connection + 5 Sessions created
+
+PHASE 2: ESTABLISHING PCF CONNECTION
+=====================================
+
+ERROR: MQJE001: Completion Code '2', Reason '2035'.

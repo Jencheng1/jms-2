@@ -1,0 +1,47 @@
+Maximum tracing enabled for all MQ components
+================================================================================
+IBM MQ UNIFORM CLUSTER - PARENT-CHILD CORRELATION PROOF
+================================================================================
+Timestamp: 20250908_111518
+Application Tag (APPTAG): PROOF-1757330118761
+CCDT Path: /workspace/ccdt/ccdt-external.json
+Target Queue Manager: QM1
+Sessions to Create: 5
+================================================================================
+
+PHASE 1: CREATING PARENT JMS CONNECTION
+=========================================
+This creates ONE connection to the Queue Manager
+
+MQConnectionFactory configured with:
+  - CCDT URL: file:///workspace/ccdt/ccdt-external.json
+  - Queue Manager: QM1
+  - Application Name (APPTAG): PROOF-1757330118761
+  - Connection Mode: CLIENT
+  - Auto-reconnect: ENABLED
+  - Connection Pooling: ENABLED
+ERROR: JMSWMQ2021: The security authentication was not valid that was supplied for queue manager 'QM1' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt-external.json', see linked exception for more information.
+com.ibm.msg.client.jms.DetailedJMSSecurityException: JMSWMQ2021: The security authentication was not valid that was supplied for queue manager 'QM1' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt-external.json', see linked exception for more information.
+Please check if the supplied username and password are correct on the queue manager to which you are connecting.  For further information, review the queue manager error logs and the Securing IBM MQ topic within IBM Documentation.
+	at com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:531)
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:482)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9009)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8349)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:242)
+	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6193)
+	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6222)
+	at UniformClusterCorrelationProof.main(UniformClusterCorrelationProof.java:50)
+Caused by: com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2035' ('MQRC_NOT_AUTHORIZED').
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+	... 8 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2059;AMQ9204: Connection to host '10.10.10.10(1414)' rejected. [3=10.10.10.10(1414),4=]
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13621)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13202)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:415)
+	... 7 more

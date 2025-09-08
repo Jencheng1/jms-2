@@ -1,0 +1,40 @@
+Maximum tracing enabled for all MQ components
+================================================================================
+UNIFORM CLUSTER DISTRIBUTION TEST WITH FULL TRACING
+================================================================================
+Timestamp: 20250908_115231
+CCDT URL: file:///workspace/ccdt/ccdt-uniform.json
+Connections to create: 3
+Sessions per connection: 5
+================================================================================
+
+PHASE 1: CREATING CONNECTIONS USING CCDT FOR RANDOM QM SELECTION
+=================================================================
+
+Creating Connection #1 with APPTAG: DIST20250908_115231_C1
+----------------------------------------------------------
+ERROR: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt-uniform.json', see linked exception for more information.
+com.ibm.msg.client.jms.DetailedJMSException: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt-uniform.json', see linked exception for more information.
+Check the queue manager is started and if running in client mode, check there is a listener running. Please see the linked exception for more information.
+	at com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:595)
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:482)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9009)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8349)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:242)
+	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6193)
+	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6256)
+	at UniformClusterDistributionTest.main(UniformClusterDistributionTest.java:88)
+Caused by: com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2278' ('MQRC_CLIENT_CONN_ERROR').
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+	... 8 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2278
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13369)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13202)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:415)
+	... 7 more

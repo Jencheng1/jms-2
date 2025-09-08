@@ -1,0 +1,125 @@
+Tracing enabled for all MQ components
+================================================================================
+UNIFORM CLUSTER DISTRIBUTION TEST
+================================================================================
+Timestamp: 20250908_115431
+Creating 3 connections (one to each QM) with 5 sessions each
+================================================================================
+
+PHASE 1: CREATING CONNECTIONS TO EACH QUEUE MANAGER
+====================================================
+
+Creating connection to QM1
+  Host: 10.10.10.10:1414
+  APPTAG: DIST20250908_115431_QM1
+  Connection created successfully
+  JMS Connection: 275710fc
+  JMS Provider: IBM MQ JMS Provider 8.0.0.0
+
+  Creating 5 sessions:
+    Session 1:
+      Hash: 1bb266b3
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 2:
+      Hash: 305ffe9e
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 3:
+      Hash: 3f4faf53
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 4:
+      Hash: 45d84a20
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 5:
+      Hash: 536f2a7e
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+
+  Connection to QM1 complete with 5 sessions
+
+Creating connection to QM2
+  Host: 10.10.10.11:1414
+  APPTAG: DIST20250908_115431_QM2
+  Connection created successfully
+  JMS Connection: 65987993
+  JMS Provider: IBM MQ JMS Provider 8.0.0.0
+
+  Creating 5 sessions:
+    Session 1:
+      Hash: 7d900ecf
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 2:
+      Hash: 4201c465
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 3:
+      Hash: eadd4fb
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 4:
+      Hash: 2de56eb2
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 5:
+      Hash: 15a34df2
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+
+  Connection to QM2 complete with 5 sessions
+
+Creating connection to QM3
+  Host: 10.10.10.12:1414
+  APPTAG: DIST20250908_115431_QM3
+  Connection created successfully
+  JMS Connection: 480d3575
+  JMS Provider: IBM MQ JMS Provider 8.0.0.0
+
+  Creating 5 sessions:
+    Session 1:
+      Hash: 38467116
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 2:
+      Hash: 5e7cd6cc
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 3:
+      Hash: 6e2829c7
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 4:
+      Hash: c05fddc
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+    Session 5:
+      Hash: 79207381
+      Transacted: false
+      Ack Mode: AUTO_ACKNOWLEDGE
+      ✓ Message sent
+
+  Connection to QM3 complete with 5 sessions
+
+
+PHASE 2: COLLECTING RUNMQSC DATA FROM ALL QUEUE MANAGERS
+=========================================================
+
+Querying QM3 for APPTAG DIST20250908_115431_QM3:
+ERROR: Cannot run program "docker": error=2, No such file or directory

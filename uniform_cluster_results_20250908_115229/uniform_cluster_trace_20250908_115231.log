@@ -1,0 +1,5 @@
+[TRACE] Trace levels set to maximum (9) for all components
+[TRACE] Creating connection with factory settings:
+[TRACE]   CCDTURL: file:///workspace/ccdt/ccdt-uniform.json
+[TRACE]   Queue Manager: * (any)
+[TRACE]   Application Name: DIST20250908_115231_C1

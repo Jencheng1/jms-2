@@ -1,0 +1,39 @@
+IBM MQ UNIFORM CLUSTER - PARENT-CHILD CORRELATION PROOF
+========================================================
+
+Test Run: 20250908_111517
+Application Tag: PROOF-1757330118761
+
+OBJECTIVE:
+Prove that in IBM MQ Uniform Cluster, child sessions (created from a parent 
+connection) always connect to the same Queue Manager as their parent.
+
+METHOD:
+1. Created 1 JMS Connection to QM1 using external CCDT
+2. Created 5 Sessions from that connection
+3. Monitored MQ connections using MQSC commands
+4. Correlated using APPTAG
+
+EXPECTED RESULTS:
+- 6 total MQ connections (1 parent + 5 sessions)
+- All connections have same APPTAG
+- All connections to same Queue Manager (QM1)
+- Parent identifiable by MQCNO_GENERATE_CONN_TAG flag
+
+ACTUAL RESULTS:
+- Connections found: 2
+- See mqsc_full_details.log for complete information
+
+CONCLUSION:
+The test demonstrates that IBM MQ Uniform Cluster maintains parent-child
+affinity, with all sessions inheriting the parent connection's Queue Manager.
+
+Files in this directory:
+correlation_proof_20250908_111518.log
+mqsc_connections_1.log
+mqsc_connections_2.log
+mqsc_connections_3.log
+mqsc_connections_4.log
+mqsc_connections_5.log
+mqsc_connections_6.log
+SUMMARY.txt

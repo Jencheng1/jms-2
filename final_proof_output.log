@@ -1,0 +1,45 @@
+========================================================================
+PARENT-CHILD PROOF: 1 CONNECTION → 5 SESSIONS = 6 MQ CONNECTIONS
+========================================================================
+APPTAG: TEST49531
+
+STEP 1: Creating 1 JMS Connection...
+✓ Parent connection created
+
+STEP 2: Creating 5 Sessions from parent connection...
+  ✓ Child session 1 created
+  ✓ Child session 2 created
+  ✓ Child session 3 created
+  ✓ Child session 4 created
+  ✓ Child session 5 created
+
+STEP 3: Sending messages to activate all sessions...
+  ✓ Message sent from session 1
+  ✓ Message sent from session 2
+  ✓ Message sent from session 3
+  ✓ Message sent from session 4
+  ✓ Message sent from session 5
+
+========================================================================
+PROOF POINT: Check MQ connections now!
+========================================================================
+
+RUN THIS COMMAND:
+docker exec qm1 bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ TEST49531)' | runmqsc QM1"
+
+EXPECTED: 6 connections (1 parent + 5 children)
+
+Keeping connection alive for 60 seconds...
+APPTAG for monitoring: TEST49531
+
+  10 seconds elapsed... (APPTAG: TEST49531)
+  20 seconds elapsed... (APPTAG: TEST49531)
+  30 seconds elapsed... (APPTAG: TEST49531)
+  40 seconds elapsed... (APPTAG: TEST49531)
+  50 seconds elapsed... (APPTAG: TEST49531)
+  60 seconds elapsed... (APPTAG: TEST49531)
+
+Cleaning up...
+
+Test completed!
+========================================================================

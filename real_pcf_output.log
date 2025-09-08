@@ -1,0 +1,29 @@
+================================================================================
+REAL PCF TEST - ACTUAL PCF API WITH CORRELATION
+================================================================================
+Timestamp: 20250908_113731
+Application Tag: REAL1890
+Queue Manager: QM1
+================================================================================
+
+STEP 1: CREATING JMS CONNECTIONS AND SESSIONS
+==============================================
+
+Creating JMS connection with APPTAG: REAL1890
+✓ JMS Connection created and started
+✓ Session 1 created and activated
+✓ Session 2 created and activated
+✓ Session 3 created and activated
+✓ Session 4 created and activated
+✓ Session 5 created and activated
+
+JMS Summary:
+  - 1 Connection created
+  - 5 Sessions created
+  - APPTAG: REAL1890
+
+STEP 2: ESTABLISHING PCF CONNECTION
+====================================
+
+Connecting to Queue Manager for PCF operations...
+ERROR: MQJE001: Completion Code '2', Reason '2035'.

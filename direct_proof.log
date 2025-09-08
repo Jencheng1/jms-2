@@ -1,0 +1,30 @@
+========================================================================
+DIRECT CONNECTION PROOF - 1 CONNECTION, 5 SESSIONS
+========================================================================
+APPTAG: DIRECT-1757330362712
+
+Creating 1 JMS Connection...
+✓ Connection created and started
+
+Creating 5 Sessions from the connection...
+  ✓ Session 1 created
+  ✓ Session 2 created
+  ✓ Session 3 created
+  ✓ Session 4 created
+  ✓ Session 5 created
+
+All sessions created successfully!
+
+RUN THIS COMMAND TO SEE 6 CONNECTIONS:
+docker exec qm1 bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ DIRECT-1757330362712)' | runmqsc QM1"
+
+Keeping connection alive for 60 seconds...
+  10 seconds... (APPTAG: DIRECT-1757330362712)
+  20 seconds... (APPTAG: DIRECT-1757330362712)
+  30 seconds... (APPTAG: DIRECT-1757330362712)
+  40 seconds... (APPTAG: DIRECT-1757330362712)
+  50 seconds... (APPTAG: DIRECT-1757330362712)
+  60 seconds... (APPTAG: DIRECT-1757330362712)
+
+Test completed!
+========================================================================

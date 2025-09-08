@@ -1,0 +1,17 @@
+Maximum tracing enabled for all MQ components
+================================================================================
+UNIFORM CLUSTER DISTRIBUTION TEST WITH FULL TRACING
+================================================================================
+Timestamp: 20250908_115231
+CCDT URL: file:///workspace/ccdt/ccdt-uniform.json
+Connections to create: 3
+Sessions per connection: 5
+================================================================================
+
+PHASE 1: CREATING CONNECTIONS USING CCDT FOR RANDOM QM SELECTION
+=================================================================
+
+Creating Connection #1 with APPTAG: DIST20250908_115231_C1
+----------------------------------------------------------
+The IBM MQ messaging client trace mechanism is tracing to '/app/mqtrace_20250908_115231.log'
+ERROR: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt-uniform.json', see linked exception for more information.

@@ -1,0 +1,41 @@
+================================================================================
+REAL PCF TEST - ACTUAL PCF API WITH CORRELATION
+================================================================================
+Timestamp: 20250908_113731
+Application Tag: REAL1890
+Queue Manager: QM1
+================================================================================
+
+STEP 1: CREATING JMS CONNECTIONS AND SESSIONS
+==============================================
+
+Creating JMS connection with APPTAG: REAL1890
+✓ JMS Connection created and started
+✓ Session 1 created and activated
+✓ Session 2 created and activated
+✓ Session 3 created and activated
+✓ Session 4 created and activated
+✓ Session 5 created and activated
+
+JMS Summary:
+  - 1 Connection created
+  - 5 Sessions created
+  - APPTAG: REAL1890
+
+STEP 2: ESTABLISHING PCF CONNECTION
+====================================
+
+Connecting to Queue Manager for PCF operations...
+ERROR: MQJE001: Completion Code '2', Reason '2035'.
+com.ibm.mq.MQException: MQJE001: Completion Code '2', Reason '2035'.
+	at com.ibm.mq.MQManagedConnectionJ11.<init>(MQManagedConnectionJ11.java:251)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11._createManagedConnection(MQClientManagedConnectionFactoryJ11.java:449)
+	at com.ibm.mq.MQClientManagedConnectionFactoryJ11.createManagedConnection(MQClientManagedConnectionFactoryJ11.java:486)
+	at com.ibm.mq.StoredManagedConnection.<init>(StoredManagedConnection.java:97)
+	at com.ibm.mq.MQSimpleConnectionManager.allocateConnection(MQSimpleConnectionManager.java:194)
+	at com.ibm.mq.MQQueueManagerFactory.obtainBaseMQQueueManager(MQQueueManagerFactory.java:870)
+	at com.ibm.mq.MQQueueManagerFactory.procure(MQQueueManagerFactory.java:818)
+	at com.ibm.mq.MQQueueManagerFactory.constructQueueManager(MQQueueManagerFactory.java:760)
+	at com.ibm.mq.MQQueueManagerFactory.createQueueManager(MQQueueManagerFactory.java:200)
+	at com.ibm.mq.MQQueueManager.<init>(MQQueueManager.java:1004)
+	at RealPCFTest.main(RealPCFTest.java:110)

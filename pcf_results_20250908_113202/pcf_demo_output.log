@@ -1,0 +1,31 @@
+================================================================================
+PCF DEMONSTRATION - CORRELATING JMS WITH MQ USING PCF
+================================================================================
+Application Tag: PCFDEMO3233
+
+STEP 1: Creating JMS Connection and Sessions
+---------------------------------------------
+✓ JMS Connection created with APPTAG: PCFDEMO3233
+✓ Session 1 created
+✓ Session 2 created
+✓ Session 3 created
+✓ Session 4 created
+✓ Session 5 created
+
+JMS Level: 1 Connection + 5 Sessions created and activated
+
+STEP 2: Connecting PCF Monitor
+-------------------------------
+Error: MQJE001: Completion Code '2', Reason '2035'.
+com.ibm.mq.headers.MQDataException: MQJE001: Completion Code '2', Reason '2035'.
+	at com.ibm.mq.headers.pcf.PCFAgent.getBasicQmgrInfo(PCFAgent.java:858)
+	at com.ibm.mq.headers.pcf.PCFAgent.open(PCFAgent.java:649)
+	at com.ibm.mq.headers.pcf.PCFAgent.open(PCFAgent.java:494)
+	at com.ibm.mq.headers.pcf.PCFAgent.connect(PCFAgent.java:251)
+	at com.ibm.mq.headers.pcf.PCFAgent.<init>(PCFAgent.java:188)
+	at com.ibm.mq.headers.pcf.PCFMessageAgent.<init>(PCFMessageAgent.java:133)
+	at PCFUtils.<init>(PCFUtils.java:33)
+	at PCFDemo.main(PCFDemo.java:80)
+
+Cleaning up...
+Demo completed!

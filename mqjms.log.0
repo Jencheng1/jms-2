@@ -1,0 +1,135 @@
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.status' has value 'ON'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.level' has value '9'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.outputName' has value 'mqtrace_20250908_111255.log'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.limit' has value '104857600'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.count' has value '3'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.append' has value 'true'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.compress' has value 'false'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:12:56 AM UTC[main] com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl
+The IBM MQ messaging client trace mechanism is tracing to '/app/mqtrace_20250908_111255.log'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:15:19 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.status' has value 'ON'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:15:19 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.level' has value '9'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:15:19 AM UTC[main] com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl
+The IBM MQ messaging client trace mechanism is tracing to '/app/mqjavaclient_1.trc'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:52:32 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.status' has value 'ON'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:52:32 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.level' has value '9'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:52:32 AM UTC[main] com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer
+Property 'com.ibm.msg.client.commonservices.trace.outputName' has value 'mqtrace_20250908_115231.log'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
+September 8, 2025 at 11:52:32 AM UTC[main] com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl
+The IBM MQ messaging client trace mechanism is tracing to '/app/mqtrace_20250908_115231.log'
+
+EXPLANATION:
+null
+
+ACTION:
+null
+--------------------------------------------------------------------
