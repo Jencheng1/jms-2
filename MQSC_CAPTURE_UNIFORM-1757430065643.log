@@ -1,0 +1,552 @@
+=== Checking QM1 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+   CONN(8A11C06800840040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800830040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800820040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800860040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800810040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800850040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 13 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+   CONN(8A11C06800890040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800880040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800870040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C068008A0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 9 connections
+
+=== Checking QM2 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+=== Checking QM3 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+EXTCONN ANALYSIS:
+QM1 EXTCONNs:
+   EXTCONN(414D5143514D31202020202020202020)
+QM2 EXTCONNs:
+QM3 EXTCONNs:
+=== Checking QM1 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+   CONN(8A11C06800840040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800830040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800820040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800860040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800810040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800850040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 13 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+   CONN(8A11C06800890040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800880040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800870040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C068008A0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 9 connections
+
+=== Checking QM2 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+=== Checking QM3 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+EXTCONN ANALYSIS:
+QM1 EXTCONNs:
+   EXTCONN(414D5143514D31202020202020202020)
+QM2 EXTCONNs:
+QM3 EXTCONNs:
+=== Checking QM1 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+   CONN(8A11C06800840040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800830040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800820040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800860040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800810040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800850040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 13 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+   CONN(8A11C06800890040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800880040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800870040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C068008A0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 9 connections
+
+=== Checking QM2 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+=== Checking QM3 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+EXTCONN ANALYSIS:
+QM1 EXTCONNs:
+   EXTCONN(414D5143514D31202020202020202020)
+QM2 EXTCONNs:
+QM3 EXTCONNs:
+=== Checking QM1 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+   CONN(8A11C06800840040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800830040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800820040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800860040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800810040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800850040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 13 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+   CONN(8A11C06800890040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800880040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800870040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C068008A0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 9 connections
+
+=== Checking QM2 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+=== Checking QM3 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+EXTCONN ANALYSIS:
+QM1 EXTCONNs:
+   EXTCONN(414D5143514D31202020202020202020)
+QM2 EXTCONNs:
+QM3 EXTCONNs:
+=== Checking QM1 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+   CONN(8A11C06800840040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800830040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800820040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800860040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800810040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800850040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 13 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+   CONN(8A11C06800890040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800880040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800870040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C068008A0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 9 connections
+
+=== Checking QM2 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+=== Checking QM3 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+EXTCONN ANALYSIS:
+QM1 EXTCONNs:
+   EXTCONN(414D5143514D31202020202020202020)
+QM2 EXTCONNs:
+QM3 EXTCONNs:
+=== Checking QM1 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+   CONN(8A11C06800840040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800830040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800820040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800860040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800810040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800850040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(60) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C1)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 13 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM1:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+   CONN(8A11C06800890040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800880040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C06800870040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+   CONN(8A11C068008A0040)                
+   EXTCONN(414D5143514D31202020202020202020)
+   PID(5861)                               TID(61) 
+   APPLDESC(IBM MQ Channel)                APPLTAG(UNIFORM-1757430065643-C2)
+   CHANNEL(APP.SVRCONN)                    CLIENTID( )
+   CONNAME(10.10.10.2)                  
+  Count: 9 connections
+
+=== Checking QM2 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM2:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+=== Checking QM3 ===
+Connection 1 (UNIFORM-1757430065643-C1) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C1') ALL
+  Count: 1 connections
+
+Connection 2 (UNIFORM-1757430065643-C2) on QM3:
+     1 : DIS CONN(*) WHERE(APPLTAG EQ 'UNIFORM-1757430065643-C2') ALL
+  Count: 1 connections
+
+EXTCONN ANALYSIS:
+QM1 EXTCONNs:
+   EXTCONN(414D5143514D31202020202020202020)
+QM2 EXTCONNs:
+QM3 EXTCONNs:
