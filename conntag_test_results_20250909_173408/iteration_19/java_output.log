@@ -1,0 +1,68 @@
+================================================================
+CONNTAG EVIDENCE CAPTURE TEST
+================================================================
+Tracking Key: CONNTAG-1757440957015
+This test will:
+1. Create 2 connections with different APPLTAGs
+2. Keep them alive for MQSC capture
+3. Output MQSC commands for verification
+================================================================
+
+Creating Connection 1...
+✅ Connection 1 created on QM1
+   APPLTAG: CONNTAG-1757440957015-C1
+   Handle: 8A11C06800130140
+   Created 5 sessions (total 6 MQ connections)
+
+Creating Connection 2...
+✅ Connection 2 created on QM1
+   APPLTAG: CONNTAG-1757440957015-C2
+   Handle: 8A11C06800190140
+   Created 3 sessions (total 4 MQ connections)
+
+================================================================
+DISTRIBUTION RESULTS:
+================================================================
+Connection 1: QM1 (6 connections)
+Connection 2: QM1 (4 connections)
+
+⚠️  Both connections on same QM: QM1
+Expected CONNTAG differences:
+  - Same QM component (QM1)
+  - Different handles
+  - Different APPLTAGs (-C1 vs -C2)
+
+================================================================
+COPY AND RUN THESE COMMANDS TO CAPTURE CONNTAG:
+================================================================
+
+# For Connection 1 on QM1:
+docker exec qm1 bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ '\'''CONNTAG-1757440957015-C1'\'') ALL' | runmqsc QM1" | grep -E 'CONN\(|CONNTAG\('
+
+# For Connection 2 on QM1:
+docker exec qm1 bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ '\'''CONNTAG-1757440957015-C2'\'') ALL' | runmqsc QM1" | grep -E 'CONN\(|CONNTAG\('
+
+# Or run this to check all QMs:
+for qm in qm1 qm2 qm3; do
+  echo "=== Checking $qm ==="
+  docker exec $qm bash -c "echo 'DIS CONN(*) WHERE(APPLTAG LK '\'''CONNTAG-1757440957015*'\'') ALL' | runmqsc ${qm^^}" | grep -E 'CONN\(|CONNTAG\('
+done
+
+================================================================
+Script created: ./capture_conntag_1757440957015.sh
+================================================================
+
+⏰ Keeping connections alive for 90 seconds...
+   RUN THE COMMANDS ABOVE NOW TO CAPTURE CONNTAG!
+   90 seconds remaining...
+   80 seconds remaining...
+   70 seconds remaining...
+   60 seconds remaining...
+   50 seconds remaining...
+   40 seconds remaining...
+   30 seconds remaining...
+   20 seconds remaining...
+   10 seconds remaining...
+
+Closing connections...
+✅ Test complete!

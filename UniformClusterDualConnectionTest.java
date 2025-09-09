@@ -15,6 +15,24 @@ public class UniformClusterDualConnectionTest {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private static PrintWriter logWriter;
     
+    // Class to store connection/session details
+    static class ConnectionDetails {
+        String type; // "Parent" or "Session"
+        String connNum; // "C1" or "C2"
+        String sessionNum; // "1", "2", etc or "-" for parent
+        String connectionId;
+        String connTag;
+        String queueManager;
+        String host;
+        String appTag;
+        
+        ConnectionDetails(String type, String connNum, String sessionNum) {
+            this.type = type;
+            this.connNum = connNum;
+            this.sessionNum = sessionNum;
+        }
+    }
+    
     public static void main(String[] args) throws Exception {
         // Create detailed log file
         String timestamp = String.valueOf(System.currentTimeMillis());
@@ -116,6 +134,23 @@ public class UniformClusterDualConnectionTest {
         connection1.start();
         log("\n✅ Connection 1 started");
         
+        // Create list to store all connection details for table
+        List<ConnectionDetails> allConnections = new ArrayList<>();
+        
+        // Add Connection 1 parent to list
+        ConnectionDetails conn1Details = new ConnectionDetails("Parent", "C1", "-");
+        conn1Details.connectionId = conn1Id;
+        conn1Details.queueManager = conn1QM;
+        conn1Details.host = conn1Host;
+        conn1Details.appTag = TRACKING_KEY_C1;
+        // Get CONNTAG for parent
+        if (connection1 instanceof MQConnection) {
+            MQConnection mqConn = (MQConnection) connection1;
+            Map<String, Object> connData = extractAllConnectionDetails(mqConn);
+            conn1Details.connTag = getResolvedConnectionTag(connData);
+        }
+        allConnections.add(conn1Details);
+        
         // Create 5 sessions for Connection 1
         log("\nCreating 5 sessions for Connection 1:");
         log("-".repeat(40));
@@ -147,8 +182,17 @@ public class UniformClusterDualConnectionTest {
                 String sessExtConn = sessConnId.length() > 32 ? sessConnId.substring(0, 32) : "UNKNOWN";
                 session1ConnIds.add(sessConnId);
                 
+                // Add session details to list
+                ConnectionDetails sessDetails = new ConnectionDetails("Session", "C1", String.valueOf(i));
+                sessDetails.connectionId = sessConnId;
+                sessDetails.connTag = getResolvedConnectionTag(sessionData);
+                sessDetails.queueManager = getFieldValue(sessionData, "RESOLVED_QUEUE_MANAGER");
+                sessDetails.host = getFieldValue(sessionData, "HOST_NAME");
+                sessDetails.appTag = TRACKING_KEY_C1;
+                allConnections.add(sessDetails);
+                
                 log("    CONNECTION_ID: " + sessConnId);
-                log("    EXTCONN: " + sessExtConn);
+                log("    CONNTAG: " + sessDetails.connTag);
                 log("    Matches parent: " + (sessConnId.equals(conn1Id) ? "✅ YES (SAME QM)" : "❌ NO"));
             }
         }
@@ -224,6 +268,20 @@ public class UniformClusterDualConnectionTest {
         connection2.start();
         log("\n✅ Connection 2 started");
         
+        // Add Connection 2 parent to list
+        ConnectionDetails conn2Details = new ConnectionDetails("Parent", "C2", "-");
+        conn2Details.connectionId = conn2Id;
+        conn2Details.queueManager = conn2QM;
+        conn2Details.host = conn2Host;
+        conn2Details.appTag = TRACKING_KEY_C2;
+        // Get CONNTAG for parent
+        if (connection2 instanceof MQConnection) {
+            MQConnection mqConn = (MQConnection) connection2;
+            Map<String, Object> connData = extractAllConnectionDetails(mqConn);
+            conn2Details.connTag = getResolvedConnectionTag(connData);
+        }
+        allConnections.add(conn2Details);
+        
         // Create 3 sessions for Connection 2
         log("\nCreating 3 sessions for Connection 2:");
         log("-".repeat(40));
@@ -255,14 +313,77 @@ public class UniformClusterDualConnectionTest {
                 String sessExtConn = sessConnId.length() > 32 ? sessConnId.substring(0, 32) : "UNKNOWN";
                 session2ConnIds.add(sessConnId);
                 
+                // Add session details to list
+                ConnectionDetails sessDetails = new ConnectionDetails("Session", "C2", String.valueOf(i));
+                sessDetails.connectionId = sessConnId;
+                sessDetails.connTag = getResolvedConnectionTag(sessionData);
+                sessDetails.queueManager = getFieldValue(sessionData, "RESOLVED_QUEUE_MANAGER");
+                sessDetails.host = getFieldValue(sessionData, "HOST_NAME");
+                sessDetails.appTag = TRACKING_KEY_C2;
+                allConnections.add(sessDetails);
+                
                 log("    CONNECTION_ID: " + sessConnId);
-                log("    EXTCONN: " + sessExtConn);
+                log("    CONNTAG: " + sessDetails.connTag);
                 log("    Matches parent: " + (sessConnId.equals(conn2Id) ? "✅ YES (SAME QM)" : "❌ NO"));
             }
         }
         
         log("\n✅ Connection 2 setup complete: 1 parent + 3 sessions = 4 MQ connections");
         log("   All on Queue Manager: " + determineQM(conn2Host));
+        
+        log("\n" + "=".repeat(80) + "\n");
+        
+        // ========== CONNECTION TABLE ==========
+        log("\n" + "=".repeat(80) + "\n");
+        log("╔" + "═".repeat(78) + "╗");
+        log("║" + center("CONNECTION DETAILS TABLE - ALL 10 CONNECTIONS", 78) + "║");
+        log("╚" + "═".repeat(78) + "╝\n");
+        
+        // Print table header
+        log(String.format("%-4s %-8s %-5s %-8s %-50s %-30s %-3s %-15s", 
+            "#", "Type", "Conn", "Session", "CONNECTION_ID", "CONNTAG", "QM", "Host"));
+        log("-".repeat(150));
+        
+        // Print all 10 connections
+        int rowNum = 1;
+        for (ConnectionDetails details : allConnections) {
+            String connIdShort = details.connectionId != null && details.connectionId.length() > 48 ? 
+                details.connectionId.substring(0, 48) : details.connectionId;
+            String connTagShort = details.connTag != null && details.connTag.length() > 28 ? 
+                details.connTag.substring(0, 28) : details.connTag;
+            
+            log(String.format("%-4d %-8s %-5s %-8s %-50s %-30s %-3s %-15s",
+                rowNum++,
+                details.type,
+                details.connNum,
+                details.sessionNum,
+                connIdShort != null ? connIdShort : "UNKNOWN",
+                connTagShort != null ? connTagShort : "UNKNOWN",
+                details.queueManager != null ? details.queueManager : "?",
+                details.host != null ? details.host : "UNKNOWN"
+            ));
+        }
+        
+        log("-".repeat(150));
+        log("\nCONNTAG Analysis:");
+        log("-".repeat(40));
+        
+        // Group by CONNTAG to show parent-child relationships
+        Map<String, List<ConnectionDetails>> byConnTag = new HashMap<>();
+        for (ConnectionDetails details : allConnections) {
+            String tag = details.connTag != null ? details.connTag : "UNKNOWN";
+            byConnTag.computeIfAbsent(tag, k -> new ArrayList<>()).add(details);
+        }
+        
+        for (Map.Entry<String, List<ConnectionDetails>> entry : byConnTag.entrySet()) {
+            log("\nCONNTAG: " + entry.getKey());
+            log("  Connections sharing this tag: " + entry.getValue().size());
+            for (ConnectionDetails details : entry.getValue()) {
+                log("    - " + details.type + " " + details.connNum + 
+                    (details.sessionNum.equals("-") ? "" : " Session " + details.sessionNum) +
+                    " on " + details.queueManager);
+            }
+        }
         
         log("\n" + "=".repeat(80) + "\n");
         
@@ -577,5 +698,45 @@ public class UniformClusterDualConnectionTest {
         int padding = (width - text.length()) / 2;
         return " ".repeat(Math.max(0, padding)) + text + 
                " ".repeat(Math.max(0, width - text.length() - padding));
+    }
+    
+    private static String getResolvedConnectionTag(Map<String, Object> data) {
+        // Try to get XMSC_WMQ_RESOLVED_CONNECTION_TAG first
+        String connTag = getFieldValue(data, "XMSC_WMQ_RESOLVED_CONNECTION_TAG");
+        if (!"UNKNOWN".equals(connTag)) {
+            return connTag;
+        }
+        
+        // Try alternate field names
+        connTag = getFieldValue(data, "RESOLVED_CONNECTION_TAG");
+        if (!"UNKNOWN".equals(connTag)) {
+            return connTag;
+        }
+        
+        // Try CONNTAG
+        connTag = getFieldValue(data, "CONNTAG");
+        if (!"UNKNOWN".equals(connTag)) {
+            return connTag;
+        }
+        
+        // Try to extract from CONNECTION_TAG field
+        connTag = getFieldValue(data, "CONNECTION_TAG");
+        if (!"UNKNOWN".equals(connTag)) {
+            return connTag;
+        }
+        
+        // If still not found, try to construct from CONNECTION_ID
+        String connId = getFieldValue(data, "CONNECTION_ID");
+        if (!"UNKNOWN".equals(connId) && connId.length() >= 48) {
+            // CONNTAG format is typically: MQCT + last 16 chars of CONN_ID + QM name
+            String qm = getFieldValue(data, "RESOLVED_QUEUE_MANAGER");
+            if (!"UNKNOWN".equals(qm)) {
+                // Extract the connection handle from CONNECTION_ID
+                String handle = connId.substring(32, 48);
+                return "MQCT" + handle + qm;
+            }
+        }
+        
+        return "UNKNOWN";
     }
 }

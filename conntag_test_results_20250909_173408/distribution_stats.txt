@@ -1,0 +1,13 @@
+CONNTAG Distribution Test Statistics
+=====================================
+Total Iterations: 20
+Different QMs: 0 (0%)
+Same QM: 20 (100.0%)
+
+Queue Manager Usage:
+- QM1 used: 0 times
+- QM2 used: 0 times  
+- QM3 used: 20 times
+
+Expected Distribution Rate: ~66.7% (2/3 probability)
+Actual Distribution Rate: 0%
