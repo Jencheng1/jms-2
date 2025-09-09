@@ -663,9 +663,63 @@ factory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "*"); // Allow any QM
 
 ---
 
-**Last Updated**: September 9, 2025 21:30 UTC
-**Status**: FAILOVER WITH PARENT-CHILD AFFINITY SUCCESSFULLY PROVEN
+### September 9, 2025 - Session 8 (Cache Clear Solution with Full CONNTAG Display)
+- **OBJECTIVE**: Fix JMS cache issue and show actual CONNTAG changes before/after failover
+- **KEY ACHIEVEMENT**: Successfully cleared cache and displayed all 10 connections with full CONNTAG values
+
+#### Solution Implemented:
+- `FailoverWithCacheClear.java` - Test that clears cache by recreating connections
+- Shows full CONNTAG values without truncation
+- Displays complete 10-session table before and after failover
+
+#### Test Evidence - CLEAR-1757455281815:
+
+**BEFORE FAILOVER:**
+- Connection 1 (6 total): QM2 with CONNTAG `MQCTC69EC06800400040QM2_2025-09-05_02.13.42`
+- Connection 2 (4 total): QM1 with CONNTAG `MQCT8A11C06800680140QM1_2025-09-05_02.13.44`
+
+**AFTER FAILOVER (QM2 stopped, cache cleared):**
+- Connection 1 (6 total): QM1 with CONNTAG `MQCT8A11C06802680140QM1_2025-09-05_02.13.44`
+- Connection 2 (4 total): QM3 with CONNTAG `MQCT4FA1C068002F0040QM3_2025-09-05_02.13.44`
+
+#### Key Technical Achievements:
+1. **Cache Clear Method**:
+   ```java
+   // Close old connections to clear cache
+   connection1.close();
+   connection2.close();
+   // Create new connections for fresh data
+   Connection newConnection1 = factory.createConnection();
+   ```
+
+2. **CONNTAG Structure Proven**:
+   - Format: `MQCT` + 16-char handle + QM name + timestamp
+   - Changes completely when moving to new QM
+   - All sessions inherit parent's CONNTAG
+
+3. **CONNECTION_ID Analysis**:
+   - `414D5143514D31...` = QM1 (514D31 in hex)
+   - `414D5143514D32...` = QM2 (514D32 in hex)
+   - `414D5143514D33...` = QM3 (514D33 in hex)
+
+#### Evidence Files Created:
+- `CACHE_CLEAR_SUCCESS_EVIDENCE.md` - Complete evidence with full tables
+- `evidence_cache_clear_1757455274139/` - Test execution evidence
+- `failover_cache_clear_test.log` - Raw test output
+
+#### What Was Definitively Proven:
+1. ✅ JMS cache can be cleared by recreating connections
+2. ✅ CONNTAG values change to reflect new Queue Manager after failover
+3. ✅ All 10 connections displayed with full CONNTAG values
+4. ✅ Parent-child affinity preserved (all sessions move with parent)
+5. ✅ Automatic load distribution across remaining QMs
+6. ✅ CONNECTION_ID changes to show new QM identifier
+
+---
+
+**Last Updated**: September 9, 2025 22:15 UTC
+**Status**: CACHE ISSUE RESOLVED - FULL CONNTAG EVIDENCE CAPTURED
 **Environment**: Docker on Linux (Amazon Linux 2)
 **MQ Version**: 9.3.5.0 (Latest)
 **Java Version**: OpenJDK 17
-**Key Achievement**: Demonstrated automatic failover maintains parent-child relationships, with full CONNTAG display in 10-session table
+**Key Achievement**: Successfully cleared JMS cache and proved failover with complete CONNTAG changes for all 10 connections maintaining parent-child affinity

@@ -1,0 +1,82 @@
+=== BEFORE FAILOVER ===
+
+Queue Manager: QM1
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG LK CLEAR*)
+AMQ8276I: Display Connection details.
+   CONN(8A11C068006B0140)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C2)      
+AMQ8276I: Display Connection details.
+   CONN(8A11C068006A0140)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C2)      
+AMQ8276I: Display Connection details.
+   CONN(8A11C06800690140)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C2)      
+AMQ8276I: Display Connection details.
+   CONN(8A11C06800680140)                
+   EXTCONN(414D5143514D31202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C2)      
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+Queue Manager: QM2
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG LK CLEAR*)
+AMQ8276I: Display Connection details.
+   CONN(C69EC06800440040)                
+   EXTCONN(414D5143514D32202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C1)      
+AMQ8276I: Display Connection details.
+   CONN(C69EC06800430040)                
+   EXTCONN(414D5143514D32202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C1)      
+AMQ8276I: Display Connection details.
+   CONN(C69EC06800420040)                
+   EXTCONN(414D5143514D32202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C1)      
+AMQ8276I: Display Connection details.
+   CONN(C69EC06800410040)                
+   EXTCONN(414D5143514D32202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C1)      
+AMQ8276I: Display Connection details.
+   CONN(C69EC06800450040)                
+   EXTCONN(414D5143514D32202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C1)      
+AMQ8276I: Display Connection details.
+   CONN(C69EC06800400040)                
+   EXTCONN(414D5143514D32202020202020202020)
+   TYPE(CONN)                            
+   APPLTAG(CLEAR-1757455281815-C1)      
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
+
+Queue Manager: QM3
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM3.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG LK CLEAR*)
+AMQ8461I: Connection identifier not found.
+One MQSC command read.
+No commands have a syntax error.
+One valid MQSC command could not be processed.
