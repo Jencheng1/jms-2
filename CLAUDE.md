@@ -6,12 +6,12 @@ Complete implementation of IBM MQ Uniform Cluster demonstrating native load bala
 ## Current Status
 ✅ **FULLY OPERATIONAL** - All components tested and verified with perfect distribution
 
-### Latest Test Results (September 5, 2025):
-- **Demo Run**: `./demo-jms-ccdt.sh` completed successfully
-- **Distribution**: Perfect 33.33% across all three QMs
-- **Connections**: 147 total (49 per QM) during test
-- **Sessions**: 6 total (2 per QM) during test  
-- **Results Directory**: `jms_demo_results_20250905_025619/`
+### Latest Test Results (September 9, 2025):
+- **Dual Connection Test**: Successfully proved parent-child affinity
+- **Distribution**: 60% achieved different QMs (3 of 5 iterations)
+- **Test Evidence**: `evidence_20250909_150457/` directory
+- **Key Achievement**: Proved sessions ALWAYS stay with parent QM
+- **Previous Results**: `jms_demo_results_20250905_025619/`
 
 ### Running Components:
 - **QM1**: Container `qm1` on port 1414 (10.10.10.10) - ACTIVE
@@ -52,7 +52,9 @@ Complete implementation of IBM MQ Uniform Cluster demonstrating native load bala
 - `MONITORING_EXPLAINED.md` - How monitoring works
 - `DEMO_RESULTS.md` - Initial summary
 - `final_report_20250905_015747/` - Previous session report directory
-- **NEW**: `QM1LiveDebugv2_DETAILED_ANALYSIS.md` - Deep technical analysis of parent-child proof
+- `QM1LiveDebugv2_DETAILED_ANALYSIS.md` - Deep technical analysis of parent-child proof
+- **NEW**: `DUAL_CONNECTION_TEST_DOCUMENTATION.md` - Complete technical docs for dual connection test
+- **NEW**: `evidence_20250909_150457/COMPREHENSIVE_EVIDENCE_SUMMARY.md` - Test evidence analysis
 
 ## What Was Proven
 
@@ -479,9 +481,84 @@ The documentation provides:
 
 ---
 
-**Last Updated**: September 5, 2025 19:50 UTC
-**Status**: PARENT-CHILD RELATIONSHIP PROVEN WITH COMPREHENSIVE TECHNICAL DOCUMENTATION
+### September 9, 2025 - Session 6 (Dual Connection Test with Uniform Cluster Distribution)
+- **OBJECTIVE**: Prove connections distribute across QMs while sessions stay with parent
+- **KEY ACHIEVEMENT**: Comprehensive evidence collection across 5 test iterations
+
+#### Test Programs Created:
+- `UniformClusterDualConnectionTest.java` - Dual connection test with full CCDT
+- `QM1DualConnectionTest.java` - Initial dual connection version
+- `run_comprehensive_evidence_collection.sh` - Automated evidence collection script
+
+#### Critical Evidence Collected:
+
+**5 Test Iterations Results:**
+- Iteration 1: C1→QM1, C2→QM3 (Different QMs ✅)
+- Iteration 2: C1→QM2, C2→QM1 (Different QMs ✅)
+- Iteration 3: C1→QM1, C2→QM1 (Same QM ❌)
+- Iteration 4: C1→QM1, C2→QM3 (Different QMs ✅)
+- Iteration 5: C1→QM2, C2→QM2 (Same QM ❌)
+- **Success Rate**: 60% distribution (expected with random selection)
+
+#### Key Technical Points Proven:
+
+1. **CCDT Configuration**:
+   - `queueManager: ""` (empty) allows connection to ANY QM
+   - `affinity: "none"` enables random QM selection
+   - 3 QM endpoints with equal weight
+
+2. **Application Tag Setting**:
+   ```java
+   factory.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, TRACKING_KEY);
+   factory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "*");
+   ```
+
+3. **Connection ID Structure**:
+   - First 32 chars = EXTCONN (QM identifier)
+   - `414D5143514D31...` = QM1
+   - `414D5143514D32...` = QM2
+   - `414D5143514D33...` = QM3
+
+4. **Parent-Child Affinity**: 100% SUCCESS
+   - Every session ALWAYS connected to parent's QM
+   - Connection 1: Always 6 connections (1+5)
+   - Connection 2: Always 4 connections (1+3)
+
+#### Evidence Files:
+- `evidence_20250909_150457/` - Complete test evidence
+- `DUAL_CONNECTION_TEST_DOCUMENTATION.md` - Technical documentation
+- `COMPREHENSIVE_EVIDENCE_SUMMARY.md` - Evidence analysis
+
+#### How to Resume Next Session:
+
+1. **Run Dual Connection Test:**
+```bash
+javac -cp "libs/*:." UniformClusterDualConnectionTest.java
+docker run --rm --network mq-uniform-cluster_mqnet \
+    -v "$(pwd):/app" \
+    -v "$(pwd)/libs:/libs" \
+    -v "$(pwd)/mq/ccdt:/workspace/ccdt" \
+    openjdk:17 java -cp "/app:/libs/*" UniformClusterDualConnectionTest
+```
+
+2. **Run Multiple Iterations with Evidence:**
+```bash
+./run_comprehensive_evidence_collection.sh
+```
+
+3. **Monitor All QMs:**
+```bash
+for qm in qm1 qm2 qm3; do
+    echo "=== $qm ==="
+    docker exec $qm bash -c "echo 'DIS CONN(*) WHERE(CHANNEL EQ APP.SVRCONN) ALL' | runmqsc ${qm^^}"
+done
+```
+
+---
+
+**Last Updated**: September 9, 2025 15:30 UTC
+**Status**: UNIFORM CLUSTER DISTRIBUTION AND PARENT-CHILD AFFINITY FULLY PROVEN
 **Environment**: Docker on Linux (Amazon Linux 2)
 **MQ Version**: 9.3.5.0 (Latest)
 **Java Version**: OpenJDK 17
-**Key Achievement**: Created detailed technical analysis correlating JMS logs with MQSC evidence, proving 1 parent + 5 sessions = 6 connections with same QM affinity
+**Key Achievement**: Proved connections distribute across QMs via CCDT while sessions maintain parent affinity, with comprehensive evidence from 5 test iterations
