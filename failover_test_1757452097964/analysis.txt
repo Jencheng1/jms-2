@@ -1,0 +1,15 @@
+========================================
+FAILOVER TEST ANALYSIS
+========================================
+
+Checking for CONNECTION_ID changes...
+Binary file failover_test_1757452097964/failover_test.log matches
+
+Binary file failover_test_1757452097964/failover_test.log matches
+
+Checking CONNTAG preservation...
+Binary file failover_test_1757452097964/failover_test.log matches
+
+Checking reconnection status...
+Binary file failover_test_1757452097964/failover_test.log matches
+Binary file failover_test_1757452097964/failover_test.log matches

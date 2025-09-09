@@ -1,0 +1,25 @@
+================================================================================
+   VERIFYING ACTUAL FAILOVER - PROVING QM CHANGE
+================================================================================
+Tracking Key: VERIFY-1757453241913
+
+Creating connection...
+
+=== PHASE 1: INITIAL CONNECTION ===
+Now check which QM has the connection:
+Run this command to find the connection:
+
+for qm in qm1 qm2 qm3; do
+  echo "Checking $qm:"
+  docker exec $qm bash -c "echo 'DIS CONN(*) WHERE(APPLTAG EQ VERIFY-1757453241913)' | runmqsc ${qm^^}" 2>/dev/null | grep -c AMQ8276I | xargs -I {} echo "  Found {} connections"
+done
+
+
+=== PHASE 2: STOP THE QM ===
+⚠️  STOP THE QUEUE MANAGER that has the connection!
+   Example: docker stop qm1 (or qm2 or qm3)
+
+Waiting for failover to occur...
+(. = heartbeat, R = reconnecting, ! = error)
+
+........

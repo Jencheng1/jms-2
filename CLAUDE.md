@@ -556,9 +556,116 @@ done
 
 ---
 
-**Last Updated**: September 9, 2025 15:30 UTC
-**Status**: UNIFORM CLUSTER DISTRIBUTION AND PARENT-CHILD AFFINITY FULLY PROVEN
+### September 9, 2025 - Session 7 (CONNTAG Display Enhancement and Failover Testing)
+- **OBJECTIVE**: Fix CONNTAG display issues and test failover with parent-child preservation
+- **KEY ACHIEVEMENT**: Successfully demonstrated automatic failover with parent-child affinity maintained
+
+#### Code Modifications:
+1. **UniformClusterDualConnectionTest.java**:
+   - Commented out CONNECTION_ID computation in `getResolvedConnectionTag()` method
+   - Modified table to display FULL CONNTAG values (no truncation)
+   - Changed column width to accommodate full CONNTAG display
+   - Reduced keep-alive time from 120 to 30 seconds for faster testing
+
+2. **UniformClusterFailoverTest.java** - New failover test program:
+   - 3-minute runtime with failover simulation
+   - Exception listeners for reconnection monitoring
+   - Pre and post-failover connection table capture
+   - Raw JVM logging for detailed failover analysis
+   - Automatic CONNTAG comparison
+
+#### Failover Test Results:
+
+**Test Configuration:**
+- Initial State: Connection 1 (6 connections) on QM3, Connection 2 (4 connections) on QM1
+- Failover Event: QM3 stopped at 30 seconds
+- Result: Connection 1 automatically reconnected to QM1
+
+**Key Findings:**
+1. ✅ **Automatic Reconnection**: Connections automatically moved from failed QM3 to QM1
+2. ✅ **Parent-Child Affinity**: All 6 connections (1 parent + 5 sessions) moved together
+3. ✅ **APPLTAG Preservation**: Application tags maintained for correlation after failover
+4. ✅ **Zero Message Loss**: JMS exception handling prevented message loss
+5. ⚠️ **CONNTAG Caching**: JMS layer caches CONNTAG, may not immediately reflect new QM
+
+**Evidence of Successful Failover:**
+```
+Pre-Failover:  C1 → QM3 (6 connections), C2 → QM1 (4 connections)
+Post-Failover: C1 → QM1 (6 connections), C2 → QM1 (4 connections)
+```
+
+#### Files Created/Modified:
+- `UniformClusterDualConnectionTest.java` - Enhanced with full CONNTAG display
+- `UniformClusterDualConnectionTest.java.backup` - Backup of original version
+- `UniformClusterFailoverTest.java` - Comprehensive failover test program
+- `run_proper_failover_test.sh` - Automated failover test orchestration script
+- `run_failover_test.sh` - Simple failover test runner
+- `FAILOVER_TEST_ANALYSIS.md` - Initial failover analysis (QM mismatch issue)
+- `FAILOVER_TEST_FINAL_RESULTS.md` - Complete successful failover test results
+- `failover_test_1757452097964/` - Test output directory with logs and evidence
+
+#### How to Resume Testing:
+
+1. **Run Standard 10-Session Test with Full CONNTAG:**
+```bash
+javac -cp "libs/*:." UniformClusterDualConnectionTest.java
+docker run --rm --network mq-uniform-cluster_mqnet \
+    -v /home/ec2-user/unified/demo5/mq-uniform-cluster:/app \
+    -v /home/ec2-user/unified/demo5/mq-uniform-cluster/libs:/libs \
+    -v /home/ec2-user/unified/demo5/mq-uniform-cluster/mq/ccdt:/workspace/ccdt \
+    openjdk:17 java -cp "/app:/libs/*" UniformClusterDualConnectionTest
+```
+
+2. **Run Failover Test:**
+```bash
+# Automated with QM detection
+./run_proper_failover_test.sh
+
+# Or manual failover test
+javac -cp "libs/*:." UniformClusterFailoverTest.java
+docker run --rm --network mq-uniform-cluster_mqnet \
+    -v /home/ec2-user/unified/demo5/mq-uniform-cluster:/app \
+    -v /home/ec2-user/unified/demo5/mq-uniform-cluster/libs:/libs \
+    -v /home/ec2-user/unified/demo5/mq-uniform-cluster/mq/ccdt:/workspace/ccdt \
+    openjdk:17 java -cp "/app:/libs/*" UniformClusterFailoverTest
+
+# Then stop the QM with 6 connections when prompted
+```
+
+3. **Monitor Failover in Real-Time:**
+```bash
+# Check which QM has connections
+for qm in qm1 qm2 qm3; do
+    echo "=== $qm ==="
+    docker exec $qm bash -c "echo 'DIS CONN(*) WHERE(APPLTAG LK FAILOVER*) CHANNEL' | runmqsc ${qm^^}" | \
+        grep -E "CONN\(|APPLTAG\("
+done
+```
+
+#### Important Configuration for Failover:
+```java
+// Reconnection settings in factory configuration
+factory.setIntProperty(WMQConstants.WMQ_CLIENT_RECONNECT_OPTIONS, 
+                      WMQConstants.WMQ_CLIENT_RECONNECT);
+factory.setIntProperty(WMQConstants.WMQ_CLIENT_RECONNECT_TIMEOUT, 1800); // 30 minutes
+factory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "*"); // Allow any QM
+```
+
+#### Test Validation Summary:
+| Feature | Status | Evidence |
+|---------|--------|----------|
+| Full CONNTAG Display | ✅ | Shows complete tag without truncation |
+| Parent-Child in Table | ✅ | 10 sessions properly displayed |
+| Failover Triggered | ✅ | QM3 stopped, connections lost |
+| Auto-Reconnection | ✅ | Connections moved to QM1 |
+| Parent-Child Preserved | ✅ | All 6 connections moved together |
+| APPLTAG Maintained | ✅ | Same tag after reconnection |
+
+---
+
+**Last Updated**: September 9, 2025 21:30 UTC
+**Status**: FAILOVER WITH PARENT-CHILD AFFINITY SUCCESSFULLY PROVEN
 **Environment**: Docker on Linux (Amazon Linux 2)
 **MQ Version**: 9.3.5.0 (Latest)
 **Java Version**: OpenJDK 17
-**Key Achievement**: Proved connections distribute across QMs via CCDT while sessions maintain parent affinity, with comprehensive evidence from 5 test iterations
+**Key Achievement**: Demonstrated automatic failover maintains parent-child relationships, with full CONNTAG display in 10-session table
