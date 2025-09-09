@@ -339,32 +339,32 @@ public class UniformClusterDualConnectionTest {
         log("║" + center("CONNECTION DETAILS TABLE - ALL 10 CONNECTIONS", 78) + "║");
         log("╚" + "═".repeat(78) + "╝\n");
         
-        // Print table header - adjusted for full CONNTAG display
-        log(String.format("%-4s %-8s %-5s %-8s %-50s %-50s %-3s %-15s", 
-            "#", "Type", "Conn", "Session", "CONNECTION_ID", "FULL_CONNTAG", "QM", "Host"));
-        log("-".repeat(180));
+        // Print table header
+        log(String.format("%-4s %-8s %-5s %-8s %-50s %-30s %-3s %-15s", 
+            "#", "Type", "Conn", "Session", "CONNECTION_ID", "CONNTAG", "QM", "Host"));
+        log("-".repeat(150));
         
-        // Print all 10 connections with FULL CONNTAG values
+        // Print all 10 connections
         int rowNum = 1;
         for (ConnectionDetails details : allConnections) {
             String connIdShort = details.connectionId != null && details.connectionId.length() > 48 ? 
                 details.connectionId.substring(0, 48) : details.connectionId;
-            // DO NOT TRUNCATE CONNTAG - show full value
-            String fullConnTag = details.connTag != null ? details.connTag : "UNKNOWN";
+            String connTagShort = details.connTag != null && details.connTag.length() > 28 ? 
+                details.connTag.substring(0, 28) : details.connTag;
             
-            log(String.format("%-4d %-8s %-5s %-8s %-50s %-50s %-3s %-15s",
+            log(String.format("%-4d %-8s %-5s %-8s %-50s %-30s %-3s %-15s",
                 rowNum++,
                 details.type,
                 details.connNum,
                 details.sessionNum,
                 connIdShort != null ? connIdShort : "UNKNOWN",
-                fullConnTag,  // Full CONNTAG value, no truncation
+                connTagShort != null ? connTagShort : "UNKNOWN",
                 details.queueManager != null ? details.queueManager : "?",
                 details.host != null ? details.host : "UNKNOWN"
             ));
         }
         
-        log("-".repeat(180));
+        log("-".repeat(150));
         log("\nCONNTAG Analysis:");
         log("-".repeat(40));
         
@@ -453,11 +453,11 @@ public class UniformClusterDualConnectionTest {
         
         System.out.println("─".repeat(60));
         
-        System.out.println("\n🔄 KEEPING CONNECTIONS ALIVE FOR 30 SECONDS...\n");
+        System.out.println("\n🔄 KEEPING CONNECTIONS ALIVE FOR 120 SECONDS...\n");
         System.out.println("Use the MQSC commands above to verify distribution");
         System.out.println("Detailed log: " + logFileName);
         
-        for (int i = 30; i > 0; i--) {
+        for (int i = 120; i > 0; i--) {
             System.out.print("\r  ⏱️  Time remaining: " + String.format("%3d", i) + " seconds  [" + "█".repeat(Math.min(60, i/2)) + " ".repeat(Math.max(0, 60-i/2)) + "]");
             Thread.sleep(1000);
             
@@ -726,8 +726,6 @@ public class UniformClusterDualConnectionTest {
         }
         
         // If still not found, try to construct from CONNECTION_ID
-        // COMMENTED OUT PER REQUEST - Do not compute, only use getResolvedConnectionTag() method
-        /*
         String connId = getFieldValue(data, "CONNECTION_ID");
         if (!"UNKNOWN".equals(connId) && connId.length() >= 48) {
             // CONNTAG format is typically: MQCT + last 16 chars of CONN_ID + QM name
@@ -738,7 +736,6 @@ public class UniformClusterDualConnectionTest {
                 return "MQCT" + handle + qm;
             }
         }
-        */
         
         return "UNKNOWN";
     }
