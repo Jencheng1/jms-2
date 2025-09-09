@@ -1,0 +1,26 @@
+Connecting to QM1...
+Connected successfully
+
+Creating INQUIRE_CONNECTION message...
+Message details:
+  Type: 1
+  Command: 1201
+  Parameter count: 0
+  Reason: 0
+  CompCode: 0
+  Serialized size: 36 bytes
+
+Sending request...
+✗ PCF Error: MQJE001: Completion Code '2', Reason '3007'.
+  Reason code: 3007
+  Completion code: 2
+  Error 3007: MQRCCF_CFH_TYPE_ERROR
+  This suggests the PCF message type is incorrect
+
+
+Trying INQUIRE_Q_MGR as control test...
+Message details:
+  Type: 1
+  Command: 2
+✓ Success! Got 1 response(s)
+  QM inquiry works, so PCF is functional

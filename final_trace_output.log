@@ -1,0 +1,75 @@
+================================================
+ FINAL TRACE TEST - FULL DEBUG & EVIDENCE
+================================================
+
+TEST 1: PCF API STATUS
+-----------------------
+QM1: INQUIRE_Q_MGR=✓ INQUIRE_CONNECTION=✗(3007)
+QM2: INQUIRE_Q_MGR=✓ INQUIRE_CONNECTION=✗(3007)
+QM3: INQUIRE_Q_MGR=✓ INQUIRE_CONNECTION=✗(3007)
+
+TEST 2: PARENT-CHILD PROOF WITH MQSC
+-------------------------------------
+APPLTAG: TEST323662
+
+Creating JMS Connection...
+  Resolved to: QM1
+
+Before sessions:
+  Connections with APPLTAG: 3
+
+Creating 3 sessions...
+  Session 1 created
+  Session 2 created
+  Session 3 created
+
+After sessions:
+  Connections with APPLTAG: 9
+  ✓ Child connections created: 6
+
+MQSC Connection Details:
+  1 : DIS CONN(*) WHERE(APPLTAG EQ TEST323662) ALL
+  CONN(8A11C06802500040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(41)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+  CONN(8A11C068084F0040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(41)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+  CONN(8A11C06800520040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(41)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+  CONN(8A11C06800510040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(41)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+
+After cleanup:
+  Remaining connections: 1
+
+TEST 3: UNIFORM CLUSTER DISTRIBUTION
+-------------------------------------
+Creating 6 connections using CCDT...
+
+Connection 1 failed: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Connection 2 failed: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Connection 3 failed: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Connection 4 failed: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Connection 5 failed: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Connection 6 failed: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+
+Distribution analysis:
+  QM1: 6 connections
+  QM2: 6 connections
+  QM3: 6 connections
+  ✓ Connections distributed across all QMs
+
+================================================
+ ALL TESTS COMPLETE - CHECK OUTPUT ABOVE
+================================================

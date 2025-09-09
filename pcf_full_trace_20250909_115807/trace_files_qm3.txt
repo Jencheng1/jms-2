@@ -1,0 +1,5 @@
+/var/mqm/trace/AMQ4555.0.TRC
+/var/mqm/trace/AMQ4565.0.TRC
+/var/mqm/trace/AMQ4569.0.TRC
+/var/mqm/trace/AMQ4572.0.TRC
+/var/mqm/trace/AMQ4587.0.TRC

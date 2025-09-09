@@ -1,0 +1,18 @@
+Connecting to QM1...
+Connected successfully
+
+Test 1: INQUIRE_Q_MGR
+✓ Success: 1 response(s)
+
+Test 2: INQUIRE_CONNECTION (no params)
+✗ Failed: MQJE001: Completion Code '2', Reason '3007'.
+Reason code: 3007
+
+Test 3: INQUIRE_CONNECTION with MQIACF_ALL
+✗ Failed: MQJE001: Completion Code '2', Reason '3007'.
+Reason code: 3007
+
+Test 4: INQUIRE_CONNECTION with empty connection ID
+✗ Failed: MQJE001: Completion Code '2', Reason '3007'.
+Reason code: 3007
+

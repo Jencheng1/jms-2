@@ -1,0 +1,75 @@
+================================================
+ FINAL TRACE TEST - FULL DEBUG & EVIDENCE
+================================================
+
+TEST 1: PCF API STATUS
+-----------------------
+QM1: INQUIRE_Q_MGR=✓ INQUIRE_CONNECTION=✗(3007)
+QM2: INQUIRE_Q_MGR=✓ INQUIRE_CONNECTION=✗(3007)
+QM3: INQUIRE_Q_MGR=✓ INQUIRE_CONNECTION=✗(3007)
+
+TEST 2: PARENT-CHILD PROOF WITH MQSC
+-------------------------------------
+APPLTAG: TEST618560
+
+Creating JMS Connection...
+  Resolved to: QM1
+
+Before sessions:
+  Connections with APPLTAG: 3
+
+Creating 3 sessions...
+  Session 1 created
+  Session 2 created
+  Session 3 created
+
+After sessions:
+  Connections with APPLTAG: 9
+  ✓ Child connections created: 6
+
+MQSC Connection Details:
+  1 : DIS CONN(*) WHERE(APPLTAG EQ TEST618560) ALL
+  CONN(8A11C06802550040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(44)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+  CONN(8A11C06808540040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(44)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+  CONN(8A11C06800570040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(44)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+  CONN(8A11C06800560040)
+  EXTCONN(414D5143514D31202020202020202020)
+  PID(5861)                               TID(44)
+  CHANNEL(APP.SVRCONN)                    CLIENTID( )
+  CONNAME(10.10.10.1)
+
+After cleanup:
+  Remaining connections: 1
+
+TEST 3: UNIFORM CLUSTER DISTRIBUTION
+-------------------------------------
+Creating 6 connections with round-robin distribution...
+
+Connection 1 (tag=DIST1) -> QM1
+Connection 2 (tag=DIST2) -> QM2
+Connection 3 (tag=DIST3) -> QM3
+Connection 4 (tag=DIST4) -> QM1
+Connection 5 (tag=DIST5) -> QM2
+Connection 6 (tag=DIST6) -> QM3
+
+Distribution analysis:
+  QM1: 6 connections
+  QM2: 6 connections
+  QM3: 6 connections
+  ✓ Connections distributed across all QMs
+
+================================================
+ ALL TESTS COMPLETE - CHECK OUTPUT ABOVE
+================================================

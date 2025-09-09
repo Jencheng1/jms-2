@@ -1,0 +1,112 @@
+[12:00:45.633] 
+[12:00:45.659] ================================================
+[12:00:45.660]  COMPREHENSIVE TRACE TEST
+[12:00:45.660] ================================================
+[12:00:45.660] 
+[12:00:45.660] Test ID: 1757419245593
+[12:00:45.661] Base Tag: COMPREHENSIVE-1757419245593
+[12:00:45.661] 
+[12:00:45.661] 
+[12:00:45.661] ================================================
+[12:00:45.661]  TEST 1: PCF FUNCTIONALITY CHECK
+[12:00:45.661] ================================================
+[12:00:45.661] 
+[12:00:45.661] Testing PCF API functionality on all Queue Managers...
+
+[12:00:45.694] Testing QM1 at 10.10.10.10:
+[12:00:46.715]   ✓ INQUIRE_Q_MGR: Success (1 response)
+[12:00:46.716]     Queue Manager Name: QM1
+[12:00:46.730]   ✗ INQUIRE_CONNECTION: Failed (Reason 3007)
+[12:00:46.731]     Error 3007: MQRCCF_CFH_TYPE_ERROR - Command not supported
+[12:00:46.756] 
+[12:00:46.756] Testing QM2 at 10.10.10.11:
+[12:00:46.841]   ✓ INQUIRE_Q_MGR: Success (1 response)
+[12:00:46.842]     Queue Manager Name: QM2
+[12:00:46.850]   ✗ INQUIRE_CONNECTION: Failed (Reason 3007)
+[12:00:46.850]     Error 3007: MQRCCF_CFH_TYPE_ERROR - Command not supported
+[12:00:46.863] 
+[12:00:46.864] Testing QM3 at 10.10.10.12:
+[12:00:46.932]   ✓ INQUIRE_Q_MGR: Success (1 response)
+[12:00:46.933]     Queue Manager Name: QM3
+[12:00:46.941]   ✗ INQUIRE_CONNECTION: Failed (Reason 3007)
+[12:00:46.941]     Error 3007: MQRCCF_CFH_TYPE_ERROR - Command not supported
+[12:00:46.970] 
+[12:00:46.971] 
+[12:00:46.971] ================================================
+[12:00:46.971]  TEST 2: SINGLE QM PARENT-CHILD TEST
+[12:00:46.972] ================================================
+[12:00:46.972] 
+[12:00:46.972] Testing parent-child relationship on QM1
+[12:00:46.972] APPLTAG: COMPREHENSIVE-1757419245593-QM1
+[12:00:46.973] 
+[12:00:46.973] Creating JMS Connection...
+[12:00:47.237] Error: JMSCC0005: The specified value 'COMPREHENSIVE-1757419245593-QM1' is not allowed for 'XMSC_WMQ_APPNAME'.
+com.ibm.msg.client.jms.DetailedJMSException: JMSCC0005: The specified value 'COMPREHENSIVE-1757419245593-QM1' is not allowed for 'XMSC_WMQ_APPNAME'.
+The given value is not allowed for the property specified.
+Change the value to a value that is supported for the property.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.ibm.msg.client.commonservices.j2se.NLSServices.createException(NLSServices.java:334)
+	at com.ibm.msg.client.commonservices.nls.NLSServices.createException(NLSServices.java:226)
+	at com.ibm.msg.client.jms.internal.JmsErrorUtils.createException(JmsErrorUtils.java:126)
+	at com.ibm.msg.client.jms.internal.JmsPropertyContextImpl.setObjectPropertyInternal(JmsPropertyContextImpl.java:463)
+	at com.ibm.msg.client.jms.internal.JmsPropertyContextImpl.setObjectProperty(JmsPropertyContextImpl.java:612)
+	at com.ibm.msg.client.jms.internal.JmsPropertyContextImpl.setStringProperty(JmsPropertyContextImpl.java:649)
+	at ComprehensiveTraceTest.testSingleQMParentChild(ComprehensiveTraceTest.java:135)
+	at ComprehensiveTraceTest.main(ComprehensiveTraceTest.java:36)
+[12:00:47.250] 
+[12:00:47.250] 
+[12:00:47.250] ================================================
+[12:00:47.251]  TEST 3: MULTI-QM DISTRIBUTION TEST
+[12:00:47.251] ================================================
+[12:00:47.251] 
+[12:00:47.251] Testing connection distribution across QMs
+[12:00:47.251] Using CCDT for distribution
+[12:00:47.251] 
+[12:00:47.279] Connection 1 with APPLTAG: COMPREHENSIVE-1757419245593-DIST-1
+[12:00:47.281]   Error: JMSCC0005: The specified value 'COMPREHENSIVE-1757419245593-DIST-1' is not allowed for 'XMSC_WMQ_APPNAME'.
+[12:00:47.282] 
+[12:00:47.282] Connection 2 with APPLTAG: COMPREHENSIVE-1757419245593-DIST-2
+[12:00:47.284]   Error: JMSCC0005: The specified value 'COMPREHENSIVE-1757419245593-DIST-2' is not allowed for 'XMSC_WMQ_APPNAME'.
+[12:00:47.284] 
+[12:00:47.284] Connection 3 with APPLTAG: COMPREHENSIVE-1757419245593-DIST-3
+[12:00:47.286]   Error: JMSCC0005: The specified value 'COMPREHENSIVE-1757419245593-DIST-3' is not allowed for 'XMSC_WMQ_APPNAME'.
+[12:00:47.286] 
+[12:00:47.286] 
+[12:00:47.286] ================================================
+[12:00:47.286]  TEST 4: MQSC CONNECTION ANALYSIS
+[12:00:47.286] ================================================
+[12:00:47.286] 
+[12:00:47.286] Analyzing current connections on all QMs
+[12:00:47.286] 
+[12:00:47.287] QM1 connections:
+[12:00:47.555]   Total connections: 49
+[12:00:47.755]   APP.SVRCONN connections: 1
+[12:00:47.755] 
+[12:00:47.755] QM2 connections:
+[12:00:47.942]   Total connections: 49
+[12:00:48.132]   APP.SVRCONN connections: 1
+[12:00:48.132] 
+[12:00:48.132] QM3 connections:
+[12:00:48.288]   Total connections: 49
+[12:00:48.522]   APP.SVRCONN connections: 1
+[12:00:48.522] 
+[12:00:48.522] 
+[12:00:48.522] ================================================
+[12:00:48.522]  TEST 5: CONNECTION SHARING INVESTIGATION
+[12:00:48.522] ================================================
+[12:00:48.523] 
+[12:00:48.523] Investigating connection sharing behavior
+[12:00:48.523] APPLTAG: COMPREHENSIVE-1757419245593-SHARE
+[12:00:48.523] 
+[12:00:48.523] Creating connection with sharing considerations...
+[12:00:48.525] Error: JMSCC0005: The specified value 'COMPREHENSIVE-1757419245593-SHARE' is not allowed for 'XMSC_WMQ_APPNAME'.
+[12:00:48.526] 
+[12:00:48.526] 
+[12:00:48.526] ================================================
+[12:00:48.526]  TEST COMPLETE
+[12:00:48.526] ================================================
+[12:00:48.526] 
+[12:00:48.526] Results saved to: comprehensive_trace_1757419245593.log

@@ -1,0 +1,57 @@
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM2.
+
+
+     1 : DIS QMGR ALL
+AMQ8408I: Display Queue Manager details.
+   QMNAME(QM2)                             ACCTCONO(DISABLED)
+   ACCTINT(1800)                           ACCTMQI(OFF)
+   ACCTQ(OFF)                              ACTIVREC(MSG)
+   ACTVCONO(DISABLED)                      ACTVTRC(ON)
+   ADVCAP(ENABLED)                         ALTDATE(2025-09-09)
+   ALTTIME(11.37.59)                       AMQPCAP(NO)
+   AUTHEVSC(FAILURES)                      AUTHOREV(DISABLED)
+   CCSID(819)                              CERTLABL( )
+   CERTVPOL(ANY)                           CHAD(DISABLED)
+   CHADEV(DISABLED)                        CHADEXIT( )
+   CHLEV(DISABLED)                         CHLAUTH(DISABLED)
+   CLWLDATA( )                             CLWLEXIT( )
+   CLWLLEN(100)                            CLWLMRUC(999999999)
+   CLWLUSEQ(LOCAL)                         CMDEV(DISABLED)
+   CMDLEVEL(943)                           COMMANDQ(SYSTEM.ADMIN.COMMAND.QUEUE)
+   CONFIGEV(DISABLED)                      CONNAUTH( )
+   CRDATE(2025-09-05)                      CRTIME(02.13.42)
+   CUSTOM( )                               DEADQ(DEV.DEAD.LETTER.QUEUE)
+   DEFCLXQ(SCTQ)                           DEFXMITQ( )
+   DESCR( )                                DISTL(YES)
+   IMGINTVL(60)                            IMGLOGLN(OFF)
+   IMGRCOVO(YES)                           IMGRCOVQ(YES)
+   IMGSCHED(MANUAL)                        INHIBTEV(DISABLED)
+   INITKEY( )                              IPADDRV(IPV4)
+   LOCALEV(DISABLED)                       LOGGEREV(DISABLED)
+   MARKINT(5000)                           MAXHANDS(256)
+   MAXMSGL(4194304)                        MAXPROPL(NOLIMIT)
+   MAXPRTY(9)                              MAXUMSGS(10000)
+   MONACLS(QMGR)                           MONCHL(HIGH)
+   MONQ(HIGH)                              PARENT( )
+   PERFMEV(DISABLED)                       PLATFORM(UNIX)
+   PSMODE(ENABLED)                         PSCLUS(ENABLED)
+   PSNPMSG(DISCARD)                        PSNPRES(NORMAL)
+   PSRTYCNT(5)                             PSSYNCPT(IFPER)
+   QMID(QM2_2025-09-05_02.13.42)           REMOTEEV(DISABLED)
+   REPOS( )                                REPOSNL( )
+   REVDNS(ENABLED)                         ROUTEREC(MSG)
+   SCHINIT(QMGR)                           SCMDSERV(QMGR)
+   SPLCAP(ENABLED)                         SSLCRLNL( )
+   SSLCRYP( )                              SSLEV(DISABLED)
+   SSLFIPS(NO)                             KEYRPWD( )
+   SSLKEYR( )                              SSLRKEYC(0)
+   STATACLS(QMGR)                          STATCHL(HIGH)
+   STATINT(1800)                           STATMQI(OFF)
+   STATQ(ON)                               STRSTPEV(ENABLED)
+   SUITEB(NONE)                            SYNCPT
+   TREELIFE(1800)                          TRIGINT(999999999)
+   VERSION(09040300)                       XRCAP(NO)
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.

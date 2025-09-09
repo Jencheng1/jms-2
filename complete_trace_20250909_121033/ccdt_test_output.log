@@ -1,0 +1,64 @@
+================================================
+ CCDT DISTRIBUTION TEST
+================================================
+
+CCDT file check:
+  Path: /home/ec2-user/unified/demo5/mq-uniform-cluster/mq/ccdt/ccdt.json
+  Exists: true
+  Readable: true
+
+Using CCDT URL: file:///home/ec2-user/unified/demo5/mq-uniform-cluster/mq/ccdt/ccdt.json
+
+Creating 9 connections using CCDT...
+
+Connection 1 -> QM1 (tag=CCDT1)
+Connection 2 -> QM1 (tag=CCDT2)
+Connection 3 -> QM3 (tag=CCDT3)
+Connection 4 -> QM2 (tag=CCDT4)
+Connection 5 -> QM2 (tag=CCDT5)
+Connection 6 -> QM3 (tag=CCDT6)
+Connection 7 -> QM2 (tag=CCDT7)
+Connection 8 -> QM2 (tag=CCDT8)
+Connection 9 -> QM1 (tag=CCDT9)
+
+--- Distribution Results ---
+QM1: 3 connections
+QM3: 2 connections
+QM2: 4 connections
+
+⚠ Uneven distribution (difference: 2)
+
+--- MQSC Verification ---
+CCDT1 found on QM1
+CCDT1 found on QM2
+CCDT1 found on QM3
+CCDT2 found on QM1
+CCDT2 found on QM2
+CCDT2 found on QM3
+CCDT3 found on QM1
+CCDT3 found on QM2
+CCDT3 found on QM3
+CCDT4 found on QM1
+CCDT4 found on QM2
+CCDT4 found on QM3
+CCDT5 found on QM1
+CCDT5 found on QM2
+CCDT5 found on QM3
+CCDT6 found on QM1
+CCDT6 found on QM2
+CCDT6 found on QM3
+CCDT7 found on QM1
+CCDT7 found on QM2
+CCDT7 found on QM3
+CCDT8 found on QM1
+CCDT8 found on QM2
+CCDT8 found on QM3
+CCDT9 found on QM1
+CCDT9 found on QM2
+CCDT9 found on QM3
+
+Cleaning up connections...
+
+================================================
+ TEST COMPLETE
+================================================

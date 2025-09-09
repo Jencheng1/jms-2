@@ -1,0 +1,23 @@
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CHL(APP.SVRCONN)
+AMQ8414I: Display Channel details.
+   CHANNEL(APP.SVRCONN)                    CHLTYPE(SVRCONN)
+   ALTDATE(2025-09-09)                     ALTTIME(11.31.58)
+   CERTLABL( )                             COMPHDR(NONE)
+   COMPMSG(NONE)                           DESCR( )
+   DISCINT(0)                              HBINT(300)
+   KAINT(AUTO)                             MAXINST(999999999)
+   MAXINSTC(999999999)                     MAXMSGL(4194304)
+   MCAUSER(mqm)                            MONCHL(QMGR)
+   RCVDATA( )                              RCVEXIT( )
+   SCYDATA( )                              SCYEXIT( )
+   SENDDATA( )                             SENDEXIT( )
+   SHARECNV(10)                            SSLCAUTH(REQUIRED)
+   SSLCIPH( )                              SSLPEER( )
+   TRPTYPE(TCP)                         
+One MQSC command read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
