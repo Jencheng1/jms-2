@@ -1,0 +1,20 @@
+# CONNTAG Distribution Test - 20 Iterations Report
+
+## Test Information
+- **Start Time:** Tue Sep  9 17:34:08 UTC 2025
+- **Test Directory:** conntag_test_results_20250909_173408
+- **Number of Iterations:** 20
+
+## Summary Results
+
+| Iteration | Tracking Key | C1 QM | C2 QM | Distribution | CONNTAG C1 | CONNTAG C2 |
+|-----------|--------------|-------|-------|--------------|------------|------------|
+| 1 | CONNTAG-1757439250659 | QM3 | QM3 | SAME_QM |  |  |
+| 2 | CONNTAG-1757439345480 | QM3 | QM3 | SAME_QM | MQCT9B11C068007E0040QM3_2025-09-05_02.13.44CONNTAG-1757439345480-C1 |  |
+| 3 | CONNTAG-1757439441004 | QM3 | QM3 | SAME_QM |  |  |
+| 4 | CONNTAG-1757439535626 | QM3 | QM3 | SAME_QM |  |  |
+| 5 | CONNTAG-1757439630618 | QM3 | QM3 | SAME_QM | MQCT9B11C06800870040QM3_2025-09-05_02.13.44CONNTAG-1757439630618-C1 |  |
+| 6 | CONNTAG-1757439724988 | QM3 | QM3 | SAME_QM |  |  |
+| 7 | CONNTAG-1757439819717 | QM3 | QM3 | SAME_QM |  |  |
+| 8 | CONNTAG-1757439914298 | QM3 | QM3 | SAME_QM |  |  |
+| 9 | CONNTAG-1757440009186 | QM3 | QM3 | SAME_QM |  | MQCT9B11C06800910040QM3_2025-09-05_02.13.44CONNTAG-1757440009186-C2 |
