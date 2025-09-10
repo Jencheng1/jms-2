@@ -715,11 +715,68 @@ factory.setStringProperty(WMQConstants.WMQ_QUEUE_MANAGER, "*"); // Allow any QM
 5. ✅ Automatic load distribution across remaining QMs
 6. ✅ CONNECTION_ID changes to show new QM identifier
 
+#### Final Test Results with Full CONNTAG Display:
+
+**Test ID**: SELECTIVE-7456855916
+
+**BEFORE FAILOVER TABLE:**
+| # | Type | Conn | Session | CONNECTION_ID | FULL_CONNTAG | Queue Manager | APPLTAG |
+|---|------|------|---------|---------------|--------------|---------------|---------|
+| 1 | Parent | C1 | - | 414D5143514D32...12A4C06800370040 | MQCT12A4C06800370040QM2_2025-09-05_02.13.42 | **QM2** | SELECTIVE-7456855916-C1 |
+| 2 | Session | C1 | 1 | 414D5143514D32...12A4C06800370040 | MQCT12A4C06800370040QM2_2025-09-05_02.13.42 | **QM2** | SELECTIVE-7456855916-C1 |
+| 3 | Session | C1 | 2 | 414D5143514D32...12A4C06800370040 | MQCT12A4C06800370040QM2_2025-09-05_02.13.42 | **QM2** | SELECTIVE-7456855916-C1 |
+| 4 | Session | C1 | 3 | 414D5143514D32...12A4C06800370040 | MQCT12A4C06800370040QM2_2025-09-05_02.13.42 | **QM2** | SELECTIVE-7456855916-C1 |
+| 5 | Session | C1 | 4 | 414D5143514D32...12A4C06800370040 | MQCT12A4C06800370040QM2_2025-09-05_02.13.42 | **QM2** | SELECTIVE-7456855916-C1 |
+| 6 | Session | C1 | 5 | 414D5143514D32...12A4C06800370040 | MQCT12A4C06800370040QM2_2025-09-05_02.13.42 | **QM2** | SELECTIVE-7456855916-C1 |
+| 7 | Parent | C2 | - | 414D5143514D31...1DA7C06800280040 | MQCT1DA7C06800280040QM1_2025-09-05_02.13.44 | **QM1** | SELECTIVE-7456855916-C2 |
+| 8 | Session | C2 | 1 | 414D5143514D31...1DA7C06800280040 | MQCT1DA7C06800280040QM1_2025-09-05_02.13.44 | **QM1** | SELECTIVE-7456855916-C2 |
+| 9 | Session | C2 | 2 | 414D5143514D31...1DA7C06800280040 | MQCT1DA7C06800280040QM1_2025-09-05_02.13.44 | **QM1** | SELECTIVE-7456855916-C2 |
+| 10 | Session | C2 | 3 | 414D5143514D31...1DA7C06800280040 | MQCT1DA7C06800280040QM1_2025-09-05_02.13.44 | **QM1** | SELECTIVE-7456855916-C2 |
+
+**Key Files Created in Session 8:**
+- `FailoverWithCacheClear.java` - Solution to clear JMS cache and show actual values
+- `SelectiveFailoverTest.java` - Selective failover test for C1 only
+- `CleanSelectiveFailoverTest.java` - Clean test with full CONNTAG display
+- `CACHE_CLEAR_SUCCESS_EVIDENCE.md` - Complete evidence documentation
+- `SELECTIVE_FAILOVER_EVIDENCE.md` - Selective failover analysis
+
+#### How to Resume Next Session:
+
+1. **Run the Cache Clear Failover Test:**
+```bash
+javac -cp "libs/*:." FailoverWithCacheClear.java
+docker run --rm --network mq-uniform-cluster_mqnet \
+    -v "/home/ec2-user/unified/demo5/mq-uniform-cluster:/app" \
+    -v "/home/ec2-user/unified/demo5/mq-uniform-cluster/libs:/libs" \
+    -v "/home/ec2-user/unified/demo5/mq-uniform-cluster/mq/ccdt:/workspace/ccdt" \
+    openjdk:17 java -cp "/app:/libs/*" FailoverWithCacheClear
+```
+
+2. **Run the Clean Selective Failover Test:**
+```bash
+javac -cp "libs/*:." CleanSelectiveFailoverTest.java
+docker run --rm --network mq-uniform-cluster_mqnet \
+    -v "/home/ec2-user/unified/demo5/mq-uniform-cluster:/app" \
+    -v "/home/ec2-user/unified/demo5/mq-uniform-cluster/libs:/libs" \
+    -v "/home/ec2-user/unified/demo5/mq-uniform-cluster/mq/ccdt:/workspace/ccdt" \
+    openjdk:17 java -cp "/app:/libs/*" CleanSelectiveFailoverTest
+```
+
+3. **Check All Queue Managers:**
+```bash
+docker ps | grep qm
+```
+
+4. **Stop Specific QM for Failover:**
+```bash
+docker stop qm2  # Or qm1, qm3 depending on where C1 is connected
+```
+
 ---
 
-**Last Updated**: September 9, 2025 22:15 UTC
-**Status**: CACHE ISSUE RESOLVED - FULL CONNTAG EVIDENCE CAPTURED
+**Last Updated**: September 9, 2025 22:30 UTC
+**Status**: FULL SUCCESS - CACHE CLEARED, FULL CONNTAG DISPLAYED, SELECTIVE FAILOVER TESTED
 **Environment**: Docker on Linux (Amazon Linux 2)
 **MQ Version**: 9.3.5.0 (Latest)
 **Java Version**: OpenJDK 17
-**Key Achievement**: Successfully cleared JMS cache and proved failover with complete CONNTAG changes for all 10 connections maintaining parent-child affinity
+**Key Achievement**: Successfully demonstrated JMS cache clearing, full CONNTAG display without truncation, selective failover with parent-child affinity, and complete 10-connection tables before and after failover
