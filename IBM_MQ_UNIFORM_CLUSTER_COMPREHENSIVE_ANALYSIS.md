@@ -199,25 +199,10 @@ public class ConnectionTagExtractor {
         
         MQConnection mqConn = (MQConnection) connection;
         
-        // Method 1: Direct CONNTAG retrieval
+        // Direct CONNTAG retrieval from MQ connection properties
         String connTag = mqConn.getStringProperty("XMSC_WMQ_RESOLVED_CONNECTION_TAG");
         if (connTag != null && !connTag.isEmpty()) {
             return connTag;
-        }
-        
-        // Method 2: Construct from CONNECTION_ID if CONNTAG not available
-        String connId = mqConn.getStringProperty("XMSC_WMQ_CONNECTION_ID");
-        String qmName = mqConn.getStringProperty("XMSC_WMQ_RESOLVED_QUEUE_MANAGER");
-        
-        if (connId != null && connId.length() >= 48 && qmName != null) {
-            // Extract handle from CONNECTION_ID (bytes 32-47)
-            String handle = connId.substring(32, 48);
-            
-            // Construct CONNTAG
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss");
-            String timestamp = sdf.format(new Date());
-            
-            return "MQCT" + handle + qmName + "_" + timestamp;
         }
         
         return "UNKNOWN";
