@@ -1,0 +1,52 @@
+{
+  "channel": [
+    {
+      "name": "APP.SVRCONN",
+      "type": "clientConnection",
+      "clientConnection": {
+        "connection": [
+          {
+            "host": "10.10.10.10",
+            "port": 1414
+          },
+          {
+            "host": "10.10.10.11",
+            "port": 1414
+          },
+          {
+            "host": "10.10.10.12",
+            "port": 1414
+          }
+        ],
+        "queueManager": ""
+      },
+      "transmissionSecurity": {
+        "cipherSpecification": ""
+      },
+      "connectionManagement": {
+        "sharingConversations": 10,
+        "heartbeatInterval": 300,
+        "keepAliveInterval": -1,
+        "reconnect": {
+          "enabled": true,
+          "timeout": 1800
+        },
+        "affinity": "none",
+        "clientWeight": 1
+      },
+      "general": {
+        "description": "Client channel for uniform cluster with automatic balancing"
+      }
+    }
+  ],
+  "tuning": {
+    "advancedProperties": {
+      "automaticReconnect": true,
+      "reconnectDelay": {
+        "delay": 1000,
+        "multiplier": 2,
+        "maximumDelay": 30000
+      }
+    }
+  }
+}

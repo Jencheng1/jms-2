@@ -1,0 +1,55 @@
+
+================================================================================
+         SPRING BOOT MQ FAILOVER STANDALONE TEST - FULL CONNTAG
+================================================================================
+Test ID: SPRINGBOOT-1757765621045
+Start Time: 12:13:41.144
+CCDT: file:///workspace/ccdt/ccdt.json
+
+=== Spring Boot Approach Demonstration ===
+• Uses string literal "JMS_IBM_CONNECTION_TAG" (not a constant)
+• Casts Connection to MQConnection
+• Casts Session to MQSession
+• This is how Spring Boot applications access CONNTAG
+
+=== CCDT Configuration ===
+• affinity: "none" - Random QM selection
+• clientWeight: 1 - Equal distribution
+• Queue Managers: QM1, QM2, QM3
+
+[12:13:41.657] MQConnectionFactory configured:
+  • Transport: CLIENT mode
+  • CCDT URL: file:///workspace/ccdt/ccdt.json
+  • Queue Manager: * (any from CCDT)
+  • Reconnect: ENABLED
+
+[12:13:41.658] Creating Connection 1 with 5 sessions...
+Exception in thread "main" com.ibm.msg.client.jms.DetailedJMSSecurityException: JMSWMQ2021: The security authentication was not valid that was supplied for queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Please check if the supplied username and password are correct on the queue manager to which you are connecting.  For further information, review the queue manager error logs and the Securing IBM MQ topic within IBM Documentation.
+	at com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:531)
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:482)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9009)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8349)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:242)
+	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6193)
+	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6256)
+	at SpringBootMQFailoverStandaloneTest.createConnectionWithSessions(SpringBootMQFailoverStandaloneTest.java:132)
+	at SpringBootMQFailoverStandaloneTest.main(SpringBootMQFailoverStandaloneTest.java:63)
+Caused by: com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2035' ('MQRC_NOT_AUTHORIZED').
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+	... 9 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2059;AMQ9204: Connection to host '10.10.10.10(1414)' rejected. [3=10.10.10.10(1414),4=]
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13621)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13202)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:415)
+	... 8 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2059;AMQ9204: Connection to host '10.10.10.12(1414)' rejected. [3=10.10.10.12(1414),4=]
+	... 15 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2059;AMQ9204: Connection to host '10.10.10.11(1414)' rejected. [3=10.10.10.11(1414),4=]
+	... 15 more

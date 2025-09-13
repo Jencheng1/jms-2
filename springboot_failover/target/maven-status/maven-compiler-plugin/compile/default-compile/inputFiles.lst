@@ -1,0 +1,9 @@
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/MQContainerListener.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootFailoverTestCorrected.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootCompleteFailoverTest.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootFailoverTestSimple.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootMQFailoverApplication.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootFailoverTableTest.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootFailoverFullConntagTest.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootMQFailoverStandaloneTest.java
+/home/ec2-user/unified/demo5/mq-uniform-cluster/springboot_failover/src/main/java/com/ibm/mq/demo/SpringBootFailoverTest.java
