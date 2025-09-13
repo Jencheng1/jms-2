@@ -1,0 +1,16 @@
+=== MQSC CONNTAG Capture: before_failover - 2025-09-13 01:46:14.910 ===
+
+=============== Queue Manager: QM1 ===============
+     1 : DIS CONN(*) WHERE(APPLTAG LK SPR*) ALL
+
+CONNTAGs on QM1:
+
+=============== Queue Manager: QM2 ===============
+     1 : DIS CONN(*) WHERE(APPLTAG LK SPR*) ALL
+
+CONNTAGs on QM2:
+
+=============== Queue Manager: QM3 ===============
+     1 : DIS CONN(*) WHERE(APPLTAG LK SPR*) ALL
+
+CONNTAGs on QM3:

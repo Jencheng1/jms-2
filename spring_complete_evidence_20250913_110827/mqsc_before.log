@@ -1,0 +1,5 @@
+=== MQSC Evidence - BEFORE FAILOVER ===
+Timestamp: 2025-09-13 11:08:37.493
+
+=== Queue Manager: QM1 ===
+Error response from daemon: container 0c0fc6f2e51c906a28f30e4e0b4e32f8bb1bd994910499bf80a234fcc79fbb19 is not running

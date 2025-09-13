@@ -1,0 +1,16 @@
+
+================================================================================
+       SPRING BOOT MQ FAILOVER TEST WITH FULL CONNTAG - TIMESTAMPED
+================================================================================
+Test ID: SPRING-1757761891077
+Start Time: 11:11:31.445
+CCDT: file:///workspace/ccdt/ccdt.json
+
+=== CCDT Configuration Details ===
+• affinity: "none" - Enables random QM selection
+• clientWeight: 1 - Equal distribution across QMs
+• reconnect.enabled: true - Automatic reconnection
+• reconnect.timeout: 1800 - 30 minute timeout
+• Queue Managers: QM1, QM2, QM3 (Uniform Cluster)
+
+Creating Connection 1 with 5 sessions...

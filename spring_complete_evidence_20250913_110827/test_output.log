@@ -1,0 +1,68 @@
+
+================================================================================
+       SPRING BOOT MQ FAILOVER TEST WITH FULL CONNTAG - TIMESTAMPED
+================================================================================
+Test ID: SPRING-1757761708456
+Start Time: 11:08:28.545
+CCDT: file:///workspace/ccdt/ccdt.json
+
+=== CCDT Configuration Details ===
+• affinity: "none" - Enables random QM selection
+• clientWeight: 1 - Equal distribution across QMs
+• reconnect.enabled: true - Automatic reconnection
+• reconnect.timeout: 1800 - 30 minute timeout
+• Queue Managers: QM1, QM2, QM3 (Uniform Cluster)
+
+Creating Connection 1 with 5 sessions...
+Exception in thread "main" com.ibm.msg.client.jms.DetailedIllegalStateException: JMSWMQ2020: Failed to connect to queue manager '*' with connection mode 'Client' and supplied CCDT URL 'file:///workspace/ccdt/ccdt.json', see linked exception for more information.
+Check the queue manager is started and if running in client mode, check there is a listener running. Please see the linked exception for more information.
+	at com.ibm.msg.client.wmq.common.internal.Reason.reasonToException(Reason.java:489)
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:215)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:482)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9009)
+	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8349)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:242)
+	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6193)
+	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6222)
+	at SpringBootFailoverFullConntagTest.main(SpringBootFailoverFullConntagTest.java:62)
+Caused by: com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2538' ('MQRC_HOST_NOT_AVAILABLE').
+	at com.ibm.msg.client.wmq.common.internal.Reason.createException(Reason.java:203)
+	... 8 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2538;AMQ9204: Connection to host '10.10.10.10(1414)' rejected. [1=com.ibm.mq.jmqi.JmqiException[CC=2;RC=2538;AMQ9204: Connection to host '/10.10.10.10:1414' rejected. [1=java.net.NoRouteToHostException[No route to host],3=/10.10.10.10:1414,4=TCP,5=Socket.connect]],3=10.10.10.10(1414),4=,5=RemoteTCPConnection.bindAndConnectSocket]
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13687)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13202)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:415)
+	... 7 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2538;AMQ9204: Connection to host '10.10.10.11(1414)' rejected. [1=com.ibm.mq.jmqi.JmqiException[CC=2;RC=2538;AMQ9204: Connection to host '/10.10.10.11:1414' rejected. [1=java.net.NoRouteToHostException[No route to host],3=/10.10.10.11:1414,4=TCP,5=Socket.connect]],3=10.10.10.11(1414),4=,5=RemoteTCPConnection.bindAndConnectSocket]
+	... 14 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2538;AMQ9204: Connection to host '10.10.10.12(1414)' rejected. [1=com.ibm.mq.jmqi.JmqiException[CC=2;RC=2538;AMQ9204: Connection to host '/10.10.10.12:1414' rejected. [1=java.net.NoRouteToHostException[No route to host],3=/10.10.10.12:1414,4=TCP,5=Socket.connect]],3=10.10.10.12(1414),4=,5=RemoteTCPConnection.bindAndConnectSocket]
+	... 14 more
+Caused by: com.ibm.mq.jmqi.JmqiException: CC=2;RC=2538;AMQ9204: Connection to host '/10.10.10.12:1414' rejected. [1=java.net.NoRouteToHostException[No route to host],3=/10.10.10.12:1414,4=TCP,5=Socket.connect]
+	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.bindAndConnectSocket(RemoteTCPConnection.java:937)
+	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.protocolConnect(RemoteTCPConnection.java:1511)
+	at com.ibm.mq.jmqi.remote.impl.RemoteConnection.connect(RemoteConnection.java:1014)
+	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getNewConnection(RemoteConnectionSpecification.java:691)
+	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSessionFromNewConnection(RemoteConnectionSpecification.java:283)
+	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSession(RemoteConnectionSpecification.java:170)
+	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionPool.getSession(RemoteConnectionPool.java:128)
+	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13411)
+	... 13 more
+Caused by: java.net.NoRouteToHostException: No route to host
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/java.net.Socket.connect(Socket.java:583)
+	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection$4.run(RemoteTCPConnection.java:1111)
+	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection$4.run(RemoteTCPConnection.java:1103)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318)
+	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.connectSocket(RemoteTCPConnection.java:1103)
+	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.bindAndConnectSocket(RemoteTCPConnection.java:843)
+	... 20 more
