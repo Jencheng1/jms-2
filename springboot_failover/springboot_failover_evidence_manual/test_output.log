@@ -1,0 +1,21 @@
+
+================================================================================
+    SPRING BOOT MQ FAILOVER TEST WITH COMPREHENSIVE MONITORING
+================================================================================
+Test ID: SPRINGBOOT-FAILOVER-1757767393601
+Start Time: 12:43:13.685
+CCDT: file:///workspace/ccdt/ccdt.json
+Host: a9821a01808a
+
+=== SPRING BOOT CONTAINER LISTENER APPROACH ===
+• ExceptionListener detects connection failures
+• Container automatically triggers reconnection
+• Parent connection and all child sessions move together
+• Zero transaction loss with automatic recovery
+
+[12:43:14.142] 🔧 MQConnectionFactory configured:
+  • Reconnect: ENABLED (WMQ_CLIENT_RECONNECT)
+  • Reconnect Timeout: 1800 seconds
+  • CCDT affinity: none (random QM selection)
+
+[12:43:14.143] 📌 Creating Connection 1 with 5 sessions...
