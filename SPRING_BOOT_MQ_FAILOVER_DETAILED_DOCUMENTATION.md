@@ -87,6 +87,8 @@ public class MQConfig {
 
 **Purpose**: Tracks parent connections and child sessions with full metadata extraction
 
+**⚠️ CRITICAL UPDATE**: Fixed CONNTAG extraction to use correct WMQ constants
+
 ```java
 @Service
 public class ConnectionTrackingService {
@@ -98,14 +100,12 @@ public class ConnectionTrackingService {
     public ConnectionInfo trackConnection(Connection connection, String trackingKey) {
         // Extract MQ-specific metadata
         String connectionId = extractConnectionId(connection);     // JMS_IBM_CONNECTION_ID
-        String connTag = extractConnTag(connection);               // Connection tag
-        String fullConnTag = extractFullConnTag(connection);       // Full CONNTAG with QM name
+        String fullConnTag = extractFullConnTag(connection);       // CRITICAL: Full CONNTAG with QM name
         String queueManager = extractQueueManager(connection);     // Resolved QM
         
         ConnectionInfo info = ConnectionInfo.builder()
             .connectionId(connectionId)        // 48-char hex ID
-            .connectionTag(connTag)            // Base CONNTAG
-            .fullConnTag(fullConnTag)          // Full CONNTAG with QM
+            .fullConnTag(fullConnTag)          // CRITICAL: MQCT<handle><QM>_<timestamp>
             .queueManager(queueManager)        // QM1/QM2/QM3
             .applicationTag(trackingKey)       // SPRING-FAILOVER-timestamp
             .isParent(true)
@@ -115,12 +115,28 @@ public class ConnectionTrackingService {
         return info;
     }
     
+    // CRITICAL FIX: Correct CONNTAG extraction
+    private String extractFullConnTag(Connection connection) throws JMSException {
+        if (connection instanceof MQConnection) {
+            MQConnection mqConn = (MQConnection) connection;
+            JmsPropertyContext context = mqConn.getPropertyContext();
+            
+            // CORRECT: Use JMS_IBM_CONNECTION_TAG for full CONNTAG
+            // NOT JMS_IBM_MQMD_CORRELID which is for message correlation!
+            String fullConnTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+            
+            if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                return fullConnTag;  // Format: MQCT<handle><QM>_<timestamp>
+            }
+        }
+        return "UNKNOWN";
+    }
+    
     public SessionInfo trackSession(Session session, String parentConnectionId, int sessionNumber) {
         // Sessions inherit parent's connection context
         SessionInfo info = SessionInfo.builder()
             .parentConnectionId(parentConnectionId)  // Links to parent
-            .sessionTag(extractSessionConnTag(session))
-            .fullConnTag(extractFullSessionConnTag(session))
+            .fullConnTag(extractFullSessionConnTag(session))  // CRITICAL: Same CONNTAG as parent
             .queueManager(extractSessionQueueManager(session))
             .sessionNumber(sessionNumber)
             .threadName(Thread.currentThread().getName())
@@ -131,20 +147,40 @@ public class ConnectionTrackingService {
         sessionsByConnection.get(parentConnectionId).add(info);
         return info;
     }
+    
+    // CRITICAL FIX: Session CONNTAG extraction
+    private String extractFullSessionConnTag(Session session) throws JMSException {
+        if (session instanceof MQSession) {
+            MQSession mqSession = (MQSession) session;
+            JmsPropertyContext context = mqSession.getPropertyContext();
+            
+            // CORRECT: Sessions inherit parent's CONNTAG
+            String fullConnTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+            
+            if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                return fullConnTag;  // Same format as parent
+            }
+        }
+        return "UNKNOWN";
+    }
 }
 ```
 
 **Critical Tracking Fields**:
 - **CONNECTION_ID**: 48-character hex string (e.g., `414D5143514D31...`)
-  - First 16 chars: "AMQC" prefix in hex
-  - Next 16 chars: Queue Manager name
-  - Last 16 chars: Unique handle
+  - First 8 chars: `414D5143` = "AMQC" in hex
+  - Next 16 chars: Queue Manager name (padded)
+  - Last 24 chars: Unique handle
 - **CONNTAG**: Format `MQCT<handle><QM>_<timestamp>`
+  - **CRITICAL**: Must use `WMQConstants.JMS_IBM_CONNECTION_TAG`
+  - **NOT**: `WMQConstants.JMS_IBM_MQMD_CORRELID` (wrong!)
 - **APPLTAG**: Set via `WMQ_APPLICATIONNAME` property
 
 ### 3. FailoverMessageListener.java - Message Processing with Session Tracking
 
 **Purpose**: Processes messages and tracks session-level information during failover
+
+**⚠️ CRITICAL UPDATE**: Fixed session CONNTAG extraction to match parent connection
 
 ```java
 @Component
@@ -157,7 +193,7 @@ public class FailoverMessageListener implements SessionAwareMessageListener<Mess
     public void onMessage(Message message, Session session) throws JMSException {
         // Extract session metadata
         String connectionId = extractConnectionId(session);
-        String sessionConnTag = extractSessionConnTag(session);
+        String sessionConnTag = extractSessionConnTag(session);  // CRITICAL: Full CONNTAG
         String queueManager = extractQueueManager(session);
         
         log.info("[MSG] Session QM: {}, CONNTAG: {}, ConnectionID: {}", 
@@ -172,6 +208,27 @@ public class FailoverMessageListener implements SessionAwareMessageListener<Mess
         }
     }
     
+    // CRITICAL FIX: Correct session CONNTAG extraction
+    private String extractSessionConnTag(Session session) {
+        try {
+            if (session instanceof MQSession) {
+                MQSession mqSession = (MQSession) session;
+                JmsPropertyContext context = mqSession.getPropertyContext();
+                
+                // CORRECT: Get the full CONNTAG from session
+                // This returns format: MQCT<handle><QM>_<timestamp>
+                String fullConnTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+                
+                if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                    return fullConnTag;
+                }
+            }
+        } catch (Exception e) {
+            log.debug("Could not extract session CONNTAG: {}", e.getMessage());
+        }
+        return "UNKNOWN";
+    }
+    
     private boolean isConnectionError(JMSException e) {
         return e.getMessage().contains("MQRC_CONNECTION_BROKEN") ||
                e.getMessage().contains("MQRC_Q_MGR_NOT_AVAILABLE");
@@ -180,9 +237,10 @@ public class FailoverMessageListener implements SessionAwareMessageListener<Mess
 ```
 
 **Session Tracking During Message Processing**:
-- Each message processed captures session's CONNTAG
+- Each message processed captures session's **FULL CONNTAG** (not CORRELID!)
 - Session's Queue Manager extracted from `JMS_IBM_RESOLVED_QUEUE_MANAGER`
 - Connection failures trigger reconnection handling
+- **CRITICAL**: Sessions inherit parent's CONNTAG format
 
 ## Connection and Session Management
 
@@ -233,7 +291,15 @@ Spring Boot creates message listener containers that:
 3. CachingConnectionFactory maintains parent connections
 4. DefaultMessageListenerContainer manages session lifecycle
 
-## CONNTAG and APPTAG Correlation
+## CONNTAG and APPTAG Correlation - CRITICAL FOR PARENT-CHILD PROOF
+
+### ⚠️ CRITICAL: Why CONNTAG is Essential
+
+**CONNTAG is THE KEY to proving parent-child session affinity**. It's the unique identifier that:
+1. **Links all sessions to their parent connection**
+2. **Changes ONLY when connection moves to different QM**
+3. **Visible in both JMS debug and MQSC output**
+4. **MUST BE IDENTICAL between parent and all child sessions**
 
 ### CONNTAG Structure Analysis
 
@@ -242,24 +308,82 @@ CONNTAG: MQCT12A4C06800370040QM2_2025-09-05_02.13.42
          ^^^^^^^^^^^^^^^^^^^^  ^^^ ^^^^^^^^^^^^^^^^^^^
          |                     |   |
          Handle (16 chars)     QM  Timestamp
+         
+CRITICAL POINTS:
+- MQCT: Fixed prefix (always present)
+- Handle: Unique 16-character identifier
+- QM Name: Indicates which Queue Manager (QM1/QM2/QM3)
+- Timestamp: Connection establishment time
+```
+
+### Correct CONNTAG Extraction (CRITICAL FIX)
+
+```java
+// ✅ CORRECT - What we use now (matches regular JMS)
+String connTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+
+// ❌ WRONG - What was used before (returns correlation ID, not CONNTAG!)
+Object wrongTag = context.getObjectProperty(WMQConstants.JMS_IBM_MQMD_CORRELID);
 ```
 
 ### APPTAG Setting and Propagation
 
 ```java
-// Set at ConnectionFactory level
+// Set at ConnectionFactory level - CRITICAL for tracking
 factory.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, 
     "SPRING-FAILOVER-" + System.currentTimeMillis());
 
-// Visible in MQSC
+// Visible in MQSC - Used to filter our connections
 DIS CONN(*) WHERE(APPLTAG LK 'SPRING-FAILOVER*')
+```
+
+### Complete Property Alignment with Regular JMS
+
+| Property | Spring Boot Extraction | Regular JMS Extraction | Critical for |
+|----------|------------------------|------------------------|--------------|
+| **CONNTAG** | `WMQConstants.JMS_IBM_CONNECTION_TAG` | `XMSC.WMQ_RESOLVED_CONNECTION_TAG` | Parent-Child Proof |
+| **CONNECTION_ID** | `WMQConstants.JMS_IBM_CONNECTION_ID` | `XMSC.WMQ_CONNECTION_ID` | Unique Connection ID |
+| **APPTAG** | `WMQConstants.WMQ_APPLICATIONNAME` | `WMQConstants.WMQ_APPLICATIONNAME` | MQSC Filtering |
+| **Queue Manager** | `WMQConstants.JMS_IBM_RESOLVED_QUEUE_MANAGER` | `XMSC.WMQ_RESOLVED_QUEUE_MANAGER` | QM Identification |
+| **Host Name** | `WMQConstants.JMS_IBM_HOST_NAME` | N/A | Connection Details |
+| **Port** | `WMQConstants.JMS_IBM_PORT` | N/A | Connection Details |
+
+### JMS Debug and Trace Alignment
+
+Both Spring Boot and Regular JMS must capture:
+
+```java
+// Enable JMS trace (same for both)
+System.setProperty("com.ibm.msg.client.commonservices.trace.status", "ON");
+System.setProperty("com.ibm.msg.client.commonservices.trace.outputName", "mqjms.trc");
+
+// Enable debug logging (Spring Boot)
+logging.level.com.ibm.mq=DEBUG
+logging.level.jakarta.jms=DEBUG
+
+// Key traces to match:
+// 1. Connection establishment: Shows CONNTAG assignment
+// 2. Session creation: Shows CONNTAG inheritance
+// 3. Failover event: Shows CONNTAG change
+// 4. APPLTAG propagation: Shows in all connections
 ```
 
 ### Correlation Evidence Collection
 
-1. **JMS Level**: Extract from JmsPropertyContext
-2. **MQSC Level**: Query with APPLTAG filter
-3. **Network Level**: Capture with tcpdump
+1. **JMS Level**: 
+   - Extract CONNTAG using `JMS_IBM_CONNECTION_TAG`
+   - Extract CONNECTION_ID using `JMS_IBM_CONNECTION_ID`
+   - Extract APPTAG from factory configuration
+
+2. **MQSC Level**:
+   - Query with APPTAG filter: `DIS CONN(*) WHERE(APPLTAG LK 'SPRING*')`
+   - Verify CONNTAG matches: Look for `CONNTAG(MQCT...)`
+   - Count connections: Should be 1 parent + N sessions
+
+3. **Network Level**:
+   - tcpdump captures TCP session establishment
+   - Shows which QM receives connections
+   - Proves all sessions go to same QM as parent
 
 ## Failover Mechanism
 

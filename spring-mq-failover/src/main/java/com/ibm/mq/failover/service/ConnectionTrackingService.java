@@ -112,27 +112,34 @@ public class ConnectionTrackingService {
     }
     
     private String extractConnTag(Connection connection) throws JMSException {
-        if (connection instanceof MQConnection) {
-            MQConnection mqConn = (MQConnection) connection;
-            JmsPropertyContext context = mqConn.getPropertyContext();
-            Object connTag = context.getObjectProperty(WMQConstants.JMS_IBM_MQMD_CORRELID);
-            if (connTag != null) {
-                return connTag.toString();
-            }
-        }
-        return "UNKNOWN";
+        // This method now delegates to extractFullConnTag for consistency
+        return extractFullConnTag(connection);
     }
     
     private String extractFullConnTag(Connection connection) throws JMSException {
         if (connection instanceof MQConnection) {
             MQConnection mqConn = (MQConnection) connection;
             JmsPropertyContext context = mqConn.getPropertyContext();
-            String baseTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
-            if (baseTag != null) {
-                return baseTag;
+            
+            // CORRECT: Use JMS_IBM_CONNECTION_TAG for full CONNTAG
+            // This gives us format: MQCT<handle><QM>_<timestamp>
+            String fullConnTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+            
+            if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                return fullConnTag;
+            }
+            
+            // Fallback: Try without constant in case of version differences
+            try {
+                fullConnTag = context.getStringProperty("JMS_IBM_CONNECTION_TAG");
+                if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                    return fullConnTag;
+                }
+            } catch (Exception e) {
+                log.debug("Fallback CONNTAG extraction failed: {}", e.getMessage());
             }
         }
-        return extractConnTag(connection);
+        return "UNKNOWN";
     }
     
     private String extractQueueManager(Connection connection) throws JMSException {
@@ -175,27 +182,34 @@ public class ConnectionTrackingService {
     }
     
     private String extractSessionConnTag(Session session) throws JMSException {
-        if (session instanceof MQSession) {
-            MQSession mqSession = (MQSession) session;
-            JmsPropertyContext context = mqSession.getPropertyContext();
-            Object connTag = context.getObjectProperty(WMQConstants.JMS_IBM_MQMD_CORRELID);
-            if (connTag != null) {
-                return connTag.toString();
-            }
-        }
-        return "UNKNOWN";
+        // This method now delegates to extractFullSessionConnTag for consistency
+        return extractFullSessionConnTag(session);
     }
     
     private String extractFullSessionConnTag(Session session) throws JMSException {
         if (session instanceof MQSession) {
             MQSession mqSession = (MQSession) session;
             JmsPropertyContext context = mqSession.getPropertyContext();
-            String baseTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
-            if (baseTag != null) {
-                return baseTag;
+            
+            // CORRECT: Sessions inherit parent's CONNTAG
+            // Use JMS_IBM_CONNECTION_TAG for full CONNTAG
+            String fullConnTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+            
+            if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                return fullConnTag;
+            }
+            
+            // Fallback: Try without constant in case of version differences
+            try {
+                fullConnTag = context.getStringProperty("JMS_IBM_CONNECTION_TAG");
+                if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                    return fullConnTag;
+                }
+            } catch (Exception e) {
+                log.debug("Fallback session CONNTAG extraction failed: {}", e.getMessage());
             }
         }
-        return extractSessionConnTag(session);
+        return "UNKNOWN";
     }
     
     private String extractSessionQueueManager(Session session) throws JMSException {

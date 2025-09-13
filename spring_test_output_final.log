@@ -1,0 +1,8 @@
+================================================================================
+          SPRING BOOT MQ FAILOVER TEST WITH PARENT-CHILD TABLES
+================================================================================
+Test ID: SPRING-7325
+Time: 2025-09-13 01:33:27.741
+
+The IBM MQ messaging client trace mechanism is tracing to '/mqjavaclient_7.trc'
+Creating Connection 1 with 5 sessions...

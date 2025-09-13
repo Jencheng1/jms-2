@@ -113,9 +113,23 @@ public class FailoverMessageListener implements SessionAwareMessageListener<Mess
             if (session instanceof MQSession) {
                 MQSession mqSession = (MQSession) session;
                 JmsPropertyContext context = mqSession.getPropertyContext();
-                String tag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
-                if (tag != null) {
-                    return tag;
+                
+                // CORRECT: Get the full CONNTAG from session
+                // This returns format: MQCT<handle><QM>_<timestamp>
+                String fullConnTag = context.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+                
+                if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                    return fullConnTag;
+                }
+                
+                // Fallback: Try without constant in case of version differences
+                try {
+                    fullConnTag = context.getStringProperty("JMS_IBM_CONNECTION_TAG");
+                    if (fullConnTag != null && !fullConnTag.isEmpty()) {
+                        return fullConnTag;
+                    }
+                } catch (Exception ex) {
+                    log.debug("Fallback CONNTAG extraction failed: {}", ex.getMessage());
                 }
             }
         } catch (Exception e) {

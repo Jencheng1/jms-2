@@ -774,89 +774,106 @@ docker stop qm2  # Or qm1, qm3 depending on where C1 is connected
 
 ---
 
-### September 13, 2025 - Session 9 (Spring Boot MQ Failover Documentation)
-- **OBJECTIVE**: Create comprehensive Spring Boot MQ failover documentation and test runner
-- **KEY ACHIEVEMENT**: Documented Spring Boot architecture with parent-child session tracking
+### September 13, 2025 - Session 9 (Spring Boot MQ Failover Documentation & Critical CONNTAG Fix)
+- **OBJECTIVE**: Create comprehensive Spring Boot MQ failover documentation and fix critical CONNTAG extraction
+- **KEY ACHIEVEMENT**: Fixed critical CONNTAG extraction bug and aligned Spring Boot with regular JMS
+
+#### CRITICAL FIX Applied:
+**CONNTAG Extraction Bug Fixed** - This was essential for parent-child correlation:
+- **WRONG**: Used `WMQConstants.JMS_IBM_MQMD_CORRELID` (message correlation ID)
+- **CORRECT**: Now uses `WMQConstants.JMS_IBM_CONNECTION_TAG` (actual CONNTAG)
+- **Impact**: Now properly returns `MQCT<handle><QM>_<timestamp>` format
+- **Alignment**: Spring Boot now matches regular JMS client behavior
 
 #### Documentation Created:
-1. **SPRING_BOOT_MQ_FAILOVER_DETAILED_DOCUMENTATION.md** - Complete technical guide including:
+1. **SPRING_BOOT_MQ_FAILOVER_DETAILED_DOCUMENTATION.md** - Complete technical guide (UPDATED):
+   - ⚠️ CRITICAL sections added highlighting CONNTAG fix
    - Spring Boot MQ architecture deep dive
-   - MQConfig.java with CCDT and auto-reconnect configuration
-   - ConnectionTrackingService.java for parent-child correlation
-   - FailoverMessageListener.java for session-aware message processing
-   - CONNTAG and APPTAG correlation mechanisms
-   - Container thread model with session isolation
-   - Failover detection and recovery flow
-   - Evidence collection strategy at JMS, MQSC, and network levels
+   - Fixed ConnectionTrackingService.java with correct CONNTAG extraction
+   - Fixed FailoverMessageListener.java with proper session tracking
+   - Complete property alignment table with regular JMS
+   - JMS debug and trace alignment instructions
+   - Evidence collection strategy at all levels
 
-2. **run-spring-boot-failover-test.sh** - Comprehensive test runner script:
+2. **CONNTAG_EXTRACTION_CRITICAL_FIX.md** - Detailed explanation of the fix:
+   - Wrong vs correct approach comparison
+   - Why JMS_IBM_MQMD_CORRELID was wrong
+   - Property mapping reference table
+   - Test verification checklist
+
+3. **SPRING_BOOT_VS_JMS_COMPARISON.md** - Complete comparison:
+   - Side-by-side code comparison
+   - Property extraction alignment
+   - Critical issues found and fixed
+   - Verification checklist
+
+4. **run-spring-boot-failover-test.sh** - Comprehensive test runner script:
    - Test 1: Parent-child connection grouping (5 sessions + 3 sessions)
    - Test 2: Failover behavior with CONNTAG tracking
    - MQSC evidence collection with APPLTAG filtering
    - tcpdump network traffic capture
    - Automated report generation
 
-#### Key Technical Components Documented:
+5. **ConnTagExtractionTest.java** - JUnit test to verify correct extraction:
+   - Demonstrates correct vs wrong CONNTAG extraction
+   - Verifies CONNTAG format and inheritance
+   - Tests all critical MQ properties
 
-**MQConfig.java**:
-- CCDT URL configuration for Uniform Cluster
-- Queue Manager wildcard "*" for any QM connection
-- Application name with timestamp for unique tracking
-- Auto-reconnect with 30-minute timeout
-- CachingConnectionFactory with 10-session cache
+#### Code Files Fixed:
+1. **ConnectionTrackingService.java**:
+   - `extractFullConnTag()` - Now uses `JMS_IBM_CONNECTION_TAG`
+   - `extractFullSessionConnTag()` - Sessions properly inherit parent CONNTAG
+   - Added fallback extraction methods
 
-**ConnectionTrackingService.java**:
-- Parent connection tracking with CONNECTION_ID extraction
-- Session tracking with parent linkage
-- CONNTAG format: `MQCT<handle><QM>_<timestamp>`
-- Full connection table generation with parent-child hierarchy
+2. **FailoverMessageListener.java**:
+   - `extractSessionConnTag()` - Fixed to use correct constant
+   - Added proper error handling and fallbacks
 
-**FailoverMessageListener.java**:
-- SessionAwareMessageListener implementation
-- Session-to-connection mapping
-- Connection failure detection (MQRC_CONNECTION_BROKEN)
-- Automatic failover handling
+#### Critical Technical Points:
 
-#### Spring Boot Architecture Insights:
+**CONNTAG Format** (Now correctly extracted):
+```
+MQCT12A4C06800370040QM2_2025-09-05_02.13.42
+^^^^^^^^^^^^^^^^^^^^  ^^^ ^^^^^^^^^^^^^^^^^^^
+Handle (16 chars)     QM  Timestamp
+```
 
-1. **Container Thread Model**:
-   - Each DefaultMessageListenerContainer thread gets dedicated session
-   - Sessions created from shared parent connection
-   - Thread names: container-1, container-2, etc.
+**Property Alignment Table**:
+| Property | Spring Boot | Regular JMS | Purpose |
+|----------|-------------|-------------|---------|
+| CONNTAG | `JMS_IBM_CONNECTION_TAG` | `XMSC.WMQ_RESOLVED_CONNECTION_TAG` | Parent-Child Proof |
+| CONNECTION_ID | `JMS_IBM_CONNECTION_ID` | `XMSC.WMQ_CONNECTION_ID` | Unique ID |
+| APPTAG | `WMQ_APPLICATIONNAME` | `WMQ_APPLICATIONNAME` | MQSC Filter |
 
-2. **Session Caching Impact**:
-   - CachingConnectionFactory maintains session cache
-   - Cache cleared on connection failure
-   - New cache populated after failover
+#### Why This Fix is Critical:
+1. **Parent-Child Correlation**: CONNTAG is THE key to proving sessions stay with parent
+2. **MQSC Matching**: JMS CONNTAG must match what appears in MQSC output
+3. **Failover Proof**: CONNTAG changes when connection moves to different QM
+4. **Test Validity**: Without correct CONNTAG, tests cannot prove affinity
 
-3. **Parent-Child Proof Strategy**:
-   - Connection 1: 1 parent + 5 sessions
-   - Connection 2: 1 parent + 3 sessions
-   - All sessions inherit parent's CONNECTION_ID
-   - APPLTAG set as SPRING-FAILOVER-<timestamp>
-
-4. **Failover Evidence Collection**:
-   - Pre-failover CONNTAG capture
-   - Queue Manager stop to trigger failover
-   - Post-failover CONNTAG comparison
-   - All sessions move together to new QM
-
-#### Files Created in Session 9:
-- `SPRING_BOOT_MQ_FAILOVER_DETAILED_DOCUMENTATION.md` - 25KB comprehensive documentation
-- `run-spring-boot-failover-test.sh` - Automated test runner with evidence collection
-- Ready to execute tests with full evidence collection
+#### Files Created/Modified in Session 9:
+- `SPRING_BOOT_MQ_FAILOVER_DETAILED_DOCUMENTATION.md` - Updated with critical fixes
+- `CONNTAG_EXTRACTION_CRITICAL_FIX.md` - Detailed fix explanation
+- `SPRING_BOOT_VS_JMS_COMPARISON.md` - Complete code comparison
+- `ConnectionTrackingService.java` - Fixed CONNTAG extraction
+- `FailoverMessageListener.java` - Fixed session tracking
+- `ConnTagExtractionTest.java` - Test to verify correct extraction
+- `run-spring-boot-failover-test.sh` - Test runner script
 
 #### Next Steps to Run Tests:
 ```bash
-# Build and run Spring Boot failover tests
+# Build and run Spring Boot failover tests with fixed CONNTAG extraction
 ./run-spring-boot-failover-test.sh
 
-# This will:
-# 1. Build Spring Boot application
-# 2. Run parent-child grouping test
-# 3. Run failover test with CONNTAG tracking
-# 4. Collect MQSC and tcpdump evidence
-# 5. Generate comprehensive report
+# Run the CONNTAG extraction test
+cd spring-mq-failover
+mvn test -Dtest=ConnTagExtractionTest
+
+# This will now correctly:
+# 1. Extract CONNTAG in format MQCT<handle><QM>_<timestamp>
+# 2. Prove parent-child session affinity
+# 3. Show CONNTAG changes during failover
+# 4. Match MQSC output exactly
 ```
 
 ---
