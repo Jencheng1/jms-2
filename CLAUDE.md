@@ -774,9 +774,97 @@ docker stop qm2  # Or qm1, qm3 depending on where C1 is connected
 
 ---
 
-**Last Updated**: September 9, 2025 22:30 UTC
-**Status**: FULL SUCCESS - CACHE CLEARED, FULL CONNTAG DISPLAYED, SELECTIVE FAILOVER TESTED
+### September 13, 2025 - Session 9 (Spring Boot MQ Failover Documentation)
+- **OBJECTIVE**: Create comprehensive Spring Boot MQ failover documentation and test runner
+- **KEY ACHIEVEMENT**: Documented Spring Boot architecture with parent-child session tracking
+
+#### Documentation Created:
+1. **SPRING_BOOT_MQ_FAILOVER_DETAILED_DOCUMENTATION.md** - Complete technical guide including:
+   - Spring Boot MQ architecture deep dive
+   - MQConfig.java with CCDT and auto-reconnect configuration
+   - ConnectionTrackingService.java for parent-child correlation
+   - FailoverMessageListener.java for session-aware message processing
+   - CONNTAG and APPTAG correlation mechanisms
+   - Container thread model with session isolation
+   - Failover detection and recovery flow
+   - Evidence collection strategy at JMS, MQSC, and network levels
+
+2. **run-spring-boot-failover-test.sh** - Comprehensive test runner script:
+   - Test 1: Parent-child connection grouping (5 sessions + 3 sessions)
+   - Test 2: Failover behavior with CONNTAG tracking
+   - MQSC evidence collection with APPLTAG filtering
+   - tcpdump network traffic capture
+   - Automated report generation
+
+#### Key Technical Components Documented:
+
+**MQConfig.java**:
+- CCDT URL configuration for Uniform Cluster
+- Queue Manager wildcard "*" for any QM connection
+- Application name with timestamp for unique tracking
+- Auto-reconnect with 30-minute timeout
+- CachingConnectionFactory with 10-session cache
+
+**ConnectionTrackingService.java**:
+- Parent connection tracking with CONNECTION_ID extraction
+- Session tracking with parent linkage
+- CONNTAG format: `MQCT<handle><QM>_<timestamp>`
+- Full connection table generation with parent-child hierarchy
+
+**FailoverMessageListener.java**:
+- SessionAwareMessageListener implementation
+- Session-to-connection mapping
+- Connection failure detection (MQRC_CONNECTION_BROKEN)
+- Automatic failover handling
+
+#### Spring Boot Architecture Insights:
+
+1. **Container Thread Model**:
+   - Each DefaultMessageListenerContainer thread gets dedicated session
+   - Sessions created from shared parent connection
+   - Thread names: container-1, container-2, etc.
+
+2. **Session Caching Impact**:
+   - CachingConnectionFactory maintains session cache
+   - Cache cleared on connection failure
+   - New cache populated after failover
+
+3. **Parent-Child Proof Strategy**:
+   - Connection 1: 1 parent + 5 sessions
+   - Connection 2: 1 parent + 3 sessions
+   - All sessions inherit parent's CONNECTION_ID
+   - APPLTAG set as SPRING-FAILOVER-<timestamp>
+
+4. **Failover Evidence Collection**:
+   - Pre-failover CONNTAG capture
+   - Queue Manager stop to trigger failover
+   - Post-failover CONNTAG comparison
+   - All sessions move together to new QM
+
+#### Files Created in Session 9:
+- `SPRING_BOOT_MQ_FAILOVER_DETAILED_DOCUMENTATION.md` - 25KB comprehensive documentation
+- `run-spring-boot-failover-test.sh` - Automated test runner with evidence collection
+- Ready to execute tests with full evidence collection
+
+#### Next Steps to Run Tests:
+```bash
+# Build and run Spring Boot failover tests
+./run-spring-boot-failover-test.sh
+
+# This will:
+# 1. Build Spring Boot application
+# 2. Run parent-child grouping test
+# 3. Run failover test with CONNTAG tracking
+# 4. Collect MQSC and tcpdump evidence
+# 5. Generate comprehensive report
+```
+
+---
+
+**Last Updated**: September 13, 2025 UTC
+**Status**: SPRING BOOT DOCUMENTATION COMPLETE - READY FOR TEST EXECUTION
 **Environment**: Docker on Linux (Amazon Linux 2)
 **MQ Version**: 9.3.5.0 (Latest)
 **Java Version**: OpenJDK 17
-**Key Achievement**: Successfully demonstrated JMS cache clearing, full CONNTAG display without truncation, selective failover with parent-child affinity, and complete 10-connection tables before and after failover
+**Spring Boot**: 3.x with IBM MQ Spring Boot Starter
+**Key Achievement**: Created comprehensive Spring Boot MQ failover documentation with detailed code analysis, parent-child session tracking explanation, and automated test runner script with full evidence collection

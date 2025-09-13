@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: mq-failover-test
+
+# IBM MQ Configuration
+ibm:
+  mq:
+    ccdt-url: file:///workspace/ccdt/ccdt.json
+    queue-manager: "*"
+    channel: APP.SVRCONN
+    application-name: SPRING-FAILOVER
+    user: app
+    password: password
+    client-reconnect: true
+    reconnect-timeout: 1800
+    test-queue: DEV.QUEUE.1
+    
+# Connection pool settings
+  connection:
+    pool:
+      max-connections: 10
+      min-connections: 2
+      parent-connections: 2
+      sessions-per-connection: 5
+      
+# Failover test settings
+failover:
+  test:
+    enabled: true
+    duration-seconds: 180
+    monitoring-interval-ms: 5000
+    simulate-failure-at-seconds: 60
+    
+# Logging
+logging:
+  level:
+    root: INFO
+    com.ibm.mq: DEBUG
+    org.springframework.jms: DEBUG
+    jakarta.jms: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    
+# Actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+      
+server:
+  port: 8080
