@@ -9,11 +9,12 @@ import com.ibm.msg.client.jms.JmsConstants;
 String conntag = connection.getStringProperty(XMSC.WMQ_RESOLVED_CONNECTION_TAG);
 ```
 
-### Spring Boot Uses WMQConstants:
+### Spring Boot Uses String Literals:
 ```java
-// Spring Boot uses WMQConstants namespace
-import com.ibm.msg.client.wmq.WMQConstants;
-String conntag = connection.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TAG);
+// Spring Boot uses string literal property names
+import com.ibm.mq.jms.MQConnection;
+MQConnection mqConnection = (MQConnection) connection;
+String conntag = mqConnection.getStringProperty("JMS_IBM_CONNECTION_TAG");
 ```
 
 ## Detailed CONNTAG Extraction Code with Line Numbers
@@ -22,79 +23,90 @@ String conntag = connection.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TA
 
 ```java
 001: import com.ibm.msg.client.wmq.WMQConstants;
-002: import javax.jms.*;
-003: import java.lang.reflect.Method;
-004: 
-005: public class SpringBootFailoverTest {
-006:     
-007:     /**
-008:      * Extract CONNTAG from Connection - Spring Boot Way
-009:      * Lines 10-35: Main extraction method with reflection fallback
-010:      */
-011:     private static String extractFullConnTag(Connection connection) {
-012:         try {
-013:             // Line 14-17: Try direct property extraction using Spring Boot constant
-014:             // THIS IS THE KEY DIFFERENCE - Spring Boot uses JMS_IBM_CONNECTION_TAG
-015:             // Regular JMS would use XMSC.WMQ_RESOLVED_CONNECTION_TAG
-016:             String conntag = connection.getStringProperty(
-017:                 WMQConstants.JMS_IBM_CONNECTION_TAG  // ← Spring Boot specific
-018:             );
-019:             
-020:             if (conntag != null && !conntag.isEmpty()) {
-021:                 // Line 22: Return full CONNTAG without truncation
-022:                 return conntag;  // Format: MQCT<16-char-handle><QM>_<timestamp>
-023:             }
-024:             
-025:             // Lines 26-33: Fallback using reflection if direct access fails
-026:             Method getPropertyMethod = connection.getClass().getMethod(
-027:                 "getStringProperty", String.class
-028:             );
-029:             
-030:             // Try alternate property names
-031:             String[] propertyNames = {
-032:                 "JMS_IBM_CONNECTION_TAG",      // Spring Boot primary
-033:                 "XMSC_WMQ_RESOLVED_CONNECTION_TAG", // Regular JMS fallback
-034:                 "XMSC.WMQ_RESOLVED_CONNECTION_TAG"  // Alternate format
-035:             };
+002: import com.ibm.mq.jms.MQConnection;
+003: import com.ibm.mq.jms.MQSession;
+004: import javax.jms.*;
+005: import java.lang.reflect.Method;
+006: 
+007: public class SpringBootFailoverTest {
+008:     
+009:     /**
+010:      * Extract CONNTAG from Connection - Spring Boot Way
+011:      * Lines 11-51: Main extraction method with reflection fallback
+012:      */
+013:     private static String extractFullConnTag(Connection connection) {
+014:         try {
+015:             // Lines 16-24: Try direct property extraction using Spring Boot approach
+016:             // THIS IS THE KEY DIFFERENCE - Spring Boot uses string literal "JMS_IBM_CONNECTION_TAG"
+017:             // Regular JMS would use XMSC.WMQ_RESOLVED_CONNECTION_TAG constant
+018:             
+019:             // Cast to MQConnection for Spring Boot style access
+020:             if (connection instanceof MQConnection) {
+021:                 MQConnection mqConnection = (MQConnection) connection;
+022:                 
+023:                 // Spring Boot way: Use string literal property name
+024:                 String conntag = mqConnection.getStringProperty("JMS_IBM_CONNECTION_TAG");
+025:                 
+026:                 if (conntag != null && !conntag.isEmpty()) {
+027:                     // Line 27: Return full CONNTAG without truncation
+028:                     return conntag;  // Format: MQCT<16-char-handle><QM>_<timestamp>
+029:                 }
+030:             }
+031:             
+032:             // Lines 32-47: Fallback using reflection if direct access fails
+033:             Method getPropertyMethod = connection.getClass().getMethod(
+034:                 "getStringProperty", String.class
+035:             );
 036:             
-037:             for (String prop : propertyNames) {
-038:                 try {
-039:                     Object result = getPropertyMethod.invoke(connection, prop);
-040:                     if (result != null) {
-041:                         return result.toString();
-042:                     }
-043:                 } catch (Exception e) {
-044:                     // Continue to next property
-045:                 }
-046:             }
-047:         } catch (Exception e) {
-048:             System.err.println("Failed to extract CONNTAG: " + e.getMessage());
-049:         }
-050:         return "CONNTAG_EXTRACTION_FAILED";
-051:     }
-052:     
-053:     /**
-054:      * Extract CONNTAG from Session - Inherits from Parent
-055:      * Lines 56-70: Session CONNTAG extraction
-056:      */
-057:     private static String extractSessionConnTag(Session session) {
-058:         try {
-059:             // Line 60-62: Sessions inherit parent's CONNTAG
-060:             // Spring Boot sessions use same constant as connection
-061:             String conntag = session.getStringProperty(
-062:                 WMQConstants.JMS_IBM_CONNECTION_TAG  // ← Same as parent
-063:             );
-064:             
-065:             if (conntag != null) {
-066:                 // Line 67: Return inherited CONNTAG (same as parent)
-067:                 return conntag;
-068:             }
-069:         } catch (Exception e) {
-070:             // Session doesn't have direct property, inherit from parent
-071:         }
-072:         return "INHERITED_FROM_PARENT";
-073:     }
-074: }
+037:             // Try alternate property names - Spring Boot uses string literals
+038:             String[] propertyNames = {
+039:                 "JMS_IBM_CONNECTION_TAG",           // Spring Boot primary (string literal)
+040:                 "XMSC_WMQ_RESOLVED_CONNECTION_TAG", // Regular JMS fallback
+041:                 "XMSC.WMQ_RESOLVED_CONNECTION_TAG"  // Alternate format
+042:             };
+043:             
+044:             for (String prop : propertyNames) {
+045:                 try {
+046:                     Object result = getPropertyMethod.invoke(connection, prop);
+047:                     if (result != null) {
+048:                         return result.toString();
+049:                     }
+050:                 } catch (Exception e) {
+051:                     // Continue to next property
+052:                 }
+053:             }
+054:         } catch (Exception e) {
+055:             System.err.println("Failed to extract CONNTAG: " + e.getMessage());
+056:         }
+057:         return "CONNTAG_EXTRACTION_FAILED";
+058:     }
+059:     
+060:     /**
+061:      * Extract CONNTAG from Session - Inherits from Parent
+062:      * Lines 62-80: Session CONNTAG extraction
+063:      */
+064:     private static String extractSessionConnTag(Session session) {
+065:         try {
+066:             // Lines 67-71: Sessions inherit parent's CONNTAG
+067:             // Spring Boot sessions use same approach as connection
+068:             
+069:             if (session instanceof MQSession) {
+070:                 MQSession mqSession = (MQSession) session;
+071:                 
+072:                 // Spring Boot way: Use string literal property name
+073:                 String conntag = mqSession.getStringProperty("JMS_IBM_CONNECTION_TAG");
+074:                 
+075:                 if (conntag != null) {
+076:                     // Line 76: Return inherited CONNTAG (same as parent)
+077:                     return conntag;
+078:                 }
+079:             }
+080:         } catch (Exception e) {
+081:             // Session doesn't have direct property, inherit from parent
+082:         }
+083:         return "INHERITED_FROM_PARENT";
+084:     }
+085: }
 ```
 
 ## Spring Boot Container Listener Failure Detection
@@ -181,8 +193,10 @@ String conntag = connection.getStringProperty(WMQConstants.JMS_IBM_CONNECTION_TA
 
 | Aspect | Regular JMS | Spring Boot |
 |--------|-------------|-------------|
-| **CONNTAG Constant** | `XMSC.WMQ_RESOLVED_CONNECTION_TAG` | `WMQConstants.JMS_IBM_CONNECTION_TAG` |
-| **Import** | `com.ibm.msg.client.jms.JmsConstants` | `com.ibm.msg.client.wmq.WMQConstants` |
+| **CONNTAG Property** | `XMSC.WMQ_RESOLVED_CONNECTION_TAG` (constant) | `"JMS_IBM_CONNECTION_TAG"` (string literal) |
+| **Connection Cast** | Generic `Connection` | Cast to `MQConnection` |
+| **Session Cast** | Generic `Session` | Cast to `MQSession` |
+| **Import** | `com.ibm.msg.client.jms.JmsConstants` | `com.ibm.mq.jms.MQConnection/MQSession` |
 | **Session Detection** | Manual exception handling | Container ExceptionListener |
 | **Reconnection** | Manual implementation | Container auto-recovery |
 | **Session Caching** | Application managed | Container factory managed |

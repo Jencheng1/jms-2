@@ -1,0 +1,22 @@
+
+================================================================================
+     SPRING BOOT COMPLETE FAILOVER TEST - FULL CONNTAG WITHOUT TRUNCATION
+================================================================================
+Test ID: SPRING-1757763846235
+Start Time: 11:44:06.325
+CCDT: file:///workspace/ccdt/ccdt.json
+
+=== CCDT Configuration Details ===
+• affinity: "none" - Enables random QM selection
+• clientWeight: 1 - Equal distribution across QMs
+• reconnect.enabled: true - Automatic reconnection
+• reconnect.timeout: 1800 - 30 minute timeout
+• Queue Managers: QM1, QM2, QM3 (Uniform Cluster)
+
+[11:44:06.948] MQConnectionFactory configured:
+  • Transport: CLIENT mode
+  • CCDT URL: file:///workspace/ccdt/ccdt.json
+  • Queue Manager: * (any from CCDT)
+  • Reconnect: ENABLED
+
+[11:44:06.948] Creating Connection 1 with 5 sessions...
