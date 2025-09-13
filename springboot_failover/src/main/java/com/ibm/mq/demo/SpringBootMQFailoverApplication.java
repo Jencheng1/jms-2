@@ -127,7 +127,7 @@ public class SpringBootMQFailoverApplication {
         String appTag = TEST_ID + "-" + connId;
         factory.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, appTag);
         
-        Connection connection = factory.createConnection("app", "");
+        Connection connection = factory.createConnection("mqm", "");
         ConnectionData connData = new ConnectionData(connId, connection, appTag);
         
         connection.setExceptionListener(new ExceptionListener() {
@@ -215,6 +215,14 @@ public class SpringBootMQFailoverApplication {
     
     private static String extractQueueManager(Connection connection) {
         try {
+            // First try to extract from CONNTAG
+            String conntag = SpringBootFailoverTest.extractFullConnTag(connection);
+            if (conntag != null && conntag.contains("QM")) {
+                if (conntag.contains("QM1")) return "QM1";
+                if (conntag.contains("QM2")) return "QM2";
+                if (conntag.contains("QM3")) return "QM3";
+            }
+            
             if (connection instanceof MQConnection) {
                 MQConnection mqConn = (MQConnection) connection;
                 

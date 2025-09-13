@@ -129,7 +129,7 @@ public class SpringBootMQFailoverStandaloneTest {
         String appTag = TEST_ID + "-" + connId;
         factory.setStringProperty(WMQConstants.WMQ_APPLICATIONNAME, appTag);
         
-        Connection connection = factory.createConnection("mqm", "");
+        Connection connection = factory.createConnection("app", "");
         ConnectionData connData = new ConnectionData(connId, connection, appTag);
         
         // Spring Boot style exception listener
@@ -234,14 +234,6 @@ public class SpringBootMQFailoverStandaloneTest {
     
     private static String extractQueueManager(Connection connection) {
         try {
-            // First try to extract from CONNTAG
-            String conntag = extractFullConnTagSpringBoot(connection);
-            if (conntag != null && conntag.contains("QM")) {
-                if (conntag.contains("QM1")) return "QM1";
-                if (conntag.contains("QM2")) return "QM2";
-                if (conntag.contains("QM3")) return "QM3";
-            }
-            
             String connId = extractConnectionId(connection);
             if (connId != null && connId.length() >= 48) {
                 String qmHex = connId.substring(8, 24);
