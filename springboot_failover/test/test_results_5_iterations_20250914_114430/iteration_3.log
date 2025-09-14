@@ -1,0 +1,110 @@
+
+========================================================================================================================
+       SPRING BOOT MQ FAILOVER COMPLETE DEMO - FULL UNTRUNCATED CONNTAG
+========================================================================================================================
+Test ID: SBDEMO-1757850401069
+Start Time: 11:46:41.302
+CCDT URL: file:///workspace/ccdt/ccdt.json
+
+========================================================================================================================
+                    HOW SPRING BOOT DETECTS SESSION FAILURES
+========================================================================================================================
+1. Container creates DefaultJmsListenerContainerFactory with ExceptionListener
+2. ExceptionListener monitors for MQ error codes:
+   - MQJMS2002: Connection broken to Queue Manager
+   - MQJMS2008: Queue Manager not available
+   - MQJMS1107: Connection closed by Queue Manager
+3. When QM fails, ALL sessions get the exception simultaneously
+4. Container marks parent connection as failed
+5. All child sessions are automatically invalidated with parent
+
+[11:46:42.545] Creating Connection 1 (C1) with 5 child sessions...
+[11:46:43.954] C1 created: 1 parent + 5 sessions
+
+[11:46:43.961] Creating Connection 2 (C2) with 3 child sessions...
+[11:46:44.128] C2 created: 1 parent + 3 sessions
+WARNING: Session 1 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+WARNING: Session 2 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+WARNING: Session 3 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+WARNING: Session 4 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+WARNING: Session 5 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+WARNING: Session 1 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+WARNING: Session 2 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+WARNING: Session 3 CONNTAG differs from parent!
+  Parent CONNTAG: CONNTAG_UNAVAILABLE
+  Session CONNTAG: SESSION_CONNTAG_UNAVAILABLE
+
+========================================================================================================================
+                    BEFORE FAILOVER - ALL 10 SESSIONS WITH FULL CONNTAG
+========================================================================================================================
+
+BEFORE FAILOVER - Complete Connection Table
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| #   | Type    | Conn | Session | FULL CONNTAG (UNTRUNCATED)                                                                           | CONNECTION_ID             | QM     | Host            | APPTAG                         |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| 1   | Parent  | C1   | -       | CONNTAG_UNAVAILABLE                                                                                  | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C1        |
+| 2   | Session | C1   | 1       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C1        |
+| 3   | Session | C1   | 2       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C1        |
+| 4   | Session | C1   | 3       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C1        |
+| 5   | Session | C1   | 4       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C1        |
+| 6   | Session | C1   | 5       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C1        |
+| 7   | Parent  | C2   | -       | CONNTAG_UNAVAILABLE                                                                                  | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C2        |
+| 8   | Session | C2   | 1       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C2        |
+| 9   | Session | C2   | 2       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C2        |
+| 10  | Session | C2   | 3       | SESSION_CONNTAG_UNAVAILABLE                                                                          | UNKNOWN                   | UNKNOWN | unknown         | SBDEMO-1757850401069-C2        |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Connection Summary:
+  • C1: 1 parent + 5 child sessions = 6 total connections
+  • C2: 1 parent + 3 child sessions = 4 total connections
+
+Queue Manager Distribution:
+  • UNKNOWN: 10 connections
+
+========================================================================================================================
+              HOW UNIFORM CLUSTER HANDLES PARENT-CHILD FAILOVER
+========================================================================================================================
+1. QUEUE MANAGER FAILURE: QM becomes unavailable (network/crash/maintenance)
+2. DETECTION: Parent connection detects failure via heartbeat timeout
+3. ATOMIC UNIT: Parent + ALL child sessions treated as single unit
+4. CCDT CONSULTATION: Client checks CCDT for available QMs
+5. QM SELECTION: Selects next available QM (load balanced)
+6. PARENT RECONNECTION: Parent connection established to new QM
+7. CHILD RECREATION: All child sessions recreated on SAME QM as parent
+8. CONNTAG UPDATE: All get new CONNTAG reflecting new QM
+9. AFFINITY PRESERVED: Parent-child relationship maintained
+
+========================================================================================================================
+                    CONNECTION POOL BEHAVIOR DURING FAILOVER
+========================================================================================================================
+NORMAL STATE:
+  Pool Size: 2 parent connections
+  - Connection 1: 1 parent + 5 cached sessions
+  - Connection 2: 1 parent + 3 cached sessions
+
+DURING FAILOVER:
+  Step 1: Exception detected → Mark connections as invalid
+  Step 2: Remove failed connections from pool
+  Step 3: Clear session cache for failed connections
+  Step 4: Create new parent connections to available QM
+  Step 5: Recreate all sessions in cache
+  Step 6: Pool restored with same structure on new QM
+
+[11:46:44.193] Monitoring for failover (2 minutes)...
+[11:46:44.194] To trigger: docker stop qm2 (or whichever QM has connections)
+[11:46:49.194] Still monitoring... (5 seconds)
+[11:47:09.195] Still monitoring... (25 seconds)

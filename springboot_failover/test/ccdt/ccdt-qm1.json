@@ -1,0 +1,20 @@
+{
+  "channel": [
+    {
+      "name": "APP.SVRCONN",
+      "type": "clientConnection",
+      "clientConnection": {
+        "connection": [
+          {
+            "host": "10.10.10.10",
+            "port": 1414
+          }
+        ],
+        "queueManager": ""
+      },
+      "connectionManagement": {
+        "sharingConversations": 10
+      }
+    }
+  ]
+}

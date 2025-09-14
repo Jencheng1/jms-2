@@ -1,0 +1,109 @@
+
+========================================================================================================================================================================================================
+                              SPRING BOOT MQ - COMPLETE 10 SESSION TABLE WITH FULL UNTRUNCATED CONNTAG
+========================================================================================================================================================================================================
+Test ID: FULLCONNTAG-1757784259154
+Time: 17:24:19.251
+
+[17:24:19.777] Creating Connection 1 (C1) - 1 parent + 5 child sessions
+[17:24:22.184] Creating Connection 2 (C2) - 1 parent + 3 child sessions
+
+========================================================================================================================================================================================================
+                                           BEFORE FAILOVER - ALL 10 SESSIONS WITH FULL CONNTAG
+========================================================================================================================================================================================================
+
+Complete 10-Session Table:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| #   | Type    | Conn | Session | FULL CONNTAG (COMPLETE - NO TRUNCATION)                                                              | QM     | Host            | APPTAG                              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| 1   | Parent  | C1   | -       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 2   | Session | C1   | 1       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 3   | Session | C1   | 2       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 4   | Session | C1   | 3       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 5   | Session | C1   | 4       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 6   | Session | C1   | 5       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 7   | Parent  | C2   | -       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+| 8   | Session | C2   | 1       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+| 9   | Session | C2   | 2       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+| 10  | Session | C2   | 3       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Summary:
+• Connection C1: 1 parent + 5 sessions = 6 total
+• Connection C2: 1 parent + 3 sessions = 4 total
+• Grand Total: 10 connections
+
+========================================================================================================================================================================================================
+                                    SPRING BOOT CONTAINER LISTENER FAILURE DETECTION
+========================================================================================================================================================================================================
+When Queue Manager fails:
+1. Spring Boot DefaultJmsListenerContainerFactory.ExceptionListener receives MQJMS2002/2008/1107
+2. Container marks parent connection as invalid in connection pool
+3. All child sessions (message listeners) are marked invalid with parent
+4. Container triggers reconnection through IBM MQ client reconnect
+5. CCDT is consulted for available Queue Managers
+6. New parent connection created to available QM
+7. All child sessions recreated on SAME QM as parent
+
+========================================================================================================================================================================================================
+                                      UNIFORM CLUSTER PARENT-CHILD FAILOVER
+========================================================================================================================================================================================================
+Key Points:
+• Parent + Children treated as ATOMIC UNIT
+• All 6 connections from C1 move together
+• All 4 connections from C2 move together
+• CONNTAG changes to reflect new Queue Manager
+• APPTAG remains constant for tracking
+
+========================================================================================================================================================================================================
+                                           CONNECTION POOL BEHAVIOR
+========================================================================================================================================================================================================
+Normal State:
+  Pool [Size: 2]
+    ├── Connection C1 (parent)
+    │     ├── Session 1 (child)
+    │     ├── Session 2 (child)
+    │     ├── Session 3 (child)
+    │     ├── Session 4 (child)
+    │     └── Session 5 (child)
+    └── Connection C2 (parent)
+          ├── Session 1 (child)
+          ├── Session 2 (child)
+          └── Session 3 (child)
+
+During Failover:
+  1. Failed connections removed from pool
+  2. Session cache cleared
+  3. New connections created to available QM
+  4. Sessions recreated in cache
+  5. Pool structure preserved on new QM
+
+[17:24:24.246] Keeping connections alive for 60 seconds...
+[17:24:24.246] To trigger failover: docker stop <qm_with_connections>
+
+[17:24:54.247] Checking for failover...
+
+========================================================================================================================================================================================================
+                                            AFTER 30 SECONDS - CURRENT STATE
+========================================================================================================================================================================================================
+
+Complete 10-Session Table:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| #   | Type    | Conn | Session | FULL CONNTAG (COMPLETE - NO TRUNCATION)                                                              | QM     | Host            | APPTAG                              |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| 1   | Parent  | C1   | -       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 2   | Session | C1   | 1       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 3   | Session | C1   | 2       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 4   | Session | C1   | 3       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 5   | Session | C1   | 4       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 6   | Session | C1   | 5       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C1        |
+| 7   | Parent  | C2   | -       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+| 8   | Session | C2   | 1       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+| 9   | Session | C2   | 2       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+| 10  | Session | C2   | 3       | WAITING_FOR_MQ_ASSIGNMENT                                                                            | TBD    | TBD             | FULLCONNTAG-1757784259154-C2        |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Summary:
+• Connection C1: 1 parent + 5 sessions = 6 total
+• Connection C2: 1 parent + 3 sessions = 4 total
+• Grand Total: 10 connections

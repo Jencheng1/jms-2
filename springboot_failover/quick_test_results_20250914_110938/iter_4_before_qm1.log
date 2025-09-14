@@ -1,0 +1,17 @@
+5724-H72 (C) Copyright IBM Corp. 1994, 2025.
+Starting MQSC for queue manager QM1.
+
+
+     1 : DIS CONN(*) WHERE(APPLTAG LK *QUICK4-1757848300*) ALL
+AMQ8569E: Error in filter specification
+DIS CONN(*) WHERE(APPLTAG LK *QUICK4-
+
+AMQ8427I: Valid syntax for the MQSC command:
+
+  DISPLAY display_cmd  
+     WHERE( filter_keyword operator filter_value ) 
+                       
+  operator := [ LT | GT | EQ | NE | LE | GE | CT | EX | LK | NL | CTG | EXG ] 
+One MQSC command read.
+One command has a syntax error.
+All valid MQSC commands were processed.

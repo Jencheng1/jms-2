@@ -1,0 +1,2 @@
+Error: Could not find or load main class QuickFailoverTest3
+Caused by: java.lang.NoClassDefFoundError: com/ibm/mq/demo/QuickFailoverTest3 (wrong name: QuickFailoverTest3)
